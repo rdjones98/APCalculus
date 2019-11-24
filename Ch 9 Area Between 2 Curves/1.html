@@ -20,20 +20,44 @@ table {
 	float:left;
 }
 td{
+	padding: 10px 0px 10px 0px;
 	vertical-align:top
 	wrap:nowrap;
 }
-a {
+a 
+{
 	text-decoration: none;
 }
 .hidden {
 	display: none;
 }
-input {
-	width:70px;
-}
 img {
 	float:right;
+}
+input {
+	font-family: Computer Modern;
+	font-size:15px;
+}
+input.c1 {
+	width:10px;
+}
+input.c2 {
+	width:10px;
+}
+input.c3 {
+	width:20px;
+}
+input.c4 {
+	width:25px;
+}
+input.c5 {
+	width:30px;
+}
+input.c6 {
+	width:10px;
+}
+input.c7 {
+	width:40px;
 }
 </style> 
 
@@ -64,10 +88,28 @@ function drawInt(lb, ub, func, d)
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
+function setVal( anE, aVal )
+{
+	var e = document.getElementById(anE);
+	e.value = aVal;
+	e.readOnly=true;
+}
+function hide(anE)
+{
+	var e = document.getElementById(anE);
+	if(e != null)
+		e.style.display='none';
+}
+function show(anE)
+{
+	var e = document.getElementById(anE);
+	if(e != null)
+		e.style.display='block';
+}
 function showStep(aDiv, pts)
 {
-	document.getElementById(aDiv+"s").style.display='none';
-	document.getElementById(aDiv).style.display='block';
+	hide(aDiv+"s");
+	show(aDiv);
 	
 	score = score - pts;
 	if(score < 0 )
@@ -76,8 +118,22 @@ function showStep(aDiv, pts)
 	document.getElementById("score").innerHTML=score;
 	if(aDiv=="step1")
 	{
-		document.getElementById("step1.a").value = "1.03283";
-		document.getElementById("step1.b").value = "2.40110";
+		setVal("step1.a","1.03283");
+		setVal("step1.b","2.40110");
+	}
+	else if(aDiv=="step2")
+	{
+		setVal("step2.a","0");
+		setVal("step2.b","a");
+		setVal("step2.c","g(x)");
+		setVal("step2.d","f(x)");
+	}
+	else if(aDiv=="step3")
+	{
+		setVal("step3.a","a");
+		setVal("step3.b","2");
+		setVal("step3.c","f(x)");
+		setVal("step3.d","g(x)");
 	}
 }
 function showToolTip(e)
@@ -86,13 +142,27 @@ function showToolTip(e)
 }
 function submit(step)
 {
-alert(step);
 	if( step == "step1" )
 	{
-		if( document.getElementById("step1.a").value != "1.03283" )
+		if (( document.getElementById("step1.a").value != "1.03283" ) ||
+			( document.getElementById("step1.b").value != "2.40110" ) )
 			showStep("step1",25);
-		if( document.getElementById("step1.b").value != "2.40110" )
-			showStep("step1",25);
+	}
+	else if( step == "step2" )
+	{
+		if (( document.getElementById("step2.a").value != "0" )|| 
+			( document.getElementById("step2.b").value.toLowerCase() != "a" ) ||
+			( document.getElementById("step2.c").value != "g(x)" ) ||
+			( document.getElementById("step2.d").value != "f(x)" ))
+			showStep("step2",25);
+	}
+	else if( step == "step3" )
+	{
+		if (( document.getElementById("step3.a").value != "0" ) ||
+			( document.getElementById("step3.b").value.toLowerCase() != "a" ) ||
+			( document.getElementById("step3.c").value != "g(x)" ) ||
+			( document.getElementById("step3.d").value != "f(x)" ))
+			showStep("step3",25);
 	}
 }
 </script>
@@ -107,30 +177,24 @@ Let R and S be the two regions enclosed by the graphs of f and g shown in the fi
 
 <table border=1>
 	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
-		<td><equ>Let (a,b)=(<input id=step1.a>,<input id=step1.b>)<br>(5 decimal places. no rounding)
+		<td><equ>Let (a,b)=(<input id=step1.a class=c7>,<input id=step1.b class=c7>)<br>(5 decimal places. no rounding)
 			<div id=step1 class="hidden">
 				<img src="2015.2.a.step1a.jpg"><br>
 				<img src="2015.2.a.step1b.jpg"><br>
 				<img src="2015.2.a.step1c.jpg"><br>
 			</div>
 		</td>
-		<td><a id=step1s href="#" onclick="submit('step1');">submit</a> or <a id=step1s href="#" onclick="showStep('step1',25);">show</a></td>
+		<td><a id=step1s href="#" onclick="submit('step1');">submit</a> or <a id=step1s href="#" onclick="showStep('step1',25);">peek</a></td>
 	</tr>
 	<tr><td>Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  </td>
-		<td><a href="#" onclick="showStep('step2',25);">Show Step 2(-25 pts)</a>
-			<div id=step2 class="hidden">
-				<script>drawInt("0","a","g(x)-f(x)", "dx");</script><br>
-				<a id=step2s href="#" onclick="showToolTip(this);" title="g(x) > f(x) from 0 to a">Do you see why its <equ>g(x)-f(x)</equ>?</a>
-			</div>
+		<td><script>drawInt("<input class=c1 id=step2.a ></input>","<input id=step2.b class=c1></input>","<input id=step2.c class=c4></input>&minus;<input id=step2.d class=c4></input>", "dx");</script>
 		</td>
+		<td><a id=step2s href="#" onclick="submit('step2');">submit</a> or <a id=step2s href="#" onclick="showStep('step2',25);">peek</a></td>
 	</tr>
 	<tr><td>Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  </td>
-		<td><a href="#" onclick="showStep('step3',25);">Show Step 3(-25 pts)</a>
-			<div id=step3 class="hidden">
-				<script>drawInt("a","2","f(x)-g(x)", "dx");</script><br>
-				<a id=step3s href="#" onclick="showToolTip(this);" title="f(x) > g(x) from a to 2">Do you see why its <equ>f(x)-g(x)</equ>?</a>
-			</div>
+		<td><script>drawInt("<input class=c1 id=step3.a ></input>","<input id=step3.b class=c1></input>","<input id=step3.c class=c4></input>&minus;<input id=step3.d class=c4></input>", "dx");</script>
 		</td>
+		<td><a id=step2s href="#" onclick="submit('step2');">submit</a> or <a id=step3s href="#" onclick="showStep('step3',25);">peek</a></td>
 	</tr>
 	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
 	<tr><td>Score:</td><td id=score>100</score>

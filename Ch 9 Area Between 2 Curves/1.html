@@ -17,7 +17,7 @@ equ {
 	font-style:italic;
 }
 table {
-	width:100%;
+	float:left;
 }
 td{
 	vertical-align:top
@@ -74,7 +74,7 @@ function showToolTip(e)
 </script>
 </head>
 <body>
-<img src="2015.2.jpg">
+<img src="2015.2.jpg" width=200>
 <H1>2015 AP Calculus AB.  Problem # 2.</H1><BR>
 Let f and g be the functions defined by <equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
 Let R and S be the two regions enclosed by the graphs of f and g shown in the figure above. 
@@ -110,10 +110,5 @@ Let R and S be the two regions enclosed by the graphs of f and g shown in the fi
 	</tr>
 	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
 </table>
-</body>
-<script>
-	var exp2 = buildExp("2x","2");
-	var exp = buildExp("2",exp2);
-	drawInt("0","&infin;","2<sup>3<sup>2x</sup></sup> +- 3dx");</script>
 </body>
 </html>

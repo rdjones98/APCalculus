@@ -53,10 +53,15 @@ function drawInt(lb, ub, func)
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
-function showStep(aDiv)
+function showStep(aDiv, clickedE)
 {
-	document.getElementById(aDiv).style.display='none';
-	document.getElementById(aDiv+"A").style.display='block';
+	clickedE.style.display='none';
+	document.getElementById(aDiv).style.display='block';
+}
+function showToolTip(e)
+{
+alert(e.title);
+console.dir(e);
 }
 </script>
 </head>
@@ -71,9 +76,9 @@ function showStep(aDiv)
 </table>
 1.  Find the area of R (You may use a calculator)<br>
 <table>
-	<tr><td>Step 1 (<a title="Find the bounds of R">hint</a>):</td>
-		<td><a   id=step1  href="javascript:showStep('step1');">Show Step (-25 pts)</a>
-			<div id=step1A class="hidden">
+	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
+		<td><a href="#" onclick="showStep('step1',this);">Show Step (-25 pts)</a>
+			<div id=step1 class="hidden">
 				<img src="2015.2.a.step1a.jpg"><br>
 				<img src="2015.2.a.step1b.jpg"><br>
 				<img src="2015.2.a.step1c	.jpg"><br>
@@ -82,7 +87,8 @@ function showStep(aDiv)
 		</td></tr>
 	<tr><td>Step 2 (<a title="Find the Area of R">hint</a>):  </td>
 		<td><a   id=step2  href="javascript:showStep('step2');">Show Step (-25 pts)</a>
-			<div id=step2A class="hidden"><script>drawInt("0","a","[g(x)-f(x)]dx");</script><br>Do you see why its <equ>g(x)-f(x)</equ>?<a title="g(x) is > f(x) from 0 to a">answer</a></td></tr>
+			<div id=step2A class="hidden"><script>drawInt("0","a","[g(x)-f(x)]dx");
+				</script><br>Do you see why its <equ>g(x)-f(x)</equ>?<a title="g(x) is > f(x) from 0 to a">answer</a></td></tr>
 	<tr><td>Step 3 (<a title="Find the Area of S">hint</a>):  </td><td id=step2><script>drawInt("a","2","[g(x)-f(x)]dx");</script><br>Do you see why its <equ>f(x)-g(x)</equ>?</td></tr>
 	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
 </table>

@@ -56,7 +56,7 @@ function drawInt(lb, ub, func)
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
-function showStep(aDiv, clickedE)
+function showStep(aDiv, clickedE, pts)
 {
 	clickedE.style.display='none';
 	document.getElementById(aDiv).style.display='block';
@@ -80,7 +80,7 @@ console.dir(e);
 1.  Find the area of R (You may use a calculator)<br>
 <table>
 	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
-		<td><a href="#" onclick="showStep('step1',this);">Show Step (-25 pts)</a>
+		<td><a href="#" onclick="showStep('step1',this,25);">Show Step 1 (-25 pts)</a>
 			<div id=step1 class="hidden">
 				<img src="2015.2.a.step1a.jpg"><br>
 				<img src="2015.2.a.step1b.jpg"><br>
@@ -88,11 +88,20 @@ console.dir(e);
 				<equ>Let (a,b)=(1.0328319,2.4011081)</equ>
 			</div>
 		</td></tr>
-	<tr><td>Step 2 (<a title="Find the Area of R">hint</a>):  </td>
-		<td><a   id=step2  href="javascript:showStep('step2');">Show Step (-25 pts)</a>
-			<div id=step2A class="hidden"><script>drawInt("0","a","[g(x)-f(x)]dx");
-				</script><br>Do you see why its <equ>g(x)-f(x)</equ>?<a title="g(x) is > f(x) from 0 to a">answer</a></td></tr>
-	<tr><td>Step 3 (<a title="Find the Area of S">hint</a>):  </td><td id=step2><script>drawInt("a","2","[g(x)-f(x)]dx");</script><br>Do you see why its <equ>f(x)-g(x)</equ>?</td></tr>
+	<tr><td>Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  </td>
+		<td><a href="#" onclick="showStep('step2',this,25);">Show Step 2(-25 pts)</a>
+			<div id=step2 class="hidden">
+				<script>drawInt("0","a","(g(x)-f(x))dx");</script><br>
+				<a href="#" onclick="showToolTip(this);" title="g(x) is > f(x) from 0 to a">Do you see why its <equ>g(x)-f(x)</equ>?</a>
+			</div>
+		</td></tr>
+	<tr><td>Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  </td>
+		<td><a href="#" onclick="showStep('step3',this,25);">Show Step 3(-25 pts)</a>
+			<div id=step3 class="hidden">
+				<script>drawInt("a","2","(f(x)-g(x))dx");</script><br>
+				<a href="#" onclick="showToolTip(this);" title="f(x) is > g(x) from 0 to a">Do you see why its <equ>f(x)-g(x)</equ>?</a>
+			</div>
+		</td></tr>
 	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
 </table>
 </body>
@@ -102,14 +111,3 @@ console.dir(e);
 	drawInt("0","&infin;","2<sup>3<sup>2x</sup></sup> +- 3dx");</script>
 </body>
 </html>
-<script type="text/javascript" async
- src="https2://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"> 
- </script>
-
-<p>
-  When \(a \int_{0}^{\infty }{f(x)dx} \ne 0\), there are two solutions to \(ax^3^2 + bx + c = 0\) and they are
-  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
-</p>
-<h>
-\(\int_{0}^{\infty }{f(x)=x^2+2x+3dx}\)
-</h>

@@ -33,12 +33,13 @@ input {
 	width:70px;
 }
 img {
-	float:left;
+	float:right;
 }
 </style> 
 
 
 <script>
+var score=100;
 function buildExp(base,exp)
 {
 	var out = "<span>" + base + "</span><sup>" +exp + "</sup>";
@@ -63,11 +64,16 @@ function drawInt(lb, ub, func, d)
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
-function showStep(aDiv, clickedE, pts)
+function showStep(aDiv, pts)
 {
-	clickedE.style.display='none';
+	document.getElementById(aDiv+"s").style.display='none';
 	document.getElementById(aDiv).style.display='block';
 	
+	score = score - pts;
+	if(score < 0 )
+		score = 0;
+		
+	document.getElementById("score").innerHTML=score;
 	if(aDiv=="step1")
 	{
 		document.getElementById("step1.a").value = "1.03283";
@@ -78,6 +84,17 @@ function showToolTip(e)
 {
 	alert(e.title);
 }
+function submit(step)
+{
+alert(step);
+	if( step == "step1" )
+	{
+		if( document.getElementById("step1.a").value != "1.03283" )
+			showStep("step1",25);
+		if( document.getElementById("step1.b").value != "2.40110" )
+			showStep("step1",25);
+	}
+}
 </script>
 </head>
 <body>
@@ -86,36 +103,37 @@ function showToolTip(e)
 Let f and g be the functions defined by <equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
 Let R and S be the two regions enclosed by the graphs of f and g shown in the figure above. 
 <br><br>
-1.  Find the area of R (You may use a calculator)<br>
+1.  Find the sum of the areas of regions R and S(You may use a calculator)<br>
 
 <table border=1>
 	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
-		<td><equ>Let (a,b)=(<input id=step1.a>,<input id=step1.b>) (5 decimal places)</equ><button type="button" onclick="submit(step1);">submit</button>
+		<td><equ>Let (a,b)=(<input id=step1.a>,<input id=step1.b>) (5 places)</equ><button type="button" onclick="submit('step1');">submit</button>
 			<div id=step1 class="hidden">
 				<img src="2015.2.a.step1a.jpg"><br>
 				<img src="2015.2.a.step1b.jpg"><br>
 				<img src="2015.2.a.step1c.jpg"><br>
 			</div>
 		</td>
-		<td><a href="#" onclick="showStep('step1',this,25);">Show Step 1 (-25 pts)</a></td>
+		<td><a id=step1s href="#" onclick="submit('step1');">submit</a> or <a id=step1s href="#" onclick="showStep('step1',25);">show</a></td>
 	</tr>
 	<tr><td>Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  </td>
-		<td><a href="#" onclick="showStep('step2',this,25);">Show Step 2(-25 pts)</a>
+		<td><a href="#" onclick="showStep('step2',25);">Show Step 2(-25 pts)</a>
 			<div id=step2 class="hidden">
 				<script>drawInt("0","a","g(x)-f(x)", "dx");</script><br>
-				<a href="#" onclick="showToolTip(this);" title="g(x) > f(x) from 0 to a">Do you see why its <equ>g(x)-f(x)</equ>?</a>
+				<a id=step2s href="#" onclick="showToolTip(this);" title="g(x) > f(x) from 0 to a">Do you see why its <equ>g(x)-f(x)</equ>?</a>
 			</div>
 		</td>
 	</tr>
 	<tr><td>Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  </td>
-		<td><a href="#" onclick="showStep('step3',this,25);">Show Step 3(-25 pts)</a>
+		<td><a href="#" onclick="showStep('step3',25);">Show Step 3(-25 pts)</a>
 			<div id=step3 class="hidden">
 				<script>drawInt("a","2","f(x)-g(x)", "dx");</script><br>
-				<a href="#" onclick="showToolTip(this);" title="f(x) > g(x) from a to 2">Do you see why its <equ>f(x)-g(x)</equ>?</a>
+				<a id=step3s href="#" onclick="showToolTip(this);" title="f(x) > g(x) from a to 2">Do you see why its <equ>f(x)-g(x)</equ>?</a>
 			</div>
 		</td>
 	</tr>
 	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
+	<tr><td>Score:</td><td id=score>100</score>
 </table>
 </body>
 </html>

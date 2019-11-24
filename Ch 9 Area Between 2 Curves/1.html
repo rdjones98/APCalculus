@@ -21,7 +21,8 @@ table {
 }
 td{
 	vertical-align:top
-	}
+	wrap:nowrap;
+}
 a {
 	text-decoration: none;
 }
@@ -29,10 +30,10 @@ a {
 	display: none;
 }
 input {
-	width:100px;
+	width:70px;
 }
 img {
-	float:right;
+	float:left;
 }
 </style> 
 
@@ -44,7 +45,7 @@ function buildExp(base,exp)
 	return out;
 }
 
-function drawInt(lb, ub, func)
+function drawInt(lb, ub, func, d)
 {
 	var fontSize = window.getComputedStyle( document.body, null).getPropertyValue("font-size");
 	var size = fontSize.substr(0, fontSize.length-2 );
@@ -58,7 +59,7 @@ function drawInt(lb, ub, func)
 	var intSpan ="<span style='font-size:" + intSize + "px;'>&int;</span>";
 	var lbSpan  ="<span style='font-size:smaller; top:" + lbTop + "px;left:" + lbLeft + "px;'>"+lb+"</span>";
 	var ubSpan  ="<span style='font-size:smaller; top:" + ubTop + "px;left:" + ubLeft + "px;'>"+ub+"</span>";
-	var fncSpan ="<span style='font-style:italic; top:" + fcTop + "px;left:" + fcLeft + "px;'>"+func+"</span>";
+	var fncSpan ="<span top:" + fcTop + "px;left:" + fcLeft + "px;'>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
@@ -66,6 +67,12 @@ function showStep(aDiv, clickedE, pts)
 {
 	clickedE.style.display='none';
 	document.getElementById(aDiv).style.display='block';
+	
+	if(aDiv=="step1")
+	{
+		document.getElementById("step1.a").value = "1.03283";
+		document.getElementById("step1.b").value = "2.40110";
+	}
 }
 function showToolTip(e)
 {
@@ -78,16 +85,16 @@ function showToolTip(e)
 <H1>2015 AP Calculus AB.  Problem # 2.</H1><BR>
 Let f and g be the functions defined by <equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
 Let R and S be the two regions enclosed by the graphs of f and g shown in the figure above. 
-<br>
+<br><br>
 1.  Find the area of R (You may use a calculator)<br>
-<table>
+
+<table border=1>
 	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
-		<td>Let (a,b)=(<input id=step1.a>,<input id=step1.b>) (5 decimal places)<button type="button" onclick="submit(step1);">submit</button>
+		<td><equ>Let (a,b)=(<input id=step1.a>,<input id=step1.b>) (5 decimal places)</equ><button type="button" onclick="submit(step1);">submit</button>
 			<div id=step1 class="hidden">
 				<img src="2015.2.a.step1a.jpg"><br>
 				<img src="2015.2.a.step1b.jpg"><br>
 				<img src="2015.2.a.step1c.jpg"><br>
-				<equ>Let (a,b)=(1.0328319,2.4011081)</equ>
 			</div>
 		</td>
 		<td><a href="#" onclick="showStep('step1',this,25);">Show Step 1 (-25 pts)</a></td>
@@ -95,7 +102,7 @@ Let R and S be the two regions enclosed by the graphs of f and g shown in the fi
 	<tr><td>Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  </td>
 		<td><a href="#" onclick="showStep('step2',this,25);">Show Step 2(-25 pts)</a>
 			<div id=step2 class="hidden">
-				<script>drawInt("0","a","(g(x)-f(x))dx");</script><br>
+				<script>drawInt("0","a","g(x)-f(x)", "dx");</script><br>
 				<a href="#" onclick="showToolTip(this);" title="g(x) > f(x) from 0 to a">Do you see why its <equ>g(x)-f(x)</equ>?</a>
 			</div>
 		</td>
@@ -103,7 +110,7 @@ Let R and S be the two regions enclosed by the graphs of f and g shown in the fi
 	<tr><td>Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  </td>
 		<td><a href="#" onclick="showStep('step3',this,25);">Show Step 3(-25 pts)</a>
 			<div id=step3 class="hidden">
-				<script>drawInt("a","2","(f(x)-g(x))dx");</script><br>
+				<script>drawInt("a","2","f(x)-g(x)", "dx");</script><br>
 				<a href="#" onclick="showToolTip(this);" title="f(x) > g(x) from a to 2">Do you see why its <equ>f(x)-g(x)</equ>?</a>
 			</div>
 		</td>

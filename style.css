@@ -1,0 +1,58 @@
+body {
+	background-color:white;
+	font-family: Helvetica, Verdana, Times, serif; 
+	margin-left:5px; 
+	margin-right:5px; 
+	margin-top:5px;
+	line-height: 150%; 
+	font-size: 15px; 
+	color:black;
+}
+a {text-decoration:none;}
+
+/* Title Bar */
+#header        { position:absolute; top:0px; left:0px;	width:100%;	height:40px; background-color: #625750; color:white;}
+#hamburgerCol  { width:20% }
+#leftArrowCol  { float:right; ; padding-top:10px }
+#titleDiv      { font-size:24px; text-align:center}
+#rightArrowCol { float:left; padding-top:10px}
+#referenceCol   { width:20%; text-align:right; padding-right:20px }
+#hamburgerMenu { position:absolute;	top:3px; left:5px;  width:30px; height:25px; background-color: #625750; }
+#hamburger 	   {										width:30px; height: 5px; background-color: white;	margin: 5px;  }
+
+/* Left side menu */
+#menu 		   { position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
+#menuX		   { float:right; font-size:24px; padding-right:10px; cursor:pointer;  }
+div.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
+div.items a    { color:white; }						 /* make all links in this div white */
+.menuItem 	   { display:block; } 					 /* sub menu items 		 */
+img.dn 		   { display:none; }
+label  		   { color:white; }
+
+/* right side drop down menu */
+#referenceDropDown { position:absolute; top:40px; right:0; background-color:#625750; display:none; }
+
+/* Current Chapter Display */
+#chapterDiv	   { position:absolute; left:0px; top:47px; width:100%; height:100%; }
+
+/* styles for chapter we will load */
+div.chapter   {padding-left:5px; background-color:white; height:95%;  }	/* this is the encompassing div */
+div.chapter a {color:black; text-decoration:underline}
+
+#refs td {background-color:red;}
+table 	{ table-layout:auto; border-collapse: collapse; margin-bottom:0px; margin-top:0px; margin-right:20px; width:100%; }
+td 		{ font-weight: bold;  padding-top: 0px; padding-bottom: 0px; padding-right:0px; line-height: 150%; font-family: Verdana, Times, serif; font-size: 16px; 	}
+
+/* Math Styles */
+equ 	{ font-family: Computer Modern;	font-style:italic;}
+.hidden { display: none;}
+img   	{ float:left;}
+
+input 	{	font-family: Computer Modern;	font-size:15px; }
+input.c1 { width:10px;}
+input.c2 { width:10px;}
+input.c3 { width:20px;}
+input.c4 { width:25px;}
+input.c5 { width:30px;}
+input.c6 { width:10px; }
+input.c7 { width:40px; }

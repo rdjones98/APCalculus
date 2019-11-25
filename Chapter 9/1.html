@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<style>
+span 	{ font-family: Computer Modern; position:relative;}
+table 	{ float:left; }
+td		{ padding: 10px 0px 10px 0px; vertical-align:top; wrap:nowrap;}
+
+</style> 
+
+
+<script>
+var score=100;
+function buildExp(base,exp)
+{
+	var out = "<span>" + base + "</span><sup>" +exp + "</sup>";
+	return out;
+}
+
+function drawInt(lb, ub, func, d)
+{
+	var fontSize = window.getComputedStyle( document.body, null).getPropertyValue("font-size");
+	var size = fontSize.substr(0, fontSize.length-2 );
+	var intSize = size*2;
+	var ubTop   = -1*intSize * .8;
+	var ubLeft  = -1*intSize * .2;
+	var lbTop   =    intSize * .2;
+	var lbLeft  = -1*intSize * .1;
+	var fcTop   = -1*intSize * .2; 
+	var fcLeft  = -1*intSize * .2; 
+	var intSpan ="<span style='font-size:" + intSize + "px;'>&int;</span>";
+	var lbSpan  ="<span style='font-size:smaller; top:" + lbTop + "px;left:" + lbLeft + "px;'>"+lb+"</span>";
+	var ubSpan  ="<span style='font-size:smaller; top:" + ubTop + "px;left:" + ubLeft + "px;'>"+ub+"</span>";
+	var fncSpan ="<span top:" + fcTop + "px;left:" + fcLeft + "px;'>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span>";
+	var out = intSpan + lbSpan + ubSpan + fncSpan ;
+	document.writeln(out);
+}
+function setVal( anE, aVal )
+{
+	var e = document.getElementById(anE);
+	e.value = aVal;
+	e.readOnly=true;
+}
+function hide(anE)
+{
+	var e = document.getElementById(anE);
+	if(e != null)
+		e.style.display='none';
+}
+function show(anE)
+{
+	var e = document.getElementById(anE);
+	if(e != null)
+		e.style.display='block';
+}
+function showStep(aDiv, pts)
+{
+	hide(aDiv+"s");
+	show(aDiv);
+	
+	score = score - pts;
+	if(score < 0 )
+		score = 0;
+		
+	document.getElementById("score").innerHTML=score;
+	if(aDiv=="step1")
+	{
+		setVal("step1.a","1.03283");
+		setVal("step1.b","2.40110");
+	}
+	else if(aDiv=="step2")
+	{
+		setVal("step2.a","0");
+		setVal("step2.b","a");
+		setVal("step2.c","g(x)");
+		setVal("step2.d","f(x)");
+	}
+	else if(aDiv=="step3")
+	{
+		setVal("step3.a","a");
+		setVal("step3.b","2");
+		setVal("step3.c","f(x)");
+		setVal("step3.d","g(x)");
+	}
+}
+function showToolTip(e)
+{
+	alert(e.title);
+}
+function submit(step)
+{
+	if( step == "step1" )
+	{
+		if (( document.getElementById("step1.a").value != "1.03283" ) ||
+			( document.getElementById("step1.b").value != "2.40110" ) )
+			showStep("step1",25);
+	}
+	else if( step == "step2" )
+	{
+		if (( document.getElementById("step2.a").value != "0" )|| 
+			( document.getElementById("step2.b").value.toLowerCase() != "a" ) ||
+			( document.getElementById("step2.c").value != "g(x)" ) ||
+			( document.getElementById("step2.d").value != "f(x)" ))
+			showStep("step2",25);
+	}
+	else if( step == "step3" )
+	{
+		if (( document.getElementById("step3.a").value != "a" ) ||
+			( document.getElementById("step3.b").value.toLowerCase() != "2" ) ||
+			( document.getElementById("step3.c").value != "f(x)" ) ||
+			( document.getElementById("step3.d").value != "g(x)" ))
+			showStep("step3",25);
+	}
+}
+</script>
+</head>
+<body>
+<img src="images/2015.2.jpg" width=200>
+<H1>2015 AP Calculus AB.  Problem # 2.</H1><BR>
+Let f and g be the functions defined by <equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
+Let R and S be the two regions enclosed by the graphs of f and g shown in the figure above. 
+<br><br>
+1.  Find the sum of the areas of regions R and S(You may use a calculator)<br>
+
+<table border=1>
+	<tr><td>Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):</td>
+		<td><equ>Let (a,b)=(<input id=step1.a class=c7>,<input id=step1.b class=c7>)<br>(5 decimal places. no rounding)
+			<div id=step1 class="hidden">
+				<img src="images/2015.2.a.step1a.jpg"><br>
+				<img src="images/2015.2.a.step1b.jpg"><br>
+				<img src="images/2015.2.a.step1c.jpg"><br>
+			</div>
+		</td>
+		<td><a id=step1s href="#" onclick="submit('step1');">submit</a> or <a id=step1s href="#" onclick="showStep('step1',25);">peek</a></td>
+	</tr>
+	<tr><td>Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  </td>
+		<td><script>drawInt("<input class=c1 id=step2.a ></input>","<input id=step2.b class=c1></input>","<input id=step2.c class=c4></input>&minus;<input id=step2.d class=c4></input>", "dx");</script>
+		</td>
+		<td><a id=step2s href="#" onclick="submit('step2');">submit</a> or <a id=step2s href="#" onclick="showStep('step2',25);">peek</a></td>
+	</tr>
+	<tr><td>Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  </td>
+		<td><script>drawInt("<input class=c1 id=step3.a ></input>","<input id=step3.b class=c1></input>","<input id=step3.c class=c4></input>&minus;<input id=step3.d class=c4></input>", "dx");</script>
+		</td>
+		<td><a id=step2s href="#" onclick="submit('step2');">submit</a> or <a id=step3s href="#" onclick="showStep('step3',25);">peek</a></td>
+	</tr>
+	<tr><td>Answer:</td><td><input id=answer></input></td></tr>
+	<tr><td>Score:</td><td id=score>100</score>
+</table>
+</body>
+</html>

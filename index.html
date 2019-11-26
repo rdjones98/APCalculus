@@ -50,8 +50,6 @@
 		else
 			lastURL = document.getElementById("iframeLoadChapter").src;
 		document.getElementById("titleDiv").innerHTML=title;
-		var body = document.getElementById("iframeLoadChapter").contentWindow.document.body.innerHTML;
-		document.getElementById("chapterDiv").innerHTML = body;
 		
 		// Hide Reference Drop down and any references that are not clicked
 		document.getElementById("referenceDropDown").style.display="none";
@@ -145,11 +143,11 @@
 			</div>
 		</td>
 		<td id=leftArrowCol>
-			<img src="leftArrow.png" onclick="leftArrowClicked();return false;">
+			<img src="images/leftArrow.png" onclick="leftArrowClicked();return false;">
 		</td>
 		<td id=titleDiv></td>
 		<td id=rightArrowCol>
-			<img src="rightArrow.png" onclick="rightArrowClicked();return false;">
+			<img src="images/rightArrow.png" onclick="rightArrowClicked();return false;">
 		</td>
 		<td id=referenceCol>
 			<div id=references onclick="showHideReferences(this);return false;">+ References</div>
@@ -168,24 +166,24 @@
 
 
 
-<iframe id=iframeLoadChapter src="IndexWelcome.html" style="position:absolute; top:40px; width:98%; height:90%"styleonload="chapterLoaded();"></iframe>
+<iframe id=iframeLoadChapter src="IndexWelcome.html" style="position:absolute; top:40px; width:98%; height:90%" onload="chapterLoaded();"></iframe>
 
 
 <div id=menu>
-	<div><img src="r.png" href="" onclick="bClick(this)"><img class="dn" src="d.png" href="" onclick="bClick(this)">Chapter 1 <span id=menuX onclick="closeMenu();">x</span>
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 1 <span id=menuX onclick="closeMenu();">x</span>
 		<div class="items">
 			<a class="menuItem" href=""onclick="urlClicked('Chapter 9/1.html');return false;">Area between 2 Curves</a>
 			<a class="menuItem" href=""onclick="urlClicked('Genesis/Gen1.html');return false;">Lesson 2</a>
 		</div>
 	</div>
 
-	<div><img src="r.png" href="" onclick="bClick(this)"><img class="dn" src="d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
 			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo1.html');return false;">Ch 1</a>
 			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo2.html');return false;">Ch 2</a>
 		</div>
 	</div>
 
-	<div><img src="r.png" href="" onclick="bClick(this)"><img class="dn" src="d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
 			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo1.html');return false;">Ch 1</a>
 			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo2.html');return false;">Ch 2</a>
 		</div>

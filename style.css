@@ -41,5 +41,6 @@ div.chapter a {color:black; text-decoration:underline}
 
 #refs td {background-color:red;}
 table 	{ table-layout:auto; border-collapse: collapse; margin-bottom:0px; margin-top:0px; margin-right:20px; width:100%; }
-td 		{ font-weight: bold;  padding-top: 0px; padding-bottom: 0px; padding-right:0px; line-height: 150%; font-family: Verdana, Times, serif; font-size: 16px; 	}
+td 		{ font-weight: bold;  padding-top: 0px; padding-bottom: 0px; padding-right:0px; line-height: 150%; font-family: Verdana, Times, serif; font-size: 16px; 
+		  wrap:nowrap; white-space: nowrap; overflow: hidden;  text-overflow: ellipsis; 	}
 

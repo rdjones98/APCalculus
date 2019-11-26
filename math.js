@@ -50,7 +50,6 @@ function drawInt(lb, ub, func, d)
 	var ubSpan  ="<span style='font-size:smaller; top:" + ubTop + "px;left:" + ubLeft + "px;'>"+ub+"</span>";
 	var fncSpan ="<span top:" + fcTop + "px;left:" + fcLeft + "px;'>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
-	console.log(out);
 	document.writeln(out);
 }
 function setVal( anE, aVal )
@@ -75,3 +74,4 @@ function showToolTip(e)
 {
 	alert(e.title);
 }
+	

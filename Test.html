@@ -2,9 +2,48 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../fonts/cmun-serif.css"></link>
+ 
+ <style>
+
+
+equ 	{ font-family: Times New Roman;	font-style:italic;}	/*custom div*/
+errMsg  { display:block; color:red; padding-top:10px; }
+.hidden { display: none;}
+
+input 	{	font-family: Times New Roman; font-size:15px; }
+input.c1 { width:10px;}
+input.c2 { width:10px;}
+input.c3 { width:20px;}
+input.c4 { width:25px;}
+input.c5 { width:40px;}
+input.c6 { width:60px; }
+input.c7 { width:40px; }
+
+span 		  { font-family: Times New Roman; position:relative; }
+
+.integral 			{ font-size: 150%; top:7px; padding-top:50px;}
+.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
+.integral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
+.integral .function { font-size: 75%;  top:-5px;  left:-3px; }
+
+td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
+
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+    /* ... */
+}
+
+
+
+
+</style>
+
 </head>
-	<body style="font-size:50px">
+	<body style="font-size:20px">
+
+
+Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span class=upbound>3</span><span class=function>(&nbsp;<equ>f(x)=2</equ>&nbsp;)<equ>dx</equ></span></span>	
+<br>Here is a whole lot more text to deal with.  What will you do?
 <div style="font-family:roboto;">roboto:&nbsp;&int;2<i>x</i>dx</div>
 <div style="font-family:computer modern;">computer modern:&nbsp;&int;2<i>x</i>dx</div>
 <div style="font-family:helvetica;">helvetica:&nbsp;&int;2<i>x</i>dx</div>

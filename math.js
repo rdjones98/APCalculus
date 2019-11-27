@@ -36,26 +36,22 @@ function buildExp(base,exp)
 
 function drawInt(lb, ub, func, d)
 {
-	var fontSize = window.getComputedStyle( document.body, null).getPropertyValue("font-size");
-	var size = fontSize.substr(0, fontSize.length-2 );
-	var intSize = size*2;
-/*	var ubTop   = -1*intSize * .6;
-	var ubLeft  = -1*intSize * .2;
-	var lbTop   =    intSize * .3;
-	var lbLeft  = -1*intSize * .05;
-	var fcTop   = -1*intSize * .2; 
-	var fcLeft  = -1*intSize * .2; */
-	var ubTop   = -20;
-	var ubLeft  = -5;
-	var lbTop   =  10;
-	var lbLeft  = -1;
-	var fcTop   = -3; 
-	var fcLeft  = -3; 
-	var intSpan ="<span style='font-size:" + intSize + "px; top:5px;'>&int;</span>";
-	var lbSpan  ="<span style='font-size:smaller; top:" + lbTop + "px;left:" + lbLeft + "px;'>"+lb+"</span>";
-	var ubSpan  ="<span style='font-size:smaller; top:" + ubTop + "px;left:" + ubLeft + "px;'>"+ub+"</span>";
-	var fncSpan ="<span top:" + fcTop + "px;left:" + fcLeft + "px;'>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span>";
+	var intSpan ="<span class=integral>&int;";
+	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
+	var ubSpan  ="<span class=upbound>"+ub+"</span>";
+	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
+	console.log(out);
+	document.writeln(out);
+}
+function drawBigInt(lb, ub, func, d)
+{
+	var intSpan ="<span class=bigintegral>&int;";
+	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
+	var ubSpan  ="<span class=upbound>"+ub+"</span>";
+	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span></span>";
+	var out = intSpan + lbSpan + ubSpan + fncSpan ;
+	console.log(out);
 	document.writeln(out);
 }
 function setVal( anE, aVal )

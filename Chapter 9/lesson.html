@@ -3,10 +3,61 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="../fonts/cmun-serif.css"></link>
-	<link rel='stylesheet' type='text/css' href='../mathStyle.css'></link>
 	<meta prevChapter='2 Kings/2Ki25.html' nextChapter='1 Chronicles/1Chron2.html'>
 	<title>Chapter 9 Lesson 1 Area between 2 Curves</title>
+<style>
+
+body {
+	background-color:white;
+	font-family: Helvetica, Verdana, Times, serif; 
+	margin-left:5px; 
+	margin-right:5px; 
+	margin-top:5px;
+	line-height: 150%; 
+	font-size: 15px; 
+	color:black;
+}
+a {text-decoration:none;}
+
+
+equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
+errMsg  { display:block; color:red; padding-top:10px; }
+.hidden { display: none;}
+
+input 	{	font-family: Times New Roman; font-size:15px; }
+input.c1 { width:10px;}
+input.c2 { width:10px;}
+input.c3 { width:20px;}
+input.c4 { width:25px;}
+input.c5 { width:40px;}
+input.c6 { width:60px; }
+input.c7 { width:40px; }
+
+
+span 		  { font-family: Times New Roman; position:relative; }
+
+.integral 			{ font-size: 150%; top:5px; padding-top:50px;}
+.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
+.integral .upbound  { font-size: 50%;  top:-15px; left:-5px; }
+.integral .function { font-size: 75%;  top:-5px;  left:-3px; }
+
+.bigintegral 		   { font-size: 200%; top:5px; padding:10px 10px 10px 10px; display:inline-block;}	
+.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
+.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
+.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; }
+
+
+td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
+
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+    /* ... */
+}
+
+
+
+
+</style>
 
 
 </head>
@@ -127,7 +178,7 @@
 			</td>
 			<td>
 				From middle school math we can see that the area of this rectangle is 8 (b*h).<br>
-				From Calculus we know that we can find the area using the definite integral <br><script>drawInt("-1","3","f(x)=2","dx")</script> is 8 as well.
+				From Calculus we know that we can find the area using the definite integral: <br><script>drawInt("-1","3","f(x)=2","dx")</script> = 8 as well.
 			</td>
 		</tr>
 	</table>
@@ -135,11 +186,11 @@
 		<tr>
 			<td>
 				What may not be as obvious is what happens when we translate the rectangle:<br>
-				Obviously the area is still 8, but the <script>drawInt("-1","3","f(x)=3","dx")</script> is 12.<br>
-				So what are we missing?  It turns out that <b>ALL</b> integrals are actually<br>
-				of the form <script>drawInt("a","b","f(x)-g(x)","dx")</script>, its just that g(x) has been the equation<br>
-				y=0 (the x-axis) for every integral <b>until now</b>. So looking at this graph we have<br>
-				<equ>f(x)=3</equ> and <equ>g(x)=1</equ>	which gives us <script>drawInt("-1","3","3-1","dx")</script><equ>=&nbsp;</equ><script>drawInt("-1","3","2","dx")</script><equ>=&nbsp;8</equ><br>.
+				Obviously the area is still 8, but  <script>drawInt("-1","3","f(x)=3","dx")</script> is 12.<br>
+				So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
+				 <script>drawBigInt("a","b","f(x)&minus;g(x)","dx")</script><br>
+				However, because g(x) has been the x axis everytime up until now, we have just ignored it.<br>
+				So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ>	which gives us <script>drawInt("-1","3","3&minus;1","dx")</script><equ>=&nbsp;</equ><script>drawInt("-1","3","2","dx")</script><equ>=&nbsp;8</equ><br>.
 			</td>
 			<td>
 				<img src="lesson.area.2.jpg" width=200>

@@ -26,6 +26,12 @@ span 		  { font-family: Times New Roman; position:relative; }
 .integral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
 .integral .function { font-size: 75%;  top:-5px;  left:-3px; }
 
+.bigintegral 		   { font-size: 200%; top:5px; padding:10px 0px 10px; display:inline-block;}	
+.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
+.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
+.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; }
+
+
 td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
 
 /* smartphones, touchscreens */
@@ -40,7 +46,8 @@ td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
 
 </head>
 	<body style="font-size:20px">
-
+	
+<span class=bigintegral>&int;<span class=lowbound>a</span><span class=upbound>b</span><span class=function>(&nbsp;<equ>f(x)&minus;g(x)</equ>&nbsp;)<equ>dx</equ></span></span>
 
 Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span class=upbound>3</span><span class=function>(&nbsp;<equ>f(x)=2</equ>&nbsp;)<equ>dx</equ></span></span>	
 <br>Here is a whole lot more text to deal with.  What will you do?

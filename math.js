@@ -39,7 +39,7 @@ function drawInt(lb, ub, func, d)
 	var intSpan ="<span class=integral>&int;";
 	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
-	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span></span>";
+	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	console.log(out);
 	document.writeln(out);
@@ -49,7 +49,7 @@ function drawBigInt(lb, ub, func, d)
 	var intSpan ="<span class=bigintegral>&int;";
 	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
-	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ>" + d + "</equ></span></span>";
+	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	console.log(out);
 	document.writeln(out);

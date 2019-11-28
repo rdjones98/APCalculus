@@ -26,19 +26,23 @@ span 		  { font-family: Times New Roman; position:relative; }
 .integral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
 .integral .function { font-size: 75%;  top:-5px;  left:-3px; }
 
-.bigintegral 		   { color:blue; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
+/* smartphones, touchscreens */
+@media only screen and (max-width: 768px) 
+{
+.bigintegral 		   { color:yellow; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
+}
+@media only screen and (min-width: 768px) 
+{
+.bigintegral 		   { color:green; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
+}
+
+
 .bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
 .bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
 .bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; }
 
 
 td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
-
-/* smartphones, touchscreens */
-@media only screen and (max-width: 768px) 
-{
-.bigintegral 		   { color:red; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
-}
 
 
 

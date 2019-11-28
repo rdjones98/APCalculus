@@ -21,12 +21,12 @@ input.c7 { width:40px; }
 
 span 		  { font-family: Times New Roman; position:relative; }
 
-.integral 			{ font-size: 150%; top:7px; padding-top:50px;}
+.integral 			{ font-size: 150%; top:7px;}
 .integral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
 .integral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
 .integral .function { font-size: 75%;  top:-5px;  left:-3px; }
 
-.bigintegral 		   { font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
+.bigintegral 		   { color:blue; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
 .bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
 .bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
 .bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; }
@@ -36,7 +36,7 @@ td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
 
 /* smartphones, touchscreens */
 @media (hover: none) and (pointer: coarse) {
-	.bigintegral 		   {color:red; font-size: 500%; top:5px; padding:10px 0px 10px; display:block;}	
+.bigintegral 		   { color:red; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
 }
 
 
@@ -48,7 +48,7 @@ td		{ padding: 10px 10px 10px 10px; vertical-align:top; wrap:nowrap;}
 	<body style="font-size:20px">
 	
 	
-	Hey
+Hey Ho
 <span class=bigintegral>&int;<span class=lowbound>a</span><span class=upbound>b</span><span class=function>(&nbsp;<equ>f(x)&minus;g(x)</equ>&nbsp;)<equ>dx</equ></span></span>
 
 Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span class=upbound>3</span><span class=function>(&nbsp;<equ>f(x)=2</equ>&nbsp;)<equ>dx</equ></span></span>	

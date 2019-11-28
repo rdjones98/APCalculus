@@ -27,13 +27,12 @@ span 		  { font-family: Times New Roman; position:relative; }
 .integral .function { font-size: 75%;  top:-5px;  left:-3px; }
 
 /* smartphones, touchscreens */
-@media only screen and (max-width: 768px) 
+@media (pointer:coarse) 
 {
 .bigintegral 		   { color:yellow; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
 }
-@media only screen and (min-width: 768px) 
-{
-.bigintegral 		   { color:green; font-size: 200%; top:5px; padding:10px 0px 10px; display:block;}	
+@media (pointer:fine) {
+.bigintegral 		   { color:green; font-size: 40px; top:5px; padding:10px 0px 10px; display:block;}	
 }
 
 

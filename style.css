@@ -23,7 +23,8 @@ a {text-decoration:none;}
 /* Left side menu */
 @media (pointer:coarse) 
 {
-	#menu { position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:25px; font-size:50px }
+	#menu { position:absolute;	top:40px; left:0px;	width:400px; height:90%;  
+			background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding:25px; font-size:50px }
 }
 @media (pointer:fine) 
 {

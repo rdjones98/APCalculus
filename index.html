@@ -1,81 +1,195 @@
 <html>
 <head>
-<style>
-body {
-	background-color:white;
-	font-family: Helvetica, Verdana, Times, serif; 
-	margin-left:5px; 
-	margin-right:5px; 
-	margin-top:5px;
-	line-height: 150%; 
-	font-size: 15px; 
-	color:black;
-}
-a {text-decoration:none;}
-span { font-family: Times New Roman; position:relative; }
-td	 { padding: 10px 10px 10px 10px; vertical-align:top; }
-p    { width:800px;}
-img  { padding: 0px 10px 10px 10px; }
-input 	{	font-family: Times New Roman; font-size:15px; }
-input.c1 { width:10px;}
-input.c2 { width:10px;}
-input.c3 { width:20px;}
-input.c4 { width:25px;}
-input.c5 { width:40px;}
-input.c6 { width:60px; }
-input.c7 { width:40px; }
-
-
-equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
-errMsg  { display:block; color:red; padding-top:10px; }
-.hidden { display: none;}
-
-
-/* smartphones, touchscreens */
-@media (pointer:coarse) 
-{
-	.bigintegral 		   { color:black; font-size: 45px; top:5px; padding:20px 0px 20px; display:inline-block;}	
-	.bigintegral .lowbound { font-size: 15px;  top:12px;  left:-3px; }
-	.bigintegral .upbound  { font-size: 15px;  top:-30px; left:-5px; }
-	.bigintegral .function { font-size: 15px;  top:-5px;  left:-3px; }
-
-	.integral 			{ font-size: 25px;  top:3px;}
-	.integral .lowbound { font-size: 10px;  top:6px;   left: 0px; }
-	.integral .upbound  { font-size: 10px;  top:-16px; left:-5px; }
-	.integral .function { font-size: 13px;  top:-3px;  left:-3px; }
-}
-@media (pointer:fine) {
-	.bigintegral 		   { color:red; font-size: 200%; top:5px; padding:50px 50px 50px 50px; display:inline-block;}	
-	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
-	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
-	.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; }
-
-	.integral 			{ font-size: 150%; top:7px;}
-	.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; }
-	.integral .upbound  { font-size: 50%;  top:-20px; left:-5px; }
-	.integral .function { font-size: 75%;  top:-5px;  left:-3px; }
-
-}
-
-
-.floatRight {float:right;}
-.floatLeft  {float:left; }
-.padLeft20  {padding-left:20px;}
-
-</style>
-<script>
-	function pageLoaded()
-	{
-	
-		document.getElementById("page").innerHTML = document.getElementById("doc").contentWindow.document.body.innerHTML;
-	}
-</script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<a href="index2.html">Real index</a>
-<div id="page">
+<script>
+	var lastURL="";
+	function hamburgerClicked()
+	{
+		var e = document.getElementById("menu");
+		if(e.style.display == "none")
+			e.style.display = "inline";
+		else
+			e.style.display = "none";
+	}
+
+	function bClick(e) {
+		e = e.parentNode;
+		var br = e.getElementsByTagName("img")[0];
+		var bd = e.getElementsByTagName("img")[1];
+		var sub = e.getElementsByTagName("div")[0];
+		if( br.style.display == "none" )
+		{
+			br.style.display = "inline";
+			bd.style.display = "none";
+			sub.style.display = "none";
+		}
+		else 
+		{
+			br.style.display = "none";
+			bd.style.display = "inline";
+			sub.style.display = "block";
+		}
+	}
+	function closeMenu()
+	{
+		document.getElementById("menu").style.display="none";
+	}
+	function urlClicked(e) {
+		document.getElementById("iframeLoadChapter").src=e;
+		closeMenu();
+	}
+	function chapterLoaded()
+	{
+		var title = document.getElementById("iframeLoadChapter").contentWindow.document.title;
+		if(title.indexOf("404") > -1 )
+		{
+			document.getElementById("iframeLoadChapter").src = lastURL;
+			return;
+		}
+		else
+			lastURL = document.getElementById("iframeLoadChapter").src;
+		document.getElementById("titleDiv").innerHTML=title;
+		
+		// Hide Reference Drop down and any references that are not clicked
+		document.getElementById("referenceDropDown").style.display="none";
+		var e=new Object();
+		if( document.getElementById("otrefs") != null )
+		{
+			e.checked = document.getElementById("otrefs").checked;
+			referencesClicked("oref", e);
+		}
+		if( document.getElementById("grefs") != null )
+		{
+			e.checked = document.getElementById("grefs").checked;
+			referencesClicked("gref", e);
+		}
+		if( document.getElementById("ntrefs") != null )
+		{
+			e.checked = document.getElementById("ntrefs").checked;
+			referencesClicked("nref", e);
+		}
+		if( document.getElementById("revrefs") != null )
+		{
+			e.checked = document.getElementById("revrefs").checked;
+			referencesClicked("rref", e);
+		}
+	}
+
+	// Hide/Show a given class of divs
+	function referencesClicked(aRef, e)
+	{
+		try {
+			var refs = document.getElementsByClassName(aRef);
+			for (var i = 0; i < refs.length; i ++) 
+			{
+				if( e.checked )
+					refs[i].style.display = 'table-cell';
+				else
+					refs[i].style.display = 'none';
+			}
+		}
+		catch(err) {
+			alert( "referencesClicked: " + err.message );
+		}
+	}
+	function showHideReferences(event)
+	{
+		var e = document.getElementById("referenceDropDown");
+		if(e.style.display == "none")
+		{
+			document.getElementById("references").innerHTML="- References";
+			e.style.display = "block";
+		}
+		else
+		{
+			document.getElementById("references").innerHTML="+ References";
+			e.style.display = "none";
+		}
+	}
+
+	function leftArrowClicked()
+	{
+
+		var url = document.getElementById("iframeLoadChapter").contentWindow.document.getElementsByTagName("META")[0].getAttribute("prevchapter");
+		urlClicked(url);
+	}
+	function rightArrowClicked()
+	{
+		var url = document.getElementById("iframeLoadChapter").contentWindow.document.getElementsByTagName("META")[0].getAttribute("nextchapter");
+		urlClicked(url);
+	}
+	
+	// Load KeyListener.  This is outside of any funciton and should load when page loads
+	document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            leftArrowClicked();
+            break;
+        case 39:
+            rightArrowClicked();
+			break;
+    }};
+	
+</script>
+<body onload=";">
+<table id=header >
+	<tr>
+		<td id=hamburgerCol>
+			<div id=hamburgerMenu onclick="hamburgerClicked();">	
+				<div id=hamburger></div>
+				<div id=hamburger></div>
+				<div id=hamburger></div>
+			</div>
+		</td>
+		<td id=leftArrowCol>
+			<img src="images/leftArrow.png" onclick="leftArrowClicked();return false;">
+		</td>
+		<td id=titleDiv></td>
+		<td id=rightArrowCol>
+			<img src="images/rightArrow.png" onclick="rightArrowClicked();return false;">
+		</td>
+		<td id=referenceCol>
+			<div id=references onclick="showHideReferences(this);return false;">+ References</div>
+		</td>
+		
+	</tr>
+</table>
+
+<div id=referenceDropDown>
+	<input id='otrefs' 	type='checkbox' checked onclick='referencesClicked("oref", this);'><label>Old Testament</label><br>
+	<input id='grefs' 	type='checkbox' checked onclick='referencesClicked("gref", this);'><label>Gospels</label><br>
+	<input id='ntrefs' 	type='checkbox' checked onclick='referencesClicked("nref", this);'><label>Acts & Epistles&nbsp;&nbsp;</label><br>
+	<input id='revrefs' type='checkbox' checked onclick='referencesClicked("rref", this);'><label>Revelation</label><br>
+	</tr>
 </div>
-<iframe id="doc" src="lesson.html" onload="pageLoaded();">
+
+
+
+<iframe id=iframeLoadChapter src="IndexWelcome.html" style="position:absolute; top:40px; width:98%; height:90%" onload="chapterLoaded();"></iframe>
+
+
+<div id=menu>
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 1 <span id=menuX onclick="closeMenu();">x</span>
+		<div class="items">
+			<a class="menuItem" href=""onclick="urlClicked('Chapter 9/lesson.html');return false;">Area between 2 Curves</a>
+			<a class="menuItem" href=""onclick="urlClicked('Test.html');return false;">Lesson 2</a>
+		</div>
+	</div>
+
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
+			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo1.html');return false;">Ch 1</a>
+			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo2.html');return false;">Ch 2</a>
+		</div>
+	</div>
+
+	<div><img src="images/r.png" href="" onclick="bClick(this)"><img class="dn" src="images/d.png" href="" onclick="bClick(this)">Chapter 2<div class="items">
+			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo1.html');return false;">Ch 1</a>
+			<a class="menuItem" href=""onclick="urlClicked('Exodus/Exo2.html');return false;">Ch 2</a>
+		</div>
+	</div>
+
 </div>
+
 </body>
 </html>

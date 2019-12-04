@@ -25,7 +25,7 @@ a {text-decoration:none;}
 {
 	#menu { position:absolute;	top:40px; left:0px;	width:400px; height:90%;  
 			background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:25px; font-size:50px }
-	#menu.div {padding:50px;}
+	div.item { padding-left:50px; } /* Top level menu item  */
 }
 @media (pointer:fine) 
 {

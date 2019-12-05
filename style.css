@@ -53,11 +53,6 @@ div.chapter a {color:black; text-decoration:underline}
 #refs td {background-color:red;}
 
 
-		a 	 	 { text-decoration:none;}
-		td	 	 { padding: 10px 10px 10px 10px; vertical-align:top; }
-		p    	 { width:800px;}
-		table    { width:800px;}
-		img  	 { padding: 0px 10px 10px 10px; }
 		input 	 { font-family: Times New Roman; font-size:15px; }
 		input.c1 { width:10px;}
 		input.c2 { width:10px;}

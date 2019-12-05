@@ -37,8 +37,8 @@
 		errMsg  { display:block; color:red; padding-top:10px; }
 		.hidden { display: none;}
 
-		.col1 {display:inline-block;  vertical-align:top; width:100px;}
-		.col2 {display:inline-block;}
+		.col1 {width:100px;  vertical-align:top;}
+		.col2 {vertical-align:top;}
 
 		/* smartphones, touchscreens */
 		@media (pointer:coarse) 
@@ -75,8 +75,6 @@
 		.padLeft20  {padding-left:20px;}
 
 	</style>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>	<meta charset="utf-8">
-
 
 </head>
 <body>
@@ -230,12 +228,12 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 
 	<h2>General Process:</h2>
 	
-	<div class=col1>Step 1:</div><div class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</div><br>
-	<div class=col1>Step 2:</div><div class=col2>Determine which equation is bigger (has larger y values)<br>
+	<span class=col1>Step 1:</span><span class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</span><br>
+	<span class=col1>Step 2:</span><span class=col2>Determine which equation is bigger (has larger y values)<br>
 												(If you have multiple intervals the equations may swap)<br>
 												 In the example at left g(x) is bigger so..<br>
 												<script>drawInt("a","b","g(x)-f(x)","dx")</script>
-								</div><br>
+									</span><br>
 	
 
 	1.  Find the sum of the areas of regions R and S<br>(You may use a calculator.  ALL intermediate answers are to 5 decimal places, no rounding.<br>The final answer is to 3 decimal places, no rounding.)<br>

@@ -16,9 +16,6 @@ a {}
 /* Title Bar */
 #header        { position:absolute; top:0px; left:0px;	width:100%;	height:40px; background-color: #625750; color:white;
 table 			 table-layout:auto; border-collapse: collapse; margin-bottom:0px; margin-top:0px; margin-right:20px;}
-td1 		{ font-weight: bold;  padding-top: 0px; padding-bottom: 0px; padding-right:0px; line-height: 150%; font-family: Verdana, Times, serif; font-size: 16px; 
-		  wrap:nowrap; white-space: nowrap; overflow: hidden;  text-overflow: ellipsis; 	}
-
 
 
 #hamburgerCol  { width:20% }
@@ -34,8 +31,8 @@ div.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
 #menu { position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
 div.items a    { color:white; }						 /* make all links in this div white */
 #menuX		   { float:right; font-size:24px; padding-right:10px; cursor:pointer;  }
-.menuItem 	   { display:block; } 					 /* sub menu items 		 */
-.menuItem:link, .menuItem:visited { text-decoration:none; color:white }
+.menuItem 	   { display:block; color:white; } 					 /* sub menu items 		 */
+a.menuItem:link, a.menuItem:visited { text-decoration:none; color:white }
 img.dn 		   { display:none; }
 label  		   { color:white; }
 
@@ -53,7 +50,7 @@ div.chapter a {color:black; text-decoration:underline}
 #refs td {background-color:red;}
 
 /* All MATH css */
-input 	 { font-family: Times New Roman; font-size:15px; }
+input 	 { font-family: Times New Roman;  }
 input.c1 { width:10px;}
 input.c2 { width:10px;}
 input.c3 { width:20px;}

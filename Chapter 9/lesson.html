@@ -37,8 +37,8 @@
 		errMsg  { display:block; color:red; padding-top:10px; }
 		.hidden { display: none;}
 
-		.col1 {width:100px;  vertical-align:top;}
-		.col2 {vertical-align:top;}
+		.col1 {width:100px;  vertical-align:top; display:inline-block;}
+		.col2 {				 vertical-align:top; display:inline-block;}
 
 		/* smartphones, touchscreens */
 		@media (pointer:coarse) 
@@ -53,8 +53,6 @@
 			.integral .upbound  { font-size: 10px;  top:-20px; left:-15px; }
 			.integral .function { font-size: 13px;  top:-4px;  left:-10px; }
 		
-			.col1 { font-size:30px;color:red;}
-			.col2 { font-size:30px;}
 		}
 		@media (pointer:fine) {
 			.bigintegral 		   { color:red; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block;}	
@@ -187,12 +185,12 @@
 	</script>
 <body>
 	
-	<span class=col1>Step 1:</span><span class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</span><br>
-	<span class=col1>Step 2:</span><span class=col2>Determine which equation is bigger (has larger y values)<br>
+	<div class=col1>Step 1:</div><div class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</div><br>
+	<div class=col1>Step 2:</div><div class=col2>Determine which equation is bigger (has larger y values)<br>
 												(If you have multiple intervals the equations may swap)<br>
 												 In the example at left g(x) is bigger so..<br>
 												<script>drawInt("a","b","g(x)-f(x)","dx")</script>
-									</span><br>
+									</div><br>
 
 
 Howdy<br>

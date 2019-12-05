@@ -20,31 +20,12 @@ a:link, a:visited { text-decoration:none; color:white }
 #referenceCol   { width:20%; text-align:right; padding-right:20px }
 #hamburgerMenu { position:absolute;	top:3px; left:5px;  width:30px; height:25px; background-color: #625750; }
 #hamburger 	   {										width:30px; height: 5px; background-color: white;	margin: 5px;  }
-
-/* Left side menu */
-div.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
-/*@media (pointer:coarse) 
-{
-	#hamburgerMenu  { position:absolute;	top:3px; left:25px;  width:30px; height:25px; background-color: #625750; }
-	#menu 			{ position:absolute;	top:40px; left:0px;	width:400px; height:90%;  
-					  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:25px; font-size:50px }
-	#menuX			{ float:right; font-size:60px; padding-right:10px; cursor:pointer; position:relative; top:-5px; }
-
-	div.item    { padding-top:20px; } /* Top level menu item  */
-	div.items a { padding-top:20px; padding-bottom:10px; color:white; white-space:nowrap; overflow:hidden;  }						 /* make all links in this div white */
-	img.dn 		{ width:50; height:auto;}
-	img.rt 		{ width:50; height:auto;}
-}
-*/
-/*@media (pointer:fine) 
-{
-*/
 	#menu { position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
 	div.items a    { color:white; }						 /* make all links in this div white */
 	#menuX		   { float:right; font-size:24px; padding-right:10px; cursor:pointer;  }
-/*
-}
-*/
+
+/* Left side menu */
+div.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
 .menuItem 	   { display:block; } 					 /* sub menu items 		 */
 img.dn 		   { display:none; }
 label  		   { color:white; }

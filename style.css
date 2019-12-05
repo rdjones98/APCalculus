@@ -73,7 +73,7 @@ errMsg  { display:block; color:red; padding-top:10px; }
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {
-	p { width:800px }
+	p { width:800px; }
 /*	.bigintegral 		   { color:black; font-size: 85px; top:5px; padding:50px 0px 50px; display:inline-block;}	
 	.bigintegral .lowbound { font-size: 35px;  top:25px;  left:-10px; }
 	.bigintegral .upbound  { font-size: 35px;  top:-50px; left:-10px; }
@@ -84,20 +84,20 @@ errMsg  { display:block; color:red; padding-top:10px; }
 	.integral .upbound  { font-size: 10px;  top:-20px; left:-15px; }
 	.integral .function { font-size: 13px;  top:-4px;  left:-10px; }
 */
-	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
-	.bigintegral .lowbound { font-size: 50%;  top:8px;   left: 0px; position:relative; }
-	.bigintegral .upbound  { font-size: 50%;  top:-15px; left:-5px; position:relative;}
-	.bigintegral .function { font-size: 75%;  top:-5px;  left:0px; position:relative;}
+	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
+	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative; }
+	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
+	.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
 
-	.integral 			{ font-family:Times New Roman; font-size: 150%; top:7px; 			position:relative;}
-	.integral .lowbound { font-size: 50%;  top:8px;   left: 0px; position:relative;}
-	.integral .upbound  { font-size: 50%;  top:-15px; left:-5px; position:relative;}
-	.integral .function { font-size: 75%;  top:-5px;  left:0px; position:relative;}
+	.integral 			{ font-family:Times New Roman; font-size: 150%; top:0px; 			position:relative;}
+	.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative;}
+	.integral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
+	.integral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
 
 }
 @media (pointer:fine) 
 {
-	p { width:800px }
+	p { width:800px; }
 	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative; }
 	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}

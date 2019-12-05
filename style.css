@@ -52,54 +52,54 @@ div.chapter a {color:black; text-decoration:underline}
 
 #refs td {background-color:red;}
 
+/* All MATH css */
+input 	 { font-family: Times New Roman; font-size:15px; }
+input.c1 { width:10px;}
+input.c2 { width:10px;}
+input.c3 { width:20px;}
+input.c4 { width:25px;}
+input.c5 { width:40px;}
+input.c6 { width:60px; }
+input.c7 { width:40px; }
 
-		input 	 { font-family: Times New Roman; font-size:15px; }
-		input.c1 { width:10px;}
-		input.c2 { width:10px;}
-		input.c3 { width:20px;}
-		input.c4 { width:25px;}
-		input.c5 { width:40px;}
-		input.c6 { width:60px; }
-		input.c7 { width:40px; }
+equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
+errMsg  { display:block; color:red; padding-top:10px; }
+.hidden { display: none;}
 
-		equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
-		errMsg  { display:block; color:red; padding-top:10px; }
-		.hidden { display: none;}
+.row  {}
+.col1 {width:100px;  vertical-align:top; }
+.col2 {width:700px;	 vertical-align:top; }
 
-		.row  {}
-		.col1 {width:100px;  vertical-align:top; }
-		.col2 {width:700px;	 vertical-align:top; }
-
-		/* smartphones, touchscreens */
+/* smartphones, touchscreens */
 /*		@media (pointer:coarse) 
-		{
-			.bigintegral 		   { color:black; font-size: 85px; top:5px; padding:50px 0px 50px; display:inline-block;}	
-			.bigintegral .lowbound { font-size: 35px;  top:25px;  left:-10px; }
-			.bigintegral .upbound  { font-size: 35px;  top:-50px; left:-10px; }
-			.bigintegral .function { font-size: 40px;  top:-5px;  left:-10px; }
+{
+	.bigintegral 		   { color:black; font-size: 85px; top:5px; padding:50px 0px 50px; display:inline-block;}	
+	.bigintegral .lowbound { font-size: 35px;  top:25px;  left:-10px; }
+	.bigintegral .upbound  { font-size: 35px;  top:-50px; left:-10px; }
+	.bigintegral .function { font-size: 40px;  top:-5px;  left:-10px; }
 
-			.integral 			{ font-size: 25px;  top:3px;}
-			.integral .lowbound { font-size: 10px;  top:10px;   left: -5px; }
-			.integral .upbound  { font-size: 10px;  top:-20px; left:-15px; }
-			.integral .function { font-size: 13px;  top:-4px;  left:-10px; }
-		
-		}
-		@media (pointer:fine) {
+	.integral 			{ font-size: 25px;  top:3px;}
+	.integral .lowbound { font-size: 10px;  top:10px;   left: -5px; }
+	.integral .upbound  { font-size: 10px;  top:-20px; left:-15px; }
+	.integral .function { font-size: 13px;  top:-4px;  left:-10px; }
+
+}
+@media (pointer:fine) {
 */
-			.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
-			.bigintegral .lowbound { font-family:Times New Roman; font-size: 50%;  top:3px;   left: 0px; position:relative; }
-			.bigintegral .upbound  { font-family:Times New Roman; font-size: 50%;  top:-20px; left:-5px; position:relative;}
-			.bigintegral .function { font-family:Times New Roman; font-size: 75%;  top:-5px;  left:-3px; position:relative;}
+	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
+	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative; }
+	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
+	.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
 
-			.integral 			{ font-family:Times New Roman; font-size: 150%; top:7px; 			position:relative;}
-			.integral .lowbound { font-family:Times New Roman; font-size: 50%;  top:3px;   left: 0px; position:relative;}
-			.integral .upbound  { font-family:Times New Roman; font-size: 50%;  top:-20px; left:-5px; position:relative;}
-			.integral .function { font-family:Times New Roman; font-size: 75%;  top:-5px;  left:-3px; position:relative;}
+	.integral 			{ font-family:Times New Roman; font-size: 150%; top:7px; 			position:relative;}
+	.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative;}
+	.integral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
+	.integral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
 
 /*		}
 */
 
-		.floatRight {float:right;}
-		.floatLeft  {float:left; }
-		.padLeft20  {padding-left:20px;}
+.floatRight {float:right;}
+.floatLeft  {float:left; }
+.padLeft20  {padding-left:20px;}
 

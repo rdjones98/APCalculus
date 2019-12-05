@@ -78,8 +78,13 @@
 
 </head>
 <body>
-	<script src="../math.js"></script>
+	<script src="../mymath.js"></script>
 	<script>
+		var subdir = "Chapter 9/";
+		function getImageSource()
+		{
+			document.writeln(subdir);
+		}
 		// Answers from problem 1
 		var _1 = new Object();
 			_1.score=0;
@@ -210,7 +215,7 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 
 	<H2>Area between 2 Curves.</H2><BR>
 	<p>
-		<img class=floatLeft src="lesson.area.1.jpg" width=400>
+		<img class=floatLeft src="Chapter 9/lesson.area.1.jpg" width=400>
 		<text>
 			From middle school math we can see that the area of this rectangle is 8 (b*h).&nbsp;&nbsp;From Calculus we know that we can find the area using the definite integral: <br><script>drawInt("-1","3","f(x)=2","dx")</script> = 8 as well.
 		</text>
@@ -218,7 +223,7 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 	<table style="width:100%"><tr><td></td></tr></table>
 	</table>
 	<p>
-		<img class=floatRight src="lesson.area.2.jpg" width=400>
+		<img class=floatRight src="Chapter 9/lesson.area.2.jpg" width=400>
 		</text>
 		What may not be as obvious is what happens when we translate the rectangle:
 		Obviously the area is still 8, but  <script>drawInt("-1","3","f(x)=3","dx")</script> is 12.
@@ -252,15 +257,15 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 			<td>
 				Let (<equ>a,b</equ>)=(<input id=1.step1.a class=c7>,<input id=1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
 				<div id=1.step1h class="hidden">												<!-- step?h hidden solution -->
-					<img src="2015.2.a.step1a.jpg"><br>
-					<img src="2015.2.a.step1b.jpg"><br>
-					<img src="2015.2.a.step1c.jpg"><br>
+					<img src="Chapter 9/2015.2.a.step1a.jpg"><br>
+					<img src="Chapter 9/2015.2.a.step1b.jpg"><br>
+					<img src="Chapter 9/2015.2.a.step1c.jpg"><br>
 				</div>
 			</td>
 			<td>
 				<a   id=1.step1  href="#" onclick="_1.validate(this);">check answer</a>		<!-- step? calls checkAnswer() -->
-				<img id=1.step1c class="hidden" src="../images/greenCheck.jpg">				<!-- step?c Correct checkmark -->
-				<img id=1.step1x class="hidden" src="../images/redX.jpg">					<!-- step?x Incorrect X -->
+				<img id=1.step1c class="hidden" src="images/greenCheck.jpg">				<!-- step?c Correct checkmark -->
+				<img id=1.step1x class="hidden" src="images/redX.jpg">					<!-- step?x Incorrect X -->
 			</td>
 		</tr>
 		<tr id=1.step2r>	<!-- step?r row. Used for scrolling -->
@@ -280,8 +285,8 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 			</td>
 			<td>
 				<a   id=1.step2  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step2c class=hidden src="../images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step2x class=hidden src="../images/redX.jpg">							<!-- step?x Incorrect X -->
+				<img id=1.step2c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+				<img id=1.step2x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
 			</td>
 		</tr>
 		<tr id=1.step3r>	<!-- step?r  row Used for scrolling -->
@@ -301,8 +306,8 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 			</td>
 			<td>
 				<a   id=1.step3  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step3c class=hidden src="../images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step3x class=hidden src="../images/redX.jpg">							<!-- step?x Incorrect X -->
+				<img id=1.step3c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+				<img id=1.step3x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
 			</td>
 		</tr>
 		<tr id=1.step4r>	<!-- step?r  row Used for scrolling -->
@@ -315,8 +320,8 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 			</td>
 			<td>
 				<a   id=1.step4  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step4c class=hidden src="../images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step4x class=hidden src="../images/redX.jpg">							<!-- step?x Incorrect X -->
+				<img id=1.step4c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+				<img id=1.step4x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
 			</td>
 		</tr>
 		<tr>

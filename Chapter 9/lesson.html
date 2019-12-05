@@ -37,6 +37,7 @@
 		errMsg  { display:block; color:red; padding-top:10px; }
 		.hidden { display: none;}
 
+		.row  {}
 		.col1 {width:100px;  vertical-align:top; display:inline-block;}
 		.col2 {				 vertical-align:top; display:inline-block;}
 
@@ -184,13 +185,16 @@
 		
 	</script>
 <body>
-	
-	<div class=col1>Step 1:</div><div class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</div><br>
-	<div class=col1>Step 2:</div><div class=col2>Determine which equation is bigger (has larger y values)<br>
-												(If you have multiple intervals the equations may swap)<br>
-												 In the example at left g(x) is bigger so..<br>
-												<script>drawInt("a","b","g(x)-f(x)","dx")</script>
-									</div><br>
+	<div class=row>
+		<div class=col1>Step 1:</div><div class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</div>
+	</div>
+	<div class=row>
+		<div class=col1>Step 2:</div><div class=col2>Determine which equation is bigger (has larger y values)<br>
+													(If you have multiple intervals the equations may swap)<br>
+													In the example at left g(x) is bigger so..<br>
+													<script>drawInt("a","b","g(x)-f(x)","dx")</script>
+										</div><br>
+	</div>
 
 
 Howdy<br>

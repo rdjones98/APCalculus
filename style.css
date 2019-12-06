@@ -76,7 +76,7 @@ errMsg  { display:block; color:red; padding-top:10px; }
 	img.fixedWidth {width:600px }
 	.menuItem 	{ padding-left:50px;} 					 /* sub menu items 		 */
 	
-	vImg { width:40px; }
+	vImg { width:80px; }
 	
 	input.c1 { width:30px;	}
 	input.c2 { width:50px;}

@@ -70,7 +70,7 @@ p { width:800px; }
 	body,td 	{ font-size:35px;}
 	img.dn 		{ width:40 }
 	img.rt 		{ width:40 }
-	.menuItem 	{ padding-left:20px; background-color:red; } 					 /* sub menu items 		 */
+	.menuItem 	{ padding-left:50px; background-color:red; } 					 /* sub menu items 		 */
 	
 	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:8px;   left: -2px; position:relative; }

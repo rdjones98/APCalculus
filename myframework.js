@@ -45,7 +45,7 @@ var out =`
 		<a href=# onclick='bClick(this)'>Chapter 9</a> <span id=menuX onclick='closeMenu();'>x</span>
 		<div class='items'>
 			<a class='menuItem' href='../Chapter 9'>Area between 2 Curves</a>
-			<a class='menuItem' href='../Chapter 9/2.html'>Lesson 2</a>
+			<a class='menuItem' href='../Chapter 1'>Chapter 1 test</a>
 		</div>
 	</div>
 

@@ -32,6 +32,7 @@ body {
 .menuItem 	   { display:block; color:white; } 					 /* sub menu items 		 */
 img.dn 		   { display:none; }
 img.rt 		   {}
+img.fixedWidth {width:300px }
 label  		   { color:white; }
 
 
@@ -71,7 +72,6 @@ errMsg  { display:block; color:red; padding-top:10px; }
 
 	img.dn 		{ width:40 }
 	img.rt 		{ width:40 }
-	img {width:125%;}
 	.menuItem 	{ padding-left:50px;} 					 /* sub menu items 		 */
 	
 	input.c1 { width:30px;	}

@@ -1,5 +1,5 @@
 body {
-	background-color:white;
+	background-color:red;
 	font-family: Helvetica, Verdana, Times, serif; 
 	margin-right:5px; 
 	margin-top:5px;
@@ -37,7 +37,7 @@ label  		   { color:white; }
 
 
 /* Div to host currect chapter*/
-#chapterDiv	   { position:absolute; left:8px; top:47px; width:975px; height:100%; }
+#chapterDiv	   { position:absolute; left:8px; top:47px; width:900px; height:100%; }
 
 
 /* All MATH css */

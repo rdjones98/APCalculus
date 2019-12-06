@@ -3,121 +3,123 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="../fonts/cmun-serif.css"></link>
-	<link rel='stylesheet' type='text/css' href='../mathStyle.css'></link>
 	<meta prevChapter='2 Kings/2Ki25.html' nextChapter='1 Chronicles/1Chron2.html'>
 	<title>Chapter 9 Lesson 1 Area between 2 Curves</title>
 
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="../myframework.js"></script>
+	<script src="../mymath.js"></script>
 
 </head>
+<script>
+	// Answers from problem 1
+	var _1 = new Object();
+		_1.score=0;
+		_1.step1a="1.03283";
+		_1.step1b="2.40110";
+		_1.step2a="0";
+		_1.step2b="a";
+		_1.step2c="g(x)";
+		_1.step2d="f(x)";
+		_1.step2e=".99742";
+		_1.step3a="a";
+		_1.step3b="2";
+		_1.step3c="f(x)";
+		_1.step3d="g(x)";
+		_1.step3e="1.00691";
+		_1.step4a="2.004";
+		_1.showStep = function showStep(aDiv)
+		{
+			hide(aDiv+"c"); // Hide correct checkmark
+			show(aDiv+"x");	// Show error Checkmark
+			show(aDiv+"h");	// Show any hidden comments/solutions
+		}
+
+		_1.validate = function(el) 
+		{
+			hide(el.id);
+			show(el.id+"c");
+			var aStep = el.id;
+
+			if( aStep == "1.step1" )
+			{
+				if (( document.getElementById("1.step1.a").value != this.step1a ) ||
+					( document.getElementById("1.step1.b").value != this.step1b ) )
+				{
+					setVal("1.step1.a",this.step1a);
+					setVal("1.step1.b",this.step1b);
+				
+					this.showStep(aStep);
+				}
+				else
+					this.score = this.score + 25;
+
+				show("1.step2" );	// make next step visible
+			}
+			else if( aStep == "1.step2" )
+			{
+				if (( document.getElementById("1.step2.a").value != this.step2a )|| 
+					( document.getElementById("1.step2.b").value.toLowerCase() != this.step2b ) ||
+					( document.getElementById("1.step2.c").value != this.step2c ) ||
+					( document.getElementById("1.step2.d").value != this.step2d ) ||
+					( document.getElementById("1.step2.e").value != this.step2e ))
+				{
+					setVal("1.step2.a",this.step2a);
+					setVal("1.step2.b",this.step2b);
+					setVal("1.step2.c",this.step2c);
+					setVal("1.step2.d",this.step2d);
+					setVal("1.step2.e",this.step2e);
+
+					this.showStep(aStep);
+				}
+				else
+					this.score = this.score + 25;
+
+				show( "1.step3" );		// make next step visible
+			}
+			else if( aStep == "1.step3" )
+			{
+				if (( document.getElementById("1.step3.a").value != this.step3a ) ||
+					( document.getElementById("1.step3.b").value.toLowerCase() != this.step3b ) ||
+					( document.getElementById("1.step3.c").value != this.step3c ) ||
+					( document.getElementById("1.step3.d").value != this.step3d ) ||
+					( document.getElementById("1.step3.e").value != this.step3e ))
+				{
+					setVal("1.step3.a",this.step3a);
+					setVal("1.step3.b",this.step3b);
+					setVal("1.step3.c",this.step3c);
+					setVal("1.step3.d",this.step3d);
+					setVal("1.step3.e",this.step3e);
+
+					this.showStep(aStep);		
+				}
+				else
+					this.score = this.score + 25;
+					
+				show("1.step4");		// make next step visible
+			}
+			else if( aStep == "1.step4" )
+			{
+				if(	document.getElementById("1.step4.a").value != this.step4a )
+				{
+					setVal( "1.step4.a", this.step4a );
+					this.showStep(aStep);
+				}
+				else
+					this.score = this.score + 25;
+
+				
+				submitScore("1", this.score);
+			}
+			document.getElementById( "1.score").innerHTML=this.score;
+			var v = document.getElementById(el.id + "r");
+			setTimeout(() => v.scrollIntoView(), 100);
+		}
+	
+</script>
 <body>
-	<script src="../math.js"></script>
-	<script>
-		// Answers from problem 1
-		var _1 = new Object();
-			_1.score=0;
-			_1.step1a="1.03283";
-			_1.step1b="2.40110";
-			_1.step2a="0";
-			_1.step2b="a";
-			_1.step2c="g(x)";
-			_1.step2d="f(x)";
-			_1.step2e=".99742";
-			_1.step3a="a";
-			_1.step3b="2";
-			_1.step3c="f(x)";
-			_1.step3d="g(x)";
-			_1.step3e="1.00691";
-			_1.step4a="2.004";
-			_1.showStep = function showStep(aDiv)
-			{
-				hide(aDiv+"c"); // Hide correct checkmark
-				show(aDiv+"x");	// Show error Checkmark
-				show(aDiv+"h");	// Show any hidden comments/solutions
-			}
-
-			_1.validate = function(el) 
-			{
-				hide(el.id);
-				show(el.id+"c");
-				var aStep = el.id;
-
-				if( aStep == "1.step1" )
-				{
-					if (( document.getElementById("1.step1.a").value != this.step1a ) ||
-						( document.getElementById("1.step1.b").value != this.step1b ) )
-					{
-						setVal("1.step1.a",this.step1a);
-						setVal("1.step1.b",this.step1b);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
-
-					show("1.step2" );	// make next step visible
-				}
-				else if( aStep == "1.step2" )
-				{
-					if (( document.getElementById("1.step2.a").value != this.step2a )|| 
-						( document.getElementById("1.step2.b").value.toLowerCase() != this.step2b ) ||
-						( document.getElementById("1.step2.c").value != this.step2c ) ||
-						( document.getElementById("1.step2.d").value != this.step2d ) ||
-						( document.getElementById("1.step2.e").value != this.step2e ))
-					{
-						setVal("1.step2.a",this.step2a);
-						setVal("1.step2.b",this.step2b);
-						setVal("1.step2.c",this.step2c);
-						setVal("1.step2.d",this.step2d);
-						setVal("1.step2.e",this.step2e);
-
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
-
-					show( "1.step3" );		// make next step visible
-				}
-				else if( aStep == "1.step3" )
-				{
-					if (( document.getElementById("1.step3.a").value != this.step3a ) ||
-						( document.getElementById("1.step3.b").value.toLowerCase() != this.step3b ) ||
-						( document.getElementById("1.step3.c").value != this.step3c ) ||
-						( document.getElementById("1.step3.d").value != this.step3d ) ||
-						( document.getElementById("1.step3.e").value != this.step3e ))
-					{
-						setVal("1.step3.a",this.step3a);
-						setVal("1.step3.b",this.step3b);
-						setVal("1.step3.c",this.step3c);
-						setVal("1.step3.d",this.step3d);
-						setVal("1.step3.e",this.step3e);
-
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 25;
-						
-					show("1.step4");		// make next step visible
-				}
-				else if( aStep == "1.step4" )
-				{
-					if(	document.getElementById("1.step4.a").value != this.step4a )
-					{
-						setVal( "1.step4.a", this.step4a );
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
-
-					
-					submitScore("1", this.score);
-				}
-				document.getElementById( "1.score").innerHTML=this.score;
-				var v = document.getElementById(el.id + "r");
-				setTimeout(() => v.scrollIntoView(), 100);
-			}
-		
-	</script>
+<script>buildHeader("Chapter 9");</script><!-- Build Common Header -->
+<div id=chapterDiv> 
 
 	<table>
 		<tr>
@@ -214,5 +216,8 @@
 			<td id=1.score></td>
 		</tr>
 	</table>
+</div>
+
+<script>buildMenu();</script> <!-- Build Common Menu -->
 </body>
 </html>

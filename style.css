@@ -63,7 +63,7 @@ errMsg  { display:block; color:red; padding-top:10px; }
 @media (pointer:coarse) 
 {
 	/* Overrides for small screen*/
-	#hamburgerMenu { left:50px; }
+	#hamburgerMenu { left:25px; }
 	#menuX 		{ font-size:40px; }
 	#chapterDiv	{ left:25px;  }
 	#menu 		{ width:700px; padding-left:15px; }

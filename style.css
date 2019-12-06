@@ -73,14 +73,14 @@ errMsg  { display:block; color:red; padding-top:10px; }
 	.menuItem 	{ padding-left:50px;} 					 /* sub menu items 		 */
 	
 	.bigintegral 		   { font-family:Times New Roman; font-size: 175%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
-	.bigintegral .lowbound { font-size: 50%;  top:8px;    left: -2px; position:relative; }
-	.bigintegral .upbound  { font-size: 50%;  top:-15px;  left:-7px; position:relative;}
-	.bigintegral .function { font-size: 75%;  top:0px;    left:-3px; position:relative;}
+	.bigintegral .lowbound { font-size: 50%;  top:13px;    	left: -5px; position:relative; }
+	.bigintegral .upbound  { font-size: 50%;  top:-25px;  	left:-10px; position:relative;}
+	.bigintegral .function { font-size: 75%;  top:0px;    	left:-5px; 	position:relative;}
 
 	.integral 			{ font-family:Times New Roman; font-size: 125%; top:0px; 			position:relative;}
-	.integral .lowbound { font-size: 50%;  top:8px;    left: 0px; position:relative;}
-	.integral .upbound  { font-size: 50%;  top:-12px;  left:-5px; position:relative;}
-	.integral .function { font-size: 75%;  top:0px;    left:-3px; position:relative;}
+	.integral .lowbound { font-size: 50%;  top:10px;    left: 0px; position:relative;}
+	.integral .upbound  { font-size: 50%;  top:-15px;  left:-5px; position:relative;}
+	.integral .function { font-size: 75%;  top:0px;    left:-5px; position:relative;}
 
 }
 @media (pointer:fine) 

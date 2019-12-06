@@ -62,9 +62,9 @@ function drawBigInt(lb, ub, func, d)
  ***************************************************************************************/
 function drawValidate(anId, aValidator, aClass)
 {
-	var out  = "<button id=" + anId + " class=" + aClass + " onclick='" + aValidator + ".validate(this);'>&#10004;</button>\n"	
-	    out += "<img id=1.step2c class=hidden src='../images/greenCheck.jpg'>\n";					
-		out += "<img id=1.step2x class=hidden src='../images/redX.jpg'>\n";						
+	var out  = "<button id=" + anId + "  class=" + aClass + " onclick='" + aValidator + ".validate(this);'>&#10004;</button>\n"	
+	    out += "<img    id=" + anId + "c class=hidden src='../images/greenCheck.jpg'>\n";					
+		out += "<img    id=" + anId + "x class=hidden src='../images/redX.jpg'>\n";						
 	console.log(out);
 	document.writeln(out);
 }

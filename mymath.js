@@ -54,6 +54,21 @@ function drawBigInt(lb, ub, func, d)
 	console.log(out);
 	document.writeln(out);
 }
+/***************************************************************************************
+ * Draw the group of validator buttons and indicators for correct/incorrect answers
+ * inputs: 	anId the elementId for the set of input fields we are validating.  
+ *			aValidator - the object upon which to call the method "validate()"
+ * Naming convention:  anId  - Example 1.step1
+ *                     anIdc - Example 1.step1c for correct checkmark
+ *					   anIdx - Example 1.step1x for incorrect checkmark
+ ***************************************************************************************/
+function drawValidate(anId, aValidator)
+{
+	var out  = "<button id=" + anId + " class=hidden onclick='" + aValidator + ".validate(this);'>&#10004;</button>"	
+	    out += "<img id=1.step2c class=hidden src='../images/greenCheck.jpg'>";					
+		out += "<img id=1.step2x class=hidden src='../images/redX.jpg'>";						
+	document.writeln(out);
+}
 function setVal( anE, aVal )
 {
 	var e = document.getElementById(anE);

@@ -41,7 +41,6 @@ function drawInt(lb, ub, func, d)
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
 	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
-	console.log(out);
 	document.writeln(out);
 }
 function drawBigInt(lb, ub, func, d)
@@ -51,7 +50,6 @@ function drawBigInt(lb, ub, func, d)
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
 	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
-	console.log(out);
 	document.writeln(out);
 }
 /***************************************************************************************
@@ -62,11 +60,12 @@ function drawBigInt(lb, ub, func, d)
  *                     anIdc - Example 1.step1c for correct checkmark
  *					   anIdx - Example 1.step1x for incorrect checkmark
  ***************************************************************************************/
-function drawValidate(anId, aValidator)
+function drawValidate(anId, aValidator, aClass)
 {
-	var out  = "<button id=" + anId + " class=hidden onclick='" + aValidator + ".validate(this);'>&#10004;</button>"	
-	    out += "<img id=1.step2c class=hidden src='../images/greenCheck.jpg'>";					
-		out += "<img id=1.step2x class=hidden src='../images/redX.jpg'>";						
+	var out  = "<button id=" + anId + " class=" + aClass + " onclick='" + aValidator + ".validate(this);'>&#10004;</button>\n"	
+	    out += "<img id=1.step2c class=hidden src='../images/greenCheck.jpg'>\n";					
+		out += "<img id=1.step2x class=hidden src='../images/redX.jpg'>\n";						
+	console.log(out);
 	document.writeln(out);
 }
 function setVal( anE, aVal )

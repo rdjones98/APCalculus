@@ -44,8 +44,7 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 9</a> <span id=menuX onclick='closeMenu();'>x</span>
 		<div class='items'>
-			<a class='menuItem' href='../Chapter 9'>Area between 2 Curves</a>
-			<a class='menuItem' href='../Ch1.01'>Chapter 1 test</a>
+			<a class='menuItem' href='../Ch9.01'>Area between 2 Curves</a>
 		</div>
 	</div>
 
@@ -54,6 +53,7 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 2</a>
 		<div class='items'>
+			<a class='menuItem' href='../Ch1.01'>Chapter 1 test</a>
 			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo1.html');return false;'>Ch 1</a>
 			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo2.html');return false;'>Ch 2</a>
 		</div>

@@ -120,19 +120,18 @@
 		
 	</script>
 <body>
-<div class=page>
-	<table>
-		<tr>
-			<td class=col1>Step 1:</td><td class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</td>
-		</tr>
-		<tr>
-			<td class=col1>Step 2:</td><td class=col2>Determine which equation is bigger (has larger y values)<br>
-														(If you have multiple intervals the equations may swap)<br>
-														In the example at left g(x) is bigger so..<br>
-														<script>drawInt("a","b","g(x)-f(x)","dx")</script>
-											</td><br>
-		</tr>
-	</table>
+<table>
+	<tr>
+		<td class=col1>Step 1:</td><td class=col2>Find your bounds.  Set f(x)=g(x) and find all point(s) of intersection(s)</td>
+	</tr>
+	<tr>
+		<td class=col1>Step 2:</td><td class=col2>Determine which equation is bigger (has larger y values)<br>
+													(If you have multiple intervals the equations may swap)<br>
+													In the example at left g(x) is bigger so..<br>
+													<script>drawInt("a","b","g(x)-f(x)","dx")</script>
+										</td><br>
+	</tr>
+</table>
 
 
 Howdy Ho<br>
@@ -143,123 +142,122 @@ Here is some text: <span class=integral>&int;<span class=lowbound>-1</span><span
 <br>Here is a whole lot more text to deal with.  What will you do?
 </p>
 
-	<H2>Area between 2 Curves.</H2><BR>
-	<p>
-		<img class=floatLeft src="Chapter 9/lesson.area.1.jpg" width=400>
-		<text>
-			From middle school math we can see that the area of this rectangle is 8 (b*h).&nbsp;&nbsp;From Calculus we know that we can find the area using the definite integral: <br><script>drawInt("-1","3","f(x)=2","dx")</script> = 8 as well.
-		</text>
-	</p>
-	<table style="width:100%"><tr><td></td></tr></table>
-	</table>
-	<p>
-		<img class=floatRight src="Chapter 9/lesson.area.2.jpg" width=400>
-		</text>
-		What may not be as obvious is what happens when we translate the rectangle:
-		Obviously the area is still 8, but  <script>drawInt("-1","3","f(x)=3","dx")</script> is 12.
-		So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
-		<span class=padLeft20 /><script>drawBigInt("a","b","f(x)&minus;g(x)","dx")</script><br>
-		However, because g(x) has been the x axis everytime up until now, we have just ignored it.
-		So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ> which gives us:<br>
-		<span class=padLeft20 /><script>drawBigInt("-1","3","3&minus;1","dx = ")</script><script>drawBigInt("-1","3","2","dx = 8")</script><br>.
-		</text>
-	</p>
-	
-	<p>
+<H2>Area between 2 Curves.</H2><BR>
+<p>
+	<img class=floatLeft src="Chapter 9/lesson.area.1.jpg" width=400>
+	<text>
+		From middle school math we can see that the area of this rectangle is 8 (b*h).&nbsp;&nbsp;From Calculus we know that we can find the area using the definite integral: <br><script>drawInt("-1","3","f(x)=2","dx")</script> = 8 as well.
+	</text>
+</p>
+<table style="width:100%"><tr><td></td></tr></table>
+</table>
+<p>
+	<img class=floatRight src="Chapter 9/lesson.area.2.jpg" width=400>
+	</text>
+	What may not be as obvious is what happens when we translate the rectangle:
+	Obviously the area is still 8, but  <script>drawInt("-1","3","f(x)=3","dx")</script> is 12.
+	So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
+	<span class=padLeft20 /><script>drawBigInt("a","b","f(x)&minus;g(x)","dx")</script><br>
+	However, because g(x) has been the x axis everytime up until now, we have just ignored it.
+	So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ> which gives us:<br>
+	<span class=padLeft20 /><script>drawBigInt("-1","3","3&minus;1","dx = ")</script><script>drawBigInt("-1","3","2","dx = 8")</script><br>.
+	</text>
+</p>
 
-	<h2>General Process:</h2>
-	<ol>
-	  <li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection(s)</li>
-	  <li>Determine which equation is bigger (has larger y values)<br>
-												(If you have multiple intervals the equations may swap)<br>
-												 In the example at left g(x) is bigger so..<br>
-												<script>drawInt("a","b","g(x)-f(x)","dx")</script></li>
-	</ol> 
-	
-	<h2>Exercises:</h2>
+<p>
 
-	1.  Find the sum of the areas of regions R and S<br>(You may use a calculator.  ALL intermediate answers are to 5 decimal places, no rounding.<br>The final answer is to 3 decimal places, no rounding.)<br>
+<h2>General Process:</h2>
+<ol>
+  <li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection(s)</li>
+  <li>Determine which equation is bigger (has larger y values)<br>
+											(If you have multiple intervals the equations may swap)<br>
+											 In the example at left g(x) is bigger so..<br>
+											<script>drawInt("a","b","g(x)-f(x)","dx")</script></li>
+</ol> 
 
-	<table border=1>
-		<tr id=1.step1r>	<!-- step?r row. Used for scrolling -->
-			<td>
-				Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):
-			</td>
-			<td>
-				Let (<equ>a,b</equ>)=(<input id=1.step1.a class=c7>,<input id=1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
-				<div id=1.step1h class="hidden">													<!-- step?h hidden solution -->
-					<img src="Chapter 9/2015.2.a.step1a.jpg"><br>
-					<img src="Chapter 9/2015.2.a.step1b.jpg"><br>
-					<img src="Chapter 9/2015.2.a.step1c.jpg"><br>
-				</div>
-			</td>
-			<td>
-				<a   id=1.step1  href="#" onclick="_1.validate(this);">check answer</a>		<!-- step? calls checkAnswer() -->
-				<img id=1.step1c class="hidden" src="images/greenCheck.jpg">				<!-- step?c Correct checkmark -->
-				<img id=1.step1x class="hidden" src="images/redX.jpg">					<!-- step?x Incorrect X -->
-			</td>
-		</tr>
-		<tr id=1.step2r>	<!-- step?r row. Used for scrolling -->
-			<td>
-				Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  
-			</td>
-			<td>
-				<script>
-					drawInt("<input class=c1 id=1.step2.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=1.step2.b class=c1></input>",
-							"<input id=1.step2.c class=c4></input>&minus;<input id=1.step2.d class=c4></input>", "dx");
-				</script>
-				<equ>=&nbsp;<input id="1.step2.e" class=c7></input></equ>
-				<div id=1.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from 0 to a.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
-				</div>
-			</td>
-			<td>
-				<a   id=1.step2  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step2c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step2x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
-			</td>
-		</tr>
-		<tr id=1.step3r>	<!-- step?r  row Used for scrolling -->
-			<td>
-				Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  
-			</td>
-			<td>
-				<script>
-					drawInt("<input id=1.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
-							"<input id=1.step3.b class=c1></input>",
-							"<input id=1.step3.c class=c4></input>&minus;<input id=1.step3.d class=c4></input>", "dx");
-				</script>
-				<equ>=&nbsp;<input id="1.step3.e" class=c7></input></equ>
-				<div id=1.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of S are from a to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [a,2].</errMsg>  
-				</div>
-			</td>
-			<td>
-				<a   id=1.step3  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step3c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step3x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
-			</td>
-		</tr>
-		<tr id=1.step4r>	<!-- step?r  row Used for scrolling -->
-			<td>Answer:</td>
-			<td>
-				<input id=1.step4.a class=c5></input>
-				<div id=1.step4h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The area of R + S = 2.004</errMsg>
-				</div>
-			</td>
-			<td>
-				<a   id=1.step4  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
-				<img id=1.step4c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
-				<img id=1.step4x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
-			</td>
-		</tr>
-		<tr>
-			<td>Score:</td>
-			<td id=1.score></td>
-		</tr>
-	</table>
-</page>
+<h2>Exercises:</h2>
+
+1.  Find the sum of the areas of regions R and S<br>(You may use a calculator.  ALL intermediate answers are to 5 decimal places, no rounding.<br>The final answer is to 3 decimal places, no rounding.)<br>
+
+<table border=1>
+	<tr id=1.step1r>	<!-- step?r row. Used for scrolling -->
+		<td>
+			Step 1 (<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):
+		</td>
+		<td>
+			Let (<equ>a,b</equ>)=(<input id=1.step1.a class=c7>,<input id=1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
+			<div id=1.step1h class="hidden">													<!-- step?h hidden solution -->
+				<img src="Chapter 9/2015.2.a.step1a.jpg"><br>
+				<img src="Chapter 9/2015.2.a.step1b.jpg"><br>
+				<img src="Chapter 9/2015.2.a.step1c.jpg"><br>
+			</div>
+		</td>
+		<td>
+			<a   id=1.step1  href="#" onclick="_1.validate(this);">check answer</a>		<!-- step? calls checkAnswer() -->
+			<img id=1.step1c class="hidden" src="images/greenCheck.jpg">				<!-- step?c Correct checkmark -->
+			<img id=1.step1x class="hidden" src="images/redX.jpg">					<!-- step?x Incorrect X -->
+		</td>
+	</tr>
+	<tr id=1.step2r>	<!-- step?r row. Used for scrolling -->
+		<td>
+			Step 2 (<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  
+		</td>
+		<td>
+			<script>
+				drawInt("<input class=c1 id=1.step2.a ></input>",					<!-- step?.a-z for each input step -->
+						"<input id=1.step2.b class=c1></input>",
+						"<input id=1.step2.c class=c4></input>&minus;<input id=1.step2.d class=c4></input>", "dx");
+			</script>
+			<equ>=&nbsp;<input id="1.step2.e" class=c7></input></equ>
+			<div id=1.step2h class="hidden">										<!-- step?h hidden solution -->
+				<errMsg>The bounds of R are from 0 to a.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
+			</div>
+		</td>
+		<td>
+			<a   id=1.step2  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
+			<img id=1.step2c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+			<img id=1.step2x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
+		</td>
+	</tr>
+	<tr id=1.step3r>	<!-- step?r  row Used for scrolling -->
+		<td>
+			Step 3 (<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  
+		</td>
+		<td>
+			<script>
+				drawInt("<input id=1.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
+						"<input id=1.step3.b class=c1></input>",
+						"<input id=1.step3.c class=c4></input>&minus;<input id=1.step3.d class=c4></input>", "dx");
+			</script>
+			<equ>=&nbsp;<input id="1.step3.e" class=c7></input></equ>
+			<div id=1.step3h class="hidden">										<!-- step?h hidden solution -->
+				<errMsg>The bounds of S are from a to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [a,2].</errMsg>  
+			</div>
+		</td>
+		<td>
+			<a   id=1.step3  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
+			<img id=1.step3c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+			<img id=1.step3x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
+		</td>
+	</tr>
+	<tr id=1.step4r>	<!-- step?r  row Used for scrolling -->
+		<td>Answer:</td>
+		<td>
+			<input id=1.step4.a class=c5></input>
+			<div id=1.step4h class="hidden">										<!-- step?h hidden solution -->
+				<errMsg>The area of R + S = 2.004</errMsg>
+			</div>
+		</td>
+		<td>
+			<a   id=1.step4  class=hidden href="#" onclick="_1.validate(this);">check answer</a>	<!-- step? calls checkAnswer() -->
+			<img id=1.step4c class=hidden src="images/greenCheck.jpg">					<!-- step?c Correct checkmark -->
+			<img id=1.step4x class=hidden src="images/redX.jpg">							<!-- step?x Incorrect X -->
+		</td>
+	</tr>
+	<tr>
+		<td>Score:</td>
+		<td id=1.score></td>
+	</tr>
+</table>
 </body>
 </html>

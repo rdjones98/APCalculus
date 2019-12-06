@@ -9,8 +9,6 @@ body {
 	padding-left:50px;
 }
 
-.page {padding-left:50px}
-
 /* Title Bar */
 #header        { position:absolute; top:0px; left:0px;	width:100%;	height:40px; background-color: #625750; color:white;
 				 table-layout:auto; border-collapse: collapse; margin-bottom:0px; margin-top:0px; margin-right:20px;}
@@ -38,11 +36,9 @@ label  		   { color:white; }
 /* right side drop down menu */
 #referenceDropDown { position:absolute; top:40px; right:0; background-color:#625750; display:none; }
 
-/* Current Chapter Display */
-#chapterDiv	   { position:absolute; left:0px; top:47px; width:100%; height:100%; }
+/* Div to host currect chapter*/
+#chapterDiv	   { position:absolute; left:8px; top:47px; width:100%; height:100%; }
 
-/* styles for chapter we will load */
-div.chapter   {padding-left:5px; background-color:white; height:95%;  }	/* this is the encompassing div */
 
 /* All MATH css */
 input 	 { font-family: Times New Roman;  }
@@ -62,10 +58,14 @@ errMsg  { display:block; color:red; padding-top:10px; }
 .col1 {width:100px;  vertical-align:top; }
 .col2 {width:700px;	 vertical-align:top; }
 
+p { width:800px; }
+
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {
-	p { width:800px; }
+	/* Current Chapter Display */
+	#chapterDiv	   { left:25px;  }
+	#menu { width:300px; padding-left:15px; }
 	body { font-size:50px; background-color:white;}
 	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:8px;   left: -2px; position:relative; }
@@ -80,7 +80,6 @@ errMsg  { display:block; color:red; padding-top:10px; }
 }
 @media (pointer:fine) 
 {
-	p { width:800px; }
 	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative; }
 	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}

@@ -1,7 +1,11 @@
+html, body{
+  margin:50 !important;
+  padding:50 !important;
+}
 body {
 	background-color:white;
 	font-family: Helvetica, Verdana, Times, serif; 
-	margin-left:5px; 
+	margin-left:50px; 
 	margin-right:5px; 
 	margin-top:5px;
 	line-height: 150%; 
@@ -27,12 +31,12 @@ table 			 table-layout:auto; border-collapse: collapse; margin-bottom:0px; margi
 #hamburger 	   {										width:30px; height: 5px; background-color: white;	margin: 5px;  }
 
 /* Left side menu */
-div.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
 #menu { position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
-div.items a    { color:white; text-decoration:none;}						 /* make all links in this div white */
 #menuX		   { float:right; font-size:24px; padding-right:10px; cursor:pointer;  }
+.items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
+.item {}
+.item a    { color:white; text-decoration:none;}						 /* make all links in this div white */
 .menuItem 	   { display:block; color:white; } 					 /* sub menu items 		 */
-a.menuItem:link, a.menuItem:visited { text-decoration:none; color:white }
 img.dn 		   { display:none; }
 label  		   { color:white; }
 

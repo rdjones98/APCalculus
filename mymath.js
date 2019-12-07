@@ -1,3 +1,9 @@
+var ttRounding = "All intermediate steps should be truncated (not rounded) to 6 decimal places.  All final answers should be truncated (not rounded) at 3 decimal places."
+function buildToolTip(aToolTip, aDisplayText)
+{
+	var out = "<a href='#' onclick='showToolTip(this);' title='" + aToolTip +"'>" + aDisplayText + "</a>";
+	document.writeln(out);
+}
 function submitScore( aProbNbr, aScore )
 {
 	var results = "You made a " + aScore + " on Problem #" + aProbNbr;
@@ -62,7 +68,7 @@ function drawBigInt(lb, ub, func, d)
  ***************************************************************************************/
 function drawValidate(anId, aValidator, aClass)
 {
-	var out  = "<button id=" + anId + "  class=" + aClass + " onclick='" + aValidator + ".validate(this);'>&#10004;</button>\n"	
+	var out  = "<button id=" + anId + "  class=" + aClass + " onclick='" + aValidator + ".validate(this);' title='click to check your answer'>&#10004;</button>\n"	
 	    out += "<img    id=" + anId + "c class='vImg hidden' src='../images/greenCheck.jpg'>\n";					
 		out += "<img    id=" + anId + "x class='vImg hidden' src='../images/redX.jpg'>\n";						
 	console.log(out);
@@ -90,4 +96,6 @@ function showToolTip(e)
 {
 	alert(e.title);
 }
+	
+	
 	

@@ -42,14 +42,16 @@ label  		   { color:white; }
 
 
 /* All MATH css */
-input 	 { font-family: Times New Roman;  }
-input.c1 { width:10px;	}
+a { text-decoration:none }
+
+input 	 { font-family: Times New Roman; font-size:17px; height:23px; }
+input.c1 { width:16px; }
 input.c2 { width:10px;}
 input.c3 { width:20px;}
 input.c4 { width:25px;}
 input.c5 { width:40px;}
 input.c6 { width:60px; }
-input.c7 { width:40px; }
+input.c7 { width:65px; }
 
 equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
 errMsg  { display:block; color:red; padding-top:10px; }
@@ -60,6 +62,10 @@ errMsg  { display:block; color:red; padding-top:10px; }
 .col1 {width:100px;  vertical-align:top; }
 .col2 {width:700px;	 vertical-align:top; }
 
+table.hw {border-collapse:collapse; }
+table.hw td {border: 1px solid black; border-collapse:collapse; }
+td.hwc1 {width:50px; height:55px; padding-left:5px; }
+td.hwc2 {width:700px; height:55px; padding-left:5px;}
 
 /* smartphones, touchscreens */
 @media (pointer:coarse) 

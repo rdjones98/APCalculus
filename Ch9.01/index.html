@@ -12,11 +12,11 @@
 			_1.step1a="1.03283";
 			_1.step1b="2.40110";
 			_1.step2a="0";
-			_1.step2b="a";
+			_1.step2b="A";
 			_1.step2c="g(x)";
 			_1.step2d="f(x)";
 			_1.step2e=".99742";
-			_1.step3a="a";
+			_1.step3a="A";
 			_1.step3b="2";
 			_1.step3c="f(x)";
 			_1.step3d="g(x)";
@@ -53,7 +53,7 @@
 				else if( aStep == "1.step2" )
 				{
 					if (( document.getElementById("1.step2.a").value != this.step2a )|| 
-						( document.getElementById("1.step2.b").value.toLowerCase() != this.step2b ) ||
+						( document.getElementById("1.step2.b").value.toUpperCase() != this.step2b ) ||
 						( document.getElementById("1.step2.c").value != this.step2c ) ||
 						( document.getElementById("1.step2.d").value != this.step2d ) ||
 						( document.getElementById("1.step2.e").value != this.step2e ))
@@ -74,7 +74,7 @@
 				else if( aStep == "1.step3" )
 				{
 					if (( document.getElementById("1.step3.a").value != this.step3a ) ||
-						( document.getElementById("1.step3.b").value.toLowerCase() != this.step3b ) ||
+						( document.getElementById("1.step3.b").value.toUpperCase() != this.step3b ) ||
 						( document.getElementById("1.step3.c").value != this.step3c ) ||
 						( document.getElementById("1.step3.d").value != this.step3d ) ||
 						( document.getElementById("1.step3.e").value != this.step3e ))
@@ -170,15 +170,15 @@ howdy ho hey
 
 	<h2>Exercises:</h2>
 
-	1.  Find the sum of the areas of regions R and S<br>(You may use a calculator.  ALL intermediate answers are to 5 decimal places, no rounding.<br>The final answer is to 3 decimal places, no rounding.)<br>
+	1.  Find the sum of the areas of regions R and S<br>(You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )<br>
 
-	<table border=1>
+	<table class=hw >
 		<tr id=1.step1r>	<!-- step?r row. Used for scrolling -->
-			<td>
+			<td class=hwc1>
 				Step 1<br>(<a href="#" onclick="showToolTip(this);" title="Find the bounds of R">hint</a>):
 			</td>
-			<td>
-				Let (<equ>a,b</equ>)=(<input id=1.step1.a class=c7>,<input id=1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
+			<td class=hwc2>
+				Let (<equ>A,B</equ>)=(<input id=1.step1.a class=c7>,<input id=1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
 				<div id=1.step1h class="hidden">													<!-- step?h hidden solution -->
 					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
 					<img class="fixedWidth" src="2015.2.a.step1b.jpg"><br>
@@ -190,10 +190,10 @@ howdy ho hey
 			</td>
 		</tr>
 		<tr id=1.step2r>	<!-- step?r row. Used for scrolling -->
-			<td>
+			<td class=hwc1>
 				Step 2<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of R">hint</a>):  
 			</td>
-			<td>
+			<td class=hwc2>
 				<script>
 					drawInt("<input class=c1 id=1.step2.a ></input>",					<!-- step?.a-z for each input step -->
 							"<input id=1.step2.b class=c1></input>",
@@ -201,7 +201,7 @@ howdy ho hey
 				</script>
 				<equ>=&nbsp;<input id="1.step2.e" class=c7></input></equ>
 				<div id=1.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from 0 to a.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
+					<errMsg>The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
 				</div>
 			</td>
 			<td>
@@ -209,10 +209,10 @@ howdy ho hey
 			</td>
 		</tr>
 		<tr id=1.step3r>	<!-- step?r  row Used for scrolling -->
-			<td>
+			<td class=hwc1>
 				Step 3<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of S">hint</a>):  
 			</td>
-			<td>
+			<td class=hwc2>
 				<script>
 					drawInt("<input id=1.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
 							"<input id=1.step3.b class=c1></input>",
@@ -220,16 +220,16 @@ howdy ho hey
 				</script>
 				<equ>=&nbsp;<input id="1.step3.e" class=c7></input></equ>
 				<div id=1.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of S are from a to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [a,2].</errMsg>  
+					<errMsg>The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [a,2].</errMsg>  
 				</div>
 			</td>
 			<td>
 				<script>drawValidate("1.step3", "_1", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=1.step4r>	<!-- step?r  row Used for scrolling -->
-			<td>Answer:</td>
-			<td>
+		<tr id=1.step4r class>	<!-- step?r  row Used for scrolling -->
+			<td class=hwc1>Answer:</td>
+			<td class=hwc2>
 				<input id=1.step4.a class=c5></input>
 				<div id=1.step4h class="hidden">										<!-- step?h hidden solution -->
 					<errMsg>The area of R + S = 2.004</errMsg>

@@ -88,11 +88,21 @@ function buildExp(base,exp)
 	var out = "<span>" + base + "</span><sup>" +exp + "</sup>";
 	return out;
 }
-
+function drawFrac(num,den)
+{
+	var out = "<table class=frac><tr><td class=fracNum><equ>" + num + "</equ></td></tr><tr><td class=fracDen><equ>" + den + "</equ></td></tr></table>";
+	document.writeln(out);
+}
+function drawEval(lb, ub)
+{
+	var out="<table class=eval><tr><td class=evalUB>" + ub + "</td></tr><tr><td class=evalUB></td></tr><tr><td class=evalLB>" + lb + "</td></tr></table>";
+	console.log(out);
+	document.write(out);
+}
 function drawInt(lb, ub, func, d)
 {
 	var intSpan ="<span class=integral>&int;";
-	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
+	var lbSpan  ="<span class=lowbound>"+lb+"</span>"; 
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
 	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
@@ -120,7 +130,6 @@ function drawValidate(anId, aValidator, aClass)
 	var out  = "<button id=" + anId + "  class=" + aClass + " onclick='" + aValidator + ".validate(this);' title='click to check your answer'>&#10004;</button>\n"	
 	    out += "<img    id=" + anId + "c class='vImg hidden' src='../images/greenCheck.jpg'>\n";					
 		out += "<img    id=" + anId + "x class='vImg hidden' src='../images/redX.jpg'>\n";						
-	console.log(out);
 	document.writeln(out);
 }
 function setVal( anE, aVal )

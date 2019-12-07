@@ -53,7 +53,7 @@ input.c5 { width:40px;}
 input.c6 { width:60px; }
 input.c7 { width:65px; }
 
-equ 	{ font-family: Times New Roman;	font-size:110%;font-style:italic;}	/*custom div*/
+equ 	{ font-family: Times New Roman;	font-size:110%;font-style:normal;}	/*custom div*/
 errMsg  { display:block; color:red; padding-top:10px; }
 .hidden  { display: none;}
 .visible {}
@@ -66,6 +66,14 @@ table.hw {border-collapse:collapse; }
 table.hw td {border: 1px solid black; border-collapse:collapse; }
 td.hwc1 {width:50px; padding-top:10px;  padding-bottom:10px; padding-left:5px; }
 td.hwc2 {width:700px; padding-top:10px; padding-bottom:10px; padding-left:5px;}
+
+table.frac { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding:0px;}
+td.fracNum { border-bottom-style:solid; border-bottom-width:1px; text-align:center}
+td.fracDen { text-align:center}
+
+table.eval { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding-left:5px; }
+td.evalUB { border-left-style:solid; border-left-width:1px; text-align:center}
+td.evalLB { border-left-style:solid; border-left-width:1px; text-align:center}
 
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
@@ -93,7 +101,7 @@ td.hwc2 {width:700px; padding-top:10px; padding-bottom:10px; padding-left:5px;}
 	input.c6 { width:130px; }
 	input.c7 { width:150px; }
 	
-	
+
 	
 	.bigintegral 		   { font-family:Times New Roman; font-size: 175%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:18px;    	left: -5px; position:relative; }

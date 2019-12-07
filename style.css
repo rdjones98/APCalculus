@@ -38,7 +38,7 @@ label  		   { color:white; }
 
 
 /* Div to host currect chapter*/
-#chapterDiv	   { position:absolute; left:8px; top:47px; width:950px; height:100%; }
+#chapterDiv	   { position:absolute; left:8px; top:47px; width:925px; height:100%; }
 
 
 /* All MATH css */
@@ -92,7 +92,7 @@ td.evalLB { border-left-style:solid; border-left-width:1px; text-align:center}
 	
 	.vImg { width:60px; }
 	
-	input 	 { height:40px; }
+	input 	 { height:45px; }
 	input.c1 { width:30px;	}
 	input.c2 { width:50px;}
 	input.c3 { width:70px;}

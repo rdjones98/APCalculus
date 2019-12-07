@@ -64,8 +64,8 @@ errMsg  { display:block; color:red; padding-top:10px; }
 
 table.hw {border-collapse:collapse; }
 table.hw td {border: 1px solid black; border-collapse:collapse; }
-td.hwc1 {width:50px; height:55px; padding-left:5px; }
-td.hwc2 {width:700px; height:55px; padding-left:5px;}
+td.hwc1 {width:50px; padding-top:10px;  padding-bottom:10px; padding-left:5px; }
+td.hwc2 {width:700px; padding-top:10px; padding-bottom:10px; padding-left:5px;}
 
 /* smartphones, touchscreens */
 @media (pointer:coarse) 

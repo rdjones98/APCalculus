@@ -1,26 +1,75 @@
+/* Standard Tooltips */
 var ttRounding = "All intermediate steps should be truncated (not rounded) to 6 decimal places.  All final answers should be truncated (not rounded) at 3 decimal places."
+
+// Array of Results
+var results=[];
+var startTime = getDateTime();
+
+
 function buildToolTip(aToolTip, aDisplayText)
 {
 	var out = "<a href='#' onclick='showToolTip(this);' title='" + aToolTip +"'>" + aDisplayText + "</a>";
 	document.writeln(out);
 }
-function submitScore( aProbNbr, aScore )
+function getDateTime()
 {
-	var results = "You made a " + aScore + " on Problem #" + aProbNbr;
-	alert(results);
-	var results = "<html><body>"+results+"<br>CheckSum:" + checksum(results) + "</body></html>";
-	download("score.html", results );
-}
-function checksum(s)
-{
-  var chk = 0x12345678;
-  var len = s.length;
-  for (var i = 0; i < len; i++) {
-      chk += (s.charCodeAt(i) * (i + 1));
-  }
+	var currentDate = new Date(),
+		day = currentDate.getDate(),
+		month = currentDate.getMonth() + 1,
+		year = currentDate.getFullYear()
+		hours = currentDate.getHours(),
+		minutes = currentDate.getMinutes();
 
-  return (chk & 0xffffffff).toString(16);
+	
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+	}
+
+	var suffix = "AM";
+	if (hours >= 12) {
+    suffix = "PM";
+    hours = hours - 12;
+	}
+	if (hours == 0) {
+	 hours = 12;
+	}
+
+	return day + "/" + month + "/" + year + " " + hours + ":" + minutes + " " + suffix;
 }
+
+function setNumProblems(aNumProblems)
+{
+	for( var i=0; i<aNumProblems; i++ )
+		results.push(0);
+}
+function scoreQuestion( aProbNbr, aScore )
+{
+	results[aProbNbr-1] = aScore;
+}
+function submitScores( anAssignment )
+{
+	var endTime = getDateTime();
+	var person = prompt("Please enter your name", "");
+	var doc = new jsPDF();
+	var x = 100 - anAssignment.length / 2;
+	doc.text( anAssignment, x, 10);
+	doc.text( person, 10,20);
+	doc.text( "Start Time: " + startTime, 120, 20);
+	doc.text(   "End Time: " + endTime,   122, 30);
+
+	var sum=0;
+	for( var i=0; i<results.length; i++ )
+	{
+		sum += results[i];
+		doc.text( "Problem Number " + (i+1) + ": " + results[i], 10, i*10 + 30 )
+	}
+
+	var avg = sum / results.length;
+
+	doc.text('Average: ' + avg, 36, results.length * 10 + 30)
+	doc.save(anAssignment + '.pdf')
+}
+
 function download(filename, text) {
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));

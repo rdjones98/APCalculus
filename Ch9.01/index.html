@@ -3,10 +3,13 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script src="../myframework.js"></script>
 	<script src="../mymath.js"></script>
 	<script>
-		// Answers from problem 1
+		setNumProblems(2);  // In mymath.js  Used to compute the average for this assignment
+		
+		// Validator for problem 1
 		var _1 = new Object();
 			_1.score=0;
 			_1.step1a="1.03283";
@@ -103,7 +106,9 @@
 						this.score = this.score + 25;
 
 					
-					submitScore("1", this.score);
+					scoreQuestion(1, 50);
+					scoreQuestion(2, 90);
+					submitScores("Chapter 9.1");
 				}
 				document.getElementById( "1.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");

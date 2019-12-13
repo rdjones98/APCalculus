@@ -42,51 +42,48 @@ var out =`
 	<div class='item'>
 		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
-		<a href=# onclick='bClick(this)'>Chapter 9</a> <span id=menuX onclick='closeMenu();'>x</span>
+		<a href=# onclick='bClick(this)'>Chapter 1 Limits</a> <span id=menuX onclick='closeMenu();'>x</span>
 		<div class='items'>
-			<a class='menuItem' href='../Ch9.01'>Area between 2 Curves</a>
+			<a class='menuItem' href='../Ch1.01'>Area between 2 Curves</a>
 		</div>
 	</div>
 
 	<div class='item'>
 		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
-		<a href=# onclick='bClick(this)'>Chapter 2</a>
+		<a href=# onclick='bClick(this)'>Chapter 2 Derivatives</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch1.01'>Chapter 1 test</a>
-			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo1.html');return false;'>Ch 1</a>
-			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo2.html');return false;'>Ch 2</a>
+			<a class='menuItem' href='../Ch2.01'>Area between 2 Curves</a>
 		</div>
 	</div>
 
-	<div class='item'><img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
-			<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>Chapter 2<div class='items'>
-			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo1.html');return false;'>Ch 1</a>
-			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo2.html');return false;'>Ch 2</a>
-		</div>
-	</div>
-
-
-	<div><img src='../images/r.png' href='' onclick='bClick(this)'>
-		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>Chapter 1<span id=menuX onclick='closeMenu();'>x</span>
+	<div class='item'>
+		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
+		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
+		<a href=# onclick='bClick(this)'>Chapter 3</a>
 		<div class='items'>
-			<a class='menuItem' href=''onclick='urlClicked('Chapter 9/lesson.html');return false;'>Area between 2 curves</a>
-			<a class='menuItem' href=''onclick='urlClicked('Genesis/Gen2.html');return false;'>Ch 2</a>
+			<a class='menuItem' href='../Ch3.01'>Applications of Derivatives</a>
 		</div>
 	</div>
 
-	<div><img src='../images/r.png' href='' onclick='bClick(this)'>
-		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>Exodus		<div class='items'>
-			<a class='menuItem' href=''onclick='urlClicked('Exodus/Exo1.html');return false;'>Ch 1</a>
-	</div>
-
-	<div><img src='../images/r.png' href='' onclick='bClick(this)'>
-	<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>Revelation
+	<div class='item'>
+		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
+		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
+		<a href=# onclick='bClick(this)'>Chapter 4 Integrals</a>
 		<div class='items'>
-			<a class='menuItem' href=''onclick='urlClicked('Revelation/Rev1.html');return false;'>Ch 1</a>
-			<a class='menuItem' href=''onclick='urlClicked('Revelation/Rev22.html');return false;'>Ch 22</a>
+			<a class='menuItem' href='../Ch4.01'>Integrate</a>
 		</div>
 	</div>
+
+	<div class='item'>
+		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
+		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
+		<a href=# onclick='bClick(this)'>Chapter 5 Applications of Integrals</a>
+		<div class='items'>
+			<a class='menuItem' href='../Ch5.01'>Area between 2 Curves</a>
+		</div>
+	</div>
+
 </div>
 `;
 	document.writeln(out);

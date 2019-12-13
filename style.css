@@ -24,7 +24,7 @@ body {
 #hamburger 	   {										width:30px; height: 5px; background-color: white;	margin: 5px;  }
 
 /* Left side menu */
-#menu  { display:none; position:absolute;	top:40px; left:0px;	width:200px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
+#menu  { display:none; position:absolute;	top:40px; left:0px;	width:300px;height:90%;  background-color:#625750;  color:white; overflow-y:auto; overflow-x:hidden; padding-left:5px; }
 #menuX { float:right; font-size:24px; padding-right:10px; cursor:pointer;  }
 .items 	   { padding-left:20px;	display: none; } /* Top level menu item  */
 .item 	   { padding-left:0px;}
@@ -71,10 +71,16 @@ table.frac { display:inline; border-collapse:collapse; position:relative; top:-5
 td.fracNum { border-bottom-style:solid; border-bottom-width:1px; text-align:center}
 td.fracDen { text-align:center}
 
-table.eval { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding-left:5px; }
-td.evalUB { border-left-style:solid; border-left-width:1px; text-align:center}
-td.evalLB { border-left-style:solid; border-left-width:1px; text-align:center}
+table.eval { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding-left:0px; }
+td.evalUB { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center}
+td.evalMB { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center}
+td.evalLB { font-size:smaller; vertical-align: bottom; 	border-left-style:solid; border-left-width:1px; text-align:center}
 
+span.root{
+}
+span.rootBody{
+  border-top-style:solid;
+}
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {
@@ -121,7 +127,7 @@ td.evalLB { border-left-style:solid; border-left-width:1px; text-align:center}
 	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
 	.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
 
-	.integral 			{ font-family:Times New Roman; font-size: 150%; top:7px; 			position:relative;}
+	.integral 			{ font-family:Times New Roman; font-size: 150%; top:5px; 			position:relative;}
 	.integral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative;}
 	.integral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
 	.integral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}

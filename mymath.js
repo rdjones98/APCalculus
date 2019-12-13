@@ -95,7 +95,7 @@ function drawFrac(num,den)
 }
 function drawEval(lb, ub)
 {
-	var out="<table class=eval><tr><td class=evalUB>" + ub + "</td></tr><tr><td class=evalUB></td></tr><tr><td class=evalLB>" + lb + "</td></tr></table>";
+	var out="<table class=eval><tr><td class=evalUB valign=top>" + ub + "</td></tr><tr><td class=evalMB></td></tr><tr><td class=evalLB valign=bottom>" + lb + "</td></tr></table>";
 	console.log(out);
 	document.write(out);
 }
@@ -104,7 +104,7 @@ function drawInt(lb, ub, func, d)
 	var intSpan ="<span class=integral>&int;";
 	var lbSpan  ="<span class=lowbound>"+lb+"</span>"; 
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
-	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
+	var fncSpan ="<span class=function>"+"<equ> " + func + " " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
 	document.writeln(out);
 }
@@ -113,8 +113,13 @@ function drawBigInt(lb, ub, func, d)
 	var intSpan ="<span class=bigintegral>&int;";
 	var lbSpan  ="<span class=lowbound>"+lb+"</span>";
 	var ubSpan  ="<span class=upbound>"+ub+"</span>";
-	var fncSpan ="<span class=function>"+"(&nbsp;<equ>" + func + "</equ>&nbsp;)<equ> " + d + "</equ></span></span>";
+	var fncSpan ="<span class=function>"+"<equ> " + func + " " + d + "</equ></span></span>";
 	var out = intSpan + lbSpan + ubSpan + fncSpan ;
+	document.writeln(out);
+}
+function drawRoot(body, root)
+{
+	var out = "<span class=root>&#8730;</span><span class=rootBody>"+ body + "</span>";
 	document.writeln(out);
 }
 /***************************************************************************************

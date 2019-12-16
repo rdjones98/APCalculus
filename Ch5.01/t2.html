@@ -1,0 +1,374 @@
+<html><head>
+<script>
+function hey()
+{
+	alert('hey');
+}
+function showToolTip()
+{
+	alert('hey');
+}
+</script>
+
+<table id="header">
+	<tbody><tr>
+		<td id="hamburgerCol">
+			<div id="hamburgerMenu" onclick="hamburgerClicked();">	
+				<div id="hamburger"></div>
+				<div id="hamburger"></div>
+				<div id="hamburger"></div>
+			</div>
+		</td>
+		<td id="leftArrowCol">
+			<img src="../images/leftArrow.png" onclick="leftArrowClicked();return false;">
+		</td>
+		<td id="titleDiv">Chapter 9</td>
+		<td id="rightArrowCol">
+			<img src="../images/rightArrow.png" onclick="rightArrowClicked();return false;">
+		</td>
+		<td id="referenceCol">
+			<div id="references" onclick="showHideReferences(this);return false;">+ References</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<!-- Build Common Header -->
+
+<div id="chapterDiv"> 
+	<h2>why Topic: Area between 2 Curves.</h2><br>
+
+<script>
+
+</script>
+	
+	<button onclick="dumpHTML();">Dump Me</button>
+
+	<p>
+		<img class="floatLeft fixedWidth" src="lesson.area.2.jpg">
+			From middle school math we can see that the area (b*h) of this rectangle is 8.&nbsp;&nbsp;
+			From Calculus we know that we can find the area using the definite integral: 
+			<br><script>drawInt("-1","3","f(x)","dx");</script><span class="integral">∫<span class="lowbound">-1</span><span class="upbound">3</span><span class="function"><equ> f(x) dx</equ></span></span>
+ = 8 as well.
+	</p>
+	
+	<table style="width:100%"><tbody><tr><td></td></tr></tbody></table> <!-- Hard break in page -->
+	
+	<p>
+		<img class="floatRight fixedWidth" src="lesson.area.2.jpg">
+		
+		What may not be as obvious is what happens when we translate the rectangle.
+		Obviously the area is still 8, but:<br>  
+		<script>drawInt("-1","3","f(x)","dx");</script><span class="integral">∫<span class="lowbound">-1</span><span class="upbound">3</span><span class="function"><equ> f(x) dx</equ></span></span>
+<equ> = </equ><script>drawInt("-1","3","3","dx");</script><span class="integral">∫<span class="lowbound">-1</span><span class="upbound">3</span><span class="function"><equ> 3 dx</equ></span></span>
+<equ> = 3x</equ> <script>drawEval("-1","3");</script><table class="eval"><tbody><tr><td class="evalUB" valign="top">3</td></tr><tr><td class="evalMB"></td></tr><tr><td class="evalLB" valign="bottom">-1</td></tr></tbody></table><equ> = 3(3) − 3(-1) = 12</equ><br>
+		So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
+		<span class="padLeft20"><script>drawBigInt("a","b","f(x) - g(x)","dx");</script><span class="bigintegral">∫<span class="lowbound">a</span><span class="upbound">b</span><span class="function"><equ> f(x) - g(x) dx</equ></span></span>
+<br>
+		However, because g(x) has been the x axis for every integral up until now, we have just ignored it.
+		So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ> which gives us:<br>
+		<span class="padLeft20"><script>drawBigInt("-1","3","3 - 1","dx = ");</script><span class="bigintegral">∫<span class="lowbound">-1</span><span class="upbound">3</span><span class="function"><equ> 3 - 1 dx = </equ></span></span>
+<script>drawBigInt("-1","3","2","dx = 8")</script><span class="bigintegral">∫<span class="lowbound">-1</span><span class="upbound">3</span><span class="function"><equ> 2 dx = 8</equ></span></span>
+<br>.
+		
+	</span></span></p>
+
+	<h2>General Process:</h2>
+
+	<img class="floatRight fixedWidth" src="lesson.area.3.jpg">
+
+	<ol>
+	  <li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
+			In the example on the right we can see that the bounds are [-2,2].<br>
+			If you did not have a graph you would solve <equ>f(x)=g(x)</equ> algebraically.</li>
+	  <li>Determine which equation is bigger (on top)<br>
+			(If you have multiple intervals the equations may swap)<br>
+			 In the example at right g(x) is bigger so our integral is <script>drawInt("-2","2","g(x) &minus; f(x)","dx")</script><span class="integral">∫<span class="lowbound">-2</span><span class="upbound">2</span><span class="function"><equ> g(x) − f(x) dx</equ></span></span>
+</li>
+		<li>Integrating we get ( <script>drawFrac("-1","12")</script><table class="frac"><tbody><tr><td class="fracNum"><equ>-1</equ></td></tr><tr><td class="fracDen"><equ>12</equ></td></tr></tbody></table>
+<equ>x<sup>3</sup>+3x</equ> ) − ( <script>drawFrac( "1","3") </script><table class="frac"><tbody><tr><td class="fracNum"><equ>1</equ></td></tr><tr><td class="fracDen"><equ>3</equ></td></tr></tbody></table>
+<equ>x<sup>3</sup>−2x</equ> ) <script>drawEval("-2","2");</script><table class="eval"><tbody><tr><td class="evalUB" valign="top">2</td></tr><tr><td class="evalMB"></td></tr><tr><td class="evalLB" valign="bottom">-2</td></tr></tbody></table><br>
+			Combining like terms <script>drawFrac( "-5","12") </script><table class="frac"><tbody><tr><td class="fracNum"><equ>-5</equ></td></tr><tr><td class="fracDen"><equ>12</equ></td></tr></tbody></table>
+<equ>x<sup>3</sup>+5</equ> <script>drawEval("-2","2");</script><table class="eval"><tbody><tr><td class="evalUB" valign="top">2</td></tr><tr><td class="evalMB"></td></tr><tr><td class="evalLB" valign="bottom">-2</td></tr></tbody></table><br>
+			Evaluating over the domain [-2,2]: <script>drawFrac("40","3")</script><table class="frac"><tbody><tr><td class="fracNum"><equ>40</equ></td></tr><tr><td class="fracDen"><equ>3</equ></td></tr></tbody></table>
+ u<sup>2</sup>.
+	</li></ol> 
+
+	<table style="width:100%"><tbody><tr><td></td></tr></tbody></table> <!-- Hard break in page -->
+	
+	<h2>Assignment:</h2>
+
+	<!-- Start Problem 1 -->
+	<h3>Problem 1:</h3>
+	<p>
+		<img class="fixedwidth floatLeft" src="2003.1.jpg">
+		</p><h3>2003 AP<sup>©</sup> Calculus AB.  Problem # 1.</h3><br>
+		Let R be the shaded region bounded by the graphs of <equ>f(x)=<script>drawRoot('x');</script><span class="root">√</span><span class="rootBody">x</span>
+</equ> and <equ>g(x)=e<sup>-3x</sup></equ> and the vertical line x = 1.<br>
+		<b>Find the area of R<br>
+	<p></p>
+	<table style="width:100%"><tbody><tr><td></td></tr></tbody></table> <!-- Hard break in page -->
+
+	<table class="hw">
+		<tbody><tr id="2.step1r">	<!-- step?r row. Used for scrolling -->
+			<td class="hwc1">
+				Step 1<br>(<a href="#" onclick="showToolTip(this);" title="Find the intersection of R of S">hint</a>):
+			</td>
+			<td class="hwc2">
+				Let (<equ>A,B</equ>)=(<input id="2.step2.a" class="c7">,<input id="2.step2.b" class="c7">)	<!-- step?.a-z for each input step -->
+				<div id="2.step1h" class="hidden">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1b.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1c.jpg"><br>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step1", "_2", "visible");</script><button id="2.step1" class="visible" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step1c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step1x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step2r">	<!-- step?r row. Used for scrolling -->
+			<td class="hwc1">
+				Step 2<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of R.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral">hint</a>):  
+			</td>
+			<td class="hwc2">
+				<script>
+					drawInt("<input class=c1 id=2.step2.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=2.step2.b class=c1></input>",
+							"<input id=2.step2.c class=c4></input>&minus;<input id=2.step2.d class=c4></input>", "dx");
+				</script><span class="integral">∫<span class="lowbound"><input class="c1" id="2.step2.a"></span><span class="upbound"><input id="2.step2.b" class="c1"></span><span class="function"><equ> <input id="2.step2.c" class="c4">−<input id="2.step2.d" class="c4"> dx</equ></span></span>
+
+				<equ>=&nbsp;<input id="2.step2.e" class="c7"></equ>
+				<div id="2.step2h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) &gt; f(x) on [0,a].</errmsg>  
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step2", "_2", "hidden");</script><button id="2.step2" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step2c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step2x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step3r">	<!-- step?r  row Used for scrolling -->
+			<td class="hwc1">
+				Step 3<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral">hint</a>):  
+			</td>
+			<td class="hwc2">
+				<script>
+					drawInt("<input id=2.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
+							"<input id=2.step3.b class=c1></input>",
+							"<input id=2.step3.c class=c4></input>&minus;<input id=2.step3.d class=c4></input>", "dx");
+				</script><span class="integral">∫<span class="lowbound"><input id="2.step3.a" class="c1"></span><span class="upbound"><input id="2.step3.b" class="c1"></span><span class="function"><equ> <input id="2.step3.c" class="c4">−<input id="2.step3.d" class="c4"> dx</equ></span></span>
+
+				<equ>=&nbsp;<input id="2.step3.e" class="c7"></equ>
+				<div id="2.step3h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) &gt; g(x) on [a,2].</errmsg>  
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step3", "_2", "hidden");</script><button id="2.step3" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step3c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step3x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step4r" class="">	<!-- step?r  row Used for scrolling -->
+			<td class="hwc1">Answer:</td>
+			<td class="hwc2">
+				<input id="2.step2.a" class="c5">
+				<div id="2.step4h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The area of R + S = 2.004</errmsg>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step4", "_2", "hidden");</script><button id="2.step4" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step4c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step4x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr>
+			<td class="hwc1">Score:</td>
+			<td id="2.score"></td>
+			<td></td>
+		</tr>
+	</tbody></table>
+	<!-- End Problem 1 -->
+
+	<!-- Start Problem  2 -->
+	<h3>Problem 2:</h3>
+	<p>
+		<img class="fixedwidth floatLeft" src="2015.2.jpg">
+		</p><h3>2015 AP<sup>©</sup> Calculus AB.  Problem # 2.</h3><br>
+		Let f and g be the functions defined by<br>
+		<equ>f(x)=1+x+e<sup>x<sup>2</sup>−2x</sup></equ> and <equ>g(x)=x<sup>4</sup>−6.5x<sup>2</sup>+6x+2</equ>. <br>
+		Let R and S be the two regions enclosed by the graphs of f and g shown in the figure at left. 
+		<br>
+		<b>Find the sum of the areas of regions R and S </b><br>(You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script><a href="javascript:return false;" onclick="showToolTip(this);return false;" title="All intermediate steps should be truncated (not rounded) to 6 decimal places.  All final answers should be truncated (not rounded) at 3 decimal places.">Round appropriately</a>
+ )<br>
+	<p></p>
+	<table style="width:100%"><tbody><tr><td></td></tr></tbody></table> <!-- Hard break in page -->
+
+	<table class="hw">
+		<tbody><tr id="2.step1r">	<!-- step?r row. Used for scrolling -->
+			<td class="hwc1">
+				Step 1<br>(<a href="#" onclick="showToolTip(this);" title="Find the intersection of R of S">hint</a>):
+			</td>
+			<td class="hwc2">
+				Let (<equ>A,B</equ>)=(<input id="2.step2.a" class="c7">,<input id="2.step2.b" class="c7">)	<!-- step?.a-z for each input step -->
+				<div id="2.step1h" class="hidden">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1b.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1c.jpg"><br>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step1", "_2", "visible");</script><button id="2.step1" class="visible" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step1c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step1x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step2r">	<!-- step?r row. Used for scrolling -->
+			<td class="hwc1">
+				Step 2<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of R.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral">hint</a>):  
+			</td>
+			<td class="hwc2">
+				<script>
+					drawInt("<input class=c1 id=2.step2.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=2.step2.b class=c1></input>",
+							"<input id=2.step2.c class=c4></input>&minus;<input id=2.step2.d class=c4></input>", "dx");
+				</script><span class="integral">∫<span class="lowbound"><input class="c1" id="2.step2.a"></span><span class="upbound"><input id="2.step2.b" class="c1"></span><span class="function"><equ> <input id="2.step2.c" class="c4">−<input id="2.step2.d" class="c4"> dx</equ></span></span>
+
+				<equ>=&nbsp;<input id="2.step2.e" class="c7"></equ>
+				<div id="2.step2h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) &gt; f(x) on [0,a].</errmsg>  
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step2", "_2", "hidden");</script><button id="2.step2" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step2c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step2x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step3r">	<!-- step?r  row Used for scrolling -->
+			<td class="hwc1">
+				Step 3<br>(<a href="#" onclick="showToolTip(this);" title="Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral">hint</a>):  
+			</td>
+			<td class="hwc2">
+				<script>
+					drawInt("<input id=2.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
+							"<input id=2.step3.b class=c1></input>",
+							"<input id=2.step3.c class=c4></input>&minus;<input id=2.step3.d class=c4></input>", "dx");
+				</script><span class="integral">∫<span class="lowbound"><input id="2.step3.a" class="c1"></span><span class="upbound"><input id="2.step3.b" class="c1"></span><span class="function"><equ> <input id="2.step3.c" class="c4">−<input id="2.step3.d" class="c4"> dx</equ></span></span>
+
+				<equ>=&nbsp;<input id="2.step3.e" class="c7"></equ>
+				<div id="2.step3h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) &gt; g(x) on [a,2].</errmsg>  
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step3", "_2", "hidden");</script><button id="2.step3" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step3c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step3x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id="2.step4r" class="">	<!-- step?r  row Used for scrolling -->
+			<td class="hwc1">Answer:</td>
+			<td class="hwc2">
+				<input id="2.step2.a" class="c5">
+				<div id="2.step4h" class="hidden">										<!-- step?h hidden solution -->
+					<errmsg>The area of R + S = 2.004</errmsg>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("2.step4", "_2", "hidden");</script><button id="2.step4" class="hidden" onclick="_2.validate(this);" title="click to check your answer">✔</button>
+<img id="2.step4c" class="vImg hidden" src="../images/greenCheck.jpg">
+<img id="2.step4x" class="vImg hidden" src="../images/redX.jpg">
+
+ <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr>
+			<td class="hwc1">Score:</td>
+			<td id="2.score"></td>
+			<td></td>
+		</tr>
+	</tbody></table>
+	<h2>Turn in your Assignment</h2>
+	<button onclick="submitScores('Chapter 9.1');">Submit Scores</button>
+	<br><br>
+</b></div><b>
+
+<script>buildMenu();</script>
+<div id="referenceDropDown">
+	<input id="otrefs" type="checkbox" checked="" onclick="referencesClicked(&quot;oref&quot;, this);"><label>Old Testament</label><br>
+	<input id="grefs" type="checkbox" checked="" onclick="referencesClicked(&quot;gref&quot;, this);"><label>Gospels</label><br>
+	<input id="ntrefs" type="checkbox" checked="" onclick="referencesClicked(&quot;nref&quot;, this);"><label>Acts &amp; Epistles&nbsp;&nbsp;</label><br>
+	<input id="revrefs" type="checkbox" checked="" onclick="referencesClicked(&quot;rref&quot;, this);"><label>Revelation</label><br>
+	
+</div>
+
+
+<div id="menu">
+	<div class="item">
+		<img class="rt" src="../images/r.png" href="" onclick="bClick(this)">
+		<img class="dn" src="../images/d.png" href="" onclick="bClick(this)">
+		<a href="#" onclick="bClick(this)">Chapter 1 Limits</a> <span id="menuX" onclick="closeMenu();">x</span>
+		<div class="items">
+			<a class="menuItem" href="../Ch1.01">Area between 2 Curves</a>
+		</div>
+	</div>
+
+	<div class="item">
+		<img class="rt" src="../images/r.png" href="" onclick="bClick(this)">
+		<img class="dn" src="../images/d.png" href="" onclick="bClick(this)">
+		<a href="#" onclick="bClick(this)">Chapter 2 Derivatives</a>
+		<div class="items">
+			<a class="menuItem" href="../Ch2.01">Area between 2 Curves</a>
+		</div>
+	</div>
+
+	<div class="item">
+		<img class="rt" src="../images/r.png" href="" onclick="bClick(this)">
+		<img class="dn" src="../images/d.png" href="" onclick="bClick(this)">
+		<a href="#" onclick="bClick(this)">Chapter 3</a>
+		<div class="items">
+			<a class="menuItem" href="../Ch3.01">Applications of Derivatives</a>
+		</div>
+	</div>
+
+	<div class="item">
+		<img class="rt" src="../images/r.png" href="" onclick="bClick(this)">
+		<img class="dn" src="../images/d.png" href="" onclick="bClick(this)">
+		<a href="#" onclick="bClick(this)">Chapter 4 Integrals</a>
+		<div class="items">
+			<a class="menuItem" href="../Ch4.01">Integrate</a>
+		</div>
+	</div>
+
+	<div class="item">
+		<img class="rt" src="../images/r.png" href="" onclick="bClick(this)">
+		<img class="dn" src="../images/d.png" href="" onclick="bClick(this)">
+		<a href="#" onclick="bClick(this)">Chapter 5 Applications of Integrals</a>
+		<div class="items">
+			<a class="menuItem" href="../Ch5.01">Area between 2 Curves</a>
+		</div>
+	</div>
+
+</div>
+
+ <!-- Build Common Menu -->
+
+</b></body></html>

@@ -78,11 +78,8 @@ td.evalUB { font-size:smaller; vertical-align: top; 	border-left-style:solid; bo
 td.evalMB { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center}
 td.evalLB { font-size:smaller; vertical-align: bottom; 	border-left-style:solid; border-left-width:1px; text-align:center}
 
-span.root{
-}
-span.rootBody{
-  border-top-style:solid;
-}
+span.root{}
+span.rootBody{  position: relative; border-top-style:solid; }
 
 .bigIdea { background-color: lightGray }
 /* smartphones, touchscreens */
@@ -102,7 +99,8 @@ span.rootBody{
 	
 	.vImg { width:60px; }
 	
-	input 	 { height:45px; }
+	input 	 { height:45px; border-style:solid;}
+	
 	input.c1 { width:30px;	}
 	input.c2 { width:50px;}
 	input.c3 { width:70px;}
@@ -111,6 +109,9 @@ span.rootBody{
 	input.c6 { width:130px; }
 	input.c7 { width:150px; }
 	
+	table.eval { display:inline; border-collapse:collapse; position:relative; top:-15px; margin:0px; padding-left:0px; font-size:35px;}
+	table.frac { display:inline; border-collapse:collapse; position:relative; top:-15px; margin:0px; padding:0px;}
+	span.rootBody{ top:5px; }
 
 	
 	.bigintegral 		   { font-family:Times New Roman; font-size: 175%; top:-5px; padding:20px 0px 20px; display:inline-block; position:relative;}	

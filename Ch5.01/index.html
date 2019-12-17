@@ -100,18 +100,18 @@
 		// Validator for problem 2
 		var _2 = new Object();
 			_2.score=0;
-			_2.step1a="1.03283";
-			_2.step1b="2.40110";
+			_2.step1a="1.032832";
+			_2.step1b="2.401108";
 			_2.step2a="0";
 			_2.step2b="A";
 			_2.step2c="g";
 			_2.step2d="f";
-			_2.step2e=".99742";
+			_2.step2e=".997427";
 			_2.step3a="A";
 			_2.step3b="2";
 			_2.step3c="f";
 			_2.step3d="g";
-			_2.step3e="1.00691";
+			_2.step3e="1.006919";
 			_2.step4a="2.004";
 			_2.showStep = function showStep(aDiv)
 			{
@@ -550,9 +550,7 @@
 		<br><br>Notice that you could integrate with respect to "x" by breaking the problem into two parts(since f(x) and g(x) only exist on separate domains. 
 		<script>drawInt("1","A","f(x)", "dx");</script> + <script>drawInt("A","5","g(x)", "dx");</script>
 		
-		<table width="100%"><tr><td></td></tr></table>
 		<br>
-		<img class="floatRight fixedWidth" src="2012.2.b.jpg">
 		However you are going to solve it by integrating with respect to "y".  <br>
 		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
 		
@@ -562,7 +560,7 @@
 	<table class=hw >
 		<tr id=_3.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
-				Step 1<br>
+				Step&nbsp;1<br>
 				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
 			</td>
 			<td class=hwc2>
@@ -579,11 +577,11 @@
 		</tr>
 		<tr id=_3.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
-				Step 2<br>
+				Step&nbsp;2<br>
 				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so q(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>q(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1>)</sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
+				Let <equ>q(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
 				<div id=_3.step2h class="hidden">										<!-- step?h hidden solution -->
 					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
@@ -594,7 +592,7 @@
 		</tr>
 		<tr id=_3.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
-				Step 2<br>
+				Step&nbsp;3<br>
 				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so r(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
@@ -609,7 +607,7 @@
 		</tr>
 		<tr id=_3.step4r>	<!-- step4r row. Used for scrolling -->
 			<td class=hwc1>
-				Step 4<br>
+				Step&nbsp;4<br>
 				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), q(y)-r(y) or r(y)-q(x), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>

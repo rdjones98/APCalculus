@@ -30,10 +30,10 @@ function buildMenu()
 {
 var out =`
 <div id=referenceDropDown>
-	<input id='otrefs' 	type='checkbox' checked onclick='referencesClicked("oref", this);'><label>Old Testament</label><br>
-	<input id='grefs' 	type='checkbox' checked onclick='referencesClicked("gref", this);'><label>Gospels</label><br>
-	<input id='ntrefs' 	type='checkbox' checked onclick='referencesClicked("nref", this);'><label>Acts & Epistles&nbsp;&nbsp;</label><br>
-	<input id='revrefs' type='checkbox' checked onclick='referencesClicked("rref", this);'><label>Revelation</label><br>
+	<input id='otrefs' 	type='checkbox' checked onclick='referencesClicked("oref", this);'><label></label><br>
+	<input id='grefs' 	type='checkbox' checked onclick='referencesClicked("gref", this);'><label></label><br>
+	<input id='ntrefs' 	type='checkbox' checked onclick='referencesClicked("nref", this);'><label></label><br>
+	<input id='revrefs' type='checkbox' checked onclick='referencesClicked("rref", this);'><label></label><br>
 	</tr>
 </div>
 

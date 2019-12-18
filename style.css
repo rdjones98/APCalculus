@@ -82,6 +82,9 @@ span.root{}
 span.rootBody{  position: relative; border-top-style:solid; }
 
 .bigIdea { background-color: lightGray }
+
+
+sup {font-size:15px;}
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {
@@ -130,8 +133,8 @@ span.rootBody{  position: relative; border-top-style:solid; }
 {
 	.bigintegral 		   { font-family:Times New Roman; font-size: 200%; top:5px; padding:20px 0px 20px; display:inline-block; position:relative;}	
 	.bigintegral .lowbound { font-size: 50%;  top:3px;   left: 0px; position:relative; }
-	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-5px; position:relative;}
-	.bigintegral .function { font-size: 75%;  top:-5px;  left:-3px; position:relative;}
+	.bigintegral .upbound  { font-size: 50%;  top:-20px; left:-10px; position:relative;}
+	.bigintegral .function { font-size: 75%;  top:-5px;  left:-10px; position:relative;}
 
 	.integral 			{ font-family:Times New Roman; font-size: 150%; top:5px; 			position:relative;}
 	.integral .lowbound { font-size: 50%;  top:5px;   left: 0px; position:relative;}

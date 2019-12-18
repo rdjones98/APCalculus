@@ -88,9 +88,14 @@ function buildExp(base,exp)
 	var out = "<span>" + base + "</span><sup>" +exp + "</sup>";
 	return out;
 }
-function drawFrac(num,den)
+function buildFrac(num,den)
 {
 	var out = "<table class=frac><tr><td class=fracNum><equ>" + num + "</equ></td></tr><tr><td class=fracDen><equ>" + den + "</equ></td></tr></table>";
+	return out;
+}
+function drawFrac(num,den)
+{
+	var out = buildFrac(num,den);
 	document.writeln(out);
 }
 function drawEval(lb, ub)

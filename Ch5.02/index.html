@@ -291,22 +291,37 @@
 	</script>
 </head>
 <body>
-<script>buildHeader("Chapter 9");</script><!-- Build Common Header -->
+<script>buildHeader("Chapter 5.2 Volume given a Cross Section");</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
-	<H2>Topic: Area between 2 Curves.</H2><BR>
+	<H2>Topic: Volume for a given Cross Section.</H2><BR>
 	
 	<div class=bigIdea>
-		<B>Big Idea:  Area between 2 Curves is found by:</B> <br>
-			<script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","[ Top &minus; Bottom ]", "dx");</script><br>
-			or<br>
-			<script>drawBigInt("y<sub>1</sub>","y<sub>2</sub>","[ Right &minus; Left ]", "dy");</script><br>
+		<B>Big Idea:  Volume is the integral of a middle school area Formula:</B> <br>
+			Square:  <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","s<sup>2</sup>", "dx");</script><equ>=</equ> <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+			Triangle: <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "bh", "dx");</script><equ>=</equ> <script>drawFrac("1","2")</script> <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+			Semi-Circle: <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "&pi;r<sup>2</sup>", "dx");</script><equ>=</equ> <script>drawFrac("1","2")</script>&pi;<script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", "[" + buildFrac("f(x) &minus; g(x)",2) + "]" + "<sup>2</sup>" , "dx");</script><br>
 	</div>
 	<p>
-		<img class="floatLeft fixedWidth" src="lesson.area.1.jpg" >
-			From middle school math we can see that the area (b*h) of this rectangle is 8.&nbsp;&nbsp;
-			From Calculus we know that we can find the area using the definite integral: 
-			<br><script>drawInt("-1","3","f(x)","dx");</script> = 8 as well.
+			In the previous section we learned how to find the area between two curves.  
+			We are now going to build Geometric shapes (Triangles, Rectangles, Semi-circles, etc.) 
+			on top of that base and find the volume of the resulting solid.<br><br>
+
+			<img class="floatLeft fixedWidth" src="lesson.1.jpg" >
+			<b>For example:</b>  What is the volume of the solid whose base is bounded by <equ>f(x) = 2<script>drawRoot("x");</script> 
+			and g(x) = <script>drawFrac("1","4")</script>x<sup>2</sup></equ> and whose cross sections are squares.
+			<br>First off it is helpful to visualize what is happening.  In the picture you can see the base of the solid is 
+			formed by f(x) and g(x).  The distance between them at any point [&nbsp;<equ>f(x)&nbsp;&minus;&nbsp;g(x)</equ>&nbsp;] 
+			along the graph is the width of each square.
+			<br><br>
+			For the example above, since the shape is a square <equ>h</equ> would also be <equ>f(x)&nbsp;&minus;&nbsp;g(x)</equ>, so our equation would be:<br>
+			<equ>V = </equ><script>drawInt("0", "4", "&beta;<sup>2</sup>","dx");</script> = <script>drawInt("0", "4", "[ f(x)-g(x) ]<sup>2</sup>","dx");</script>
+			<br><br>
+			Some general equations are:<br>
+			Square: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>", "&beta;<sup>2</sup>","dx");</script><br>
+			Right Triangle: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>",  buildFrac("1","2") +"&beta;<sup>2</sup>","dx");</script><br>
+			Semi-Circle: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>", buildFrac("1","2") + "&pi;(" + buildFrac("&beta;","2") + ")<sup>2</sup>","dx");</script><br>
+			
 	</p>
 	
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
@@ -318,11 +333,11 @@
 		Obviously the area is still 8, but:<br>  
 		<script>drawInt("-1","3","f(x)","dx");</script><equ> = </equ><script>drawInt("-1","3","3","dx");</script><equ> = 3x</equ> <script>drawEval("-1","3");</script><equ> = 3(3) &minus; 3(-1) = 12</equ><br>
 		So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
-		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","[ Top &minus; Bottom ]", "dx");</script><br>otherwise written as<br>
-		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) - g(x) ]","dx");</script><br>
+		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","( Top &minus; Bottom )", "dx");</script><br>otherwise written as<br>
+		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","f(x) - g(x)","dx");</script><br>
 		However, because g(x) has been the x axis for every integral up until now, we have just ignored it.
 		So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ> which gives us:<br>
-		<span class=padLeft20 /><script>drawBigInt("-1","3","[3 - 1]","dx = ");</script><script>drawBigInt("-1","3","2","dx = 8")</script><br>.
+		<span class=padLeft20 /><script>drawBigInt("-1","3","3 - 1","dx = ");</script><script>drawBigInt("-1","3","2","dx = 8")</script><br>.
 		
 	</p>
 
@@ -337,7 +352,7 @@
 		</li>
 		<li>Determine which equation is bigger (on top)<br>
 			(If you have multiple intervals the equations may swap)<br>
-			 In the example at right g(x) is bigger so our integral is <script>drawInt("-2","2","[ g(x) &minus; f(x) ]","dx")</script>
+			 In the example at right g(x) is bigger so our integral is <script>drawInt("-2","2","g(x) &minus; f(x)","dx")</script>
 		</li>
 		<li>Integrating we get ( <script>drawFrac("-1","12")</script><equ>x<sup>3</sup>&plus;3x</equ> ) &minus; ( <script>drawFrac( "1","3") </script><equ>x<sup>3</sup>&minus;2x</equ> ) <script>drawEval("-2","2");</script><br>
 			Combining like terms <script>drawFrac( "-5","12") </script><equ>x<sup>3</sup>+5</equ> <script>drawEval("-2","2");</script><br>
@@ -387,7 +402,7 @@
 				<script>
 					drawInt("<input class=c1 id=_1.step2.a ></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_1.step2.b class=c1></input>",
-							"[ <input id=_1.step2.c class=c1></input>(x) &minus; <input id=_1.step2.d class=c1></input>(x) ]", "dx");
+							"<input id=_1.step2.c class=c1></input>(x) &minus; <input id=_1.step2.d class=c1></input>(x)", "dx");
 				</script>
 				<equ> = <input id="_1.step2.e" class=c4></input></equ>
 				<div id=_1.step2h class="hidden">										<!-- step?h hidden solution -->
@@ -446,7 +461,7 @@
 				<script>
 					drawInt("<input class=c1 id=_2.step2.a ></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_2.step2.b class=c1></input>",
-							"[ <input id=_2.step2.c class=c1></input>(x) &minus; <input id=_2.step2.d class=c1></input>(x) ]", "dx");
+							"<input id=_2.step2.c class=c1></input>(x) &minus; <input id=_2.step2.d class=c1></input>(x)", "dx");
 				</script>
 				<equ>=&nbsp;<input id="_2.step2.e" class=c7></input></equ>
 				<div id=_2.step2h class="hidden">										<!-- step?h hidden solution -->
@@ -466,7 +481,7 @@
 				<script>
 					drawInt("<input id=_2.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_2.step3.b class=c1></input>",
-							"[ <input id=_2.step3.c class=c1></input>(x) &minus; <input id=_2.step3.d class=c1></input>(x) ]", "dx");
+							"<input id=_2.step3.c class=c1></input>(x) &minus; <input id=_2.step3.d class=c1></input>(x)", "dx");
 				</script>
 				<equ>=&nbsp;<input id="_2.step3.e" class=c7></input></equ>
 				<div id=_2.step3h class="hidden">										<!-- step?h hidden solution -->
@@ -513,7 +528,7 @@
 		<BR>
 		<img class="fixedwidth floatRight" src="lesson.area.4c.jpg">
 		<B>Option 2: </B>Solve each equation for x and integrate with respect to "y".<br>
-					<span class=padLeft20 /><script>drawInt("y<sub>1</sub>","y<sub>2</sub>","[ Right &minus; Left ]", "dy");</script><br>
+					<span class=padLeft20 /><script>drawInt("y<sub>1</sub>","y<sub>2</sub>","( Right &minus; Left )", "dy");</script><br>
 					(This may seem more difficult but its an important AP skill and its how we are going to solve this problem.)<br>
 		<B>Process:</B>
 		<ol>
@@ -522,8 +537,7 @@
 				<equ>y = (x &minus; 1)<sup>2</sup></equ> becomes <equ>x = &plusmn;<script>drawRoot("y")</script> &plus; 1</equ> 
 			</li>
 			<li>
-				Instead of <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","[ top &minus; bottom ]","dx")</script> you are going to 
-				<script>drawInt("y<sub>1</sub>","y<sub>2</sub>","[ right &minus; left ]","dy")</script> (Notice the bounds have changed)<br>
+				Instead of <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","(top &minus; bottom)","dx")</script> you are going to <script>drawInt("y<sub>1</sub>","y<sub>2</sub>","(right &minus; left)","dy")</script> (Notice the bounds have changed)<br>
 			</li>
 			<li>
 				Let:<br>
@@ -532,7 +546,7 @@
 				     r(y) = &minus;<script>drawRoot("y");</script> &plus; 1
 				</equ> (&minus; because of domain for g(x))<br>
 				
-				<script>drawInt("0","B","[ r(y) &minus; q(y) ]","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
+				<script>drawInt("0","B","r(y) &minus; q(y)","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
 				
 			</li>
 		</ol>
@@ -618,7 +632,7 @@
 				<script>
 					drawInt("<input class=c1 id=_3.step4.a ></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_3.step4.b class=c1></input>",
-							"[ <input id=_3.step4.c class=c1></input>(y) &minus; <input id=_3.step4.d class=c1></input>(y) ]", "dy");
+							"<input id=_3.step4.c class=c1></input>(y) &minus; <input id=_3.step4.d class=c1></input>(y)", "dy");
 				</script>
 				<equ>=&nbsp;<input id="_3.step4.e" class=c5></input></equ>
 				<div id=_3.step4h class="hidden">										<!-- step?h hidden solution -->

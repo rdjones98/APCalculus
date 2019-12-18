@@ -81,6 +81,7 @@ var out =`
 		<a href=# onclick='bClick(this)'>Chapter 5 Applications of Integrals</a>
 		<div class='items'>
 			<a class='menuItem' href='../Ch5.01'>Area between 2 Curves</a>
+			<a class='menuItem' href='../Ch5.02'>Volume given Cross Section</a>
 		</div>
 	</div>
 

@@ -14,11 +14,18 @@
 			_1.score=0;
 			_1.step1a=".238734";
 			_1.step1b=".488604";
-			_1.step2a="A";
-			_1.step2b="1";
-			_1.step2c="f";
-			_1.step2d="g";
-			_1.step2e=".442";
+			_1.step2a="f";
+			_1.step2b="g";
+			_1.step3a="5";
+			_1.step3b="f";
+			_1.step3c="g";
+			_1.step4a="5";
+			_1.step4b="f";
+			_1.step4c="g";
+			_1.step4d="2";
+			_1.step5a="A";
+			_1.step5b="1";
+			_1.step5c="1.554";
 			_1.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -41,58 +48,70 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 50;
+						this.score = this.score + 20;
 					show("_1.step2" );	// make next step visible
 				}
 				else if( aStep == "_1.step2" )
 				{
-					if (( document.getElementById("_1.step2.a").value != this.step2a )|| 
-						( document.getElementById("_1.step2.b").value.toUpperCase() != this.step2b ) ||
-						( document.getElementById("_1.step2.c").value.toLowerCase() != this.step2c ) ||
-						( document.getElementById("_1.step2.d").value.toLowerCase() != this.step2d ) ||
-						( document.getElementById("_1.step2.e").value != this.step2e ))
+					if (( document.getElementById("_1.step2.a").value.toLowerCase() != this.step2a )|| 
+						( document.getElementById("_1.step2.b").value.toLowerCase() != this.step2b ))
 					{
 						setVal("_1.step2.a",this.step2a);
 						setVal("_1.step2.b",this.step2b);
-						setVal("_1.step2.c",this.step2c);
-						setVal("_1.step2.d",this.step2d);
-						setVal("_1.step2.e",this.step2e);
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 50;
+						this.score = this.score + 20;
 					show( "_1.step3" );		// make next step visible
 				}
 				else if( aStep == "_1.step3" )
 				{
 					if (( document.getElementById("_1.step3.a").value != this.step3a ) ||
-						( document.getElementById("_1.step3.b").value.toUpperCase() != this.step3b ) ||
-						( document.getElementById("_1.step3.c").value != this.step3c ) ||
-						( document.getElementById("_1.step3.d").value != this.step3d ) ||
-						( document.getElementById("_1.step3.e").value != this.step3e ))
+						( document.getElementById("_1.step3.b").value.toLowerCase() != this.step3b ) ||
+						( document.getElementById("_1.step3.c").value.toLowerCase() != this.step3c ))
 					{
 						setVal("_1.step3.a",this.step3a);
 						setVal("_1.step3.b",this.step3b);
 						setVal("_1.step3.c",this.step3c);
-						setVal("_1.step3.d",this.step3d);
-						setVal("_1.step3.e",this.step3e);
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 20;
 						
 					show("_1.step4");		// make next step visible
 				}
 				else if( aStep == "_1.step4" )
 				{
-					if(	document.getElementById("_1.step4.a").value != this.step4a )
+					if (( document.getElementById("_1.step4.a").value != this.step4a ) ||
+						( document.getElementById("_1.step4.b").value.toLowerCase() != this.step4b ) ||
+						( document.getElementById("_1.step4.c").value.toLowerCase() != this.step4c ) ||
+						( document.getElementById("_1.step4.d").value != this.step4d ))
 					{
-						setVal( "_1.step4.a", this.step4a );
-						this.showStep(aStep);
+						setVal("_1.step4.a",this.step4a);
+						setVal("_1.step4.b",this.step4b);
+						setVal("_1.step4.c",this.step4c);
+						setVal("_1.step4.d",this.step4d);
+						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 25;
-					
+						this.score = this.score + 20;
+						
+					show("_1.step5");		// make next step visible
+				}
+				else if( aStep == "_1.step5" )
+				{
+					if (( document.getElementById("_1.step5.a").value.toUpperCase() != this.step5a ) ||
+						( document.getElementById("_1.step5.b").value != this.step5b ) ||
+						( document.getElementById("_1.step5.c").value != this.step5c ))
+					{
+						setVal("_1.step5.a",this.step5a);
+						setVal("_1.step5.b",this.step5b);
+						setVal("_1.step5.c",this.step5c);
+						this.showStep(aStep);		
+					}
+					else
+						this.score = this.score + 20;
+						
 				}
 				document.getElementById( "1.score").innerHTML=this.score;
 			}
@@ -102,17 +121,12 @@
 			_2.score=0;
 			_2.step1a="1.032832";
 			_2.step1b="2.401108";
-			_2.step2a="0";
-			_2.step2b="A";
-			_2.step2c="g";
-			_2.step2d="f";
-			_2.step2e=".997427";
+			_2.step2a="f";
+			_2.step2b="g";
+			_2.step2c="2";
 			_2.step3a="A";
 			_2.step3b="2";
-			_2.step3c="f";
-			_2.step3d="g";
-			_2.step3e="1.006919";
-			_2.step4a="2.004";
+			_2.step3c="1.283";
 			_2.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -135,57 +149,38 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 33;
 					show("_2.step2" );	// make next step visible
 				}
 				else if( aStep == "_2.step2" )
 				{
 					if (( document.getElementById("_2.step2.a").value != this.step2a )|| 
-						( document.getElementById("_2.step2.b").value.toUpperCase() != this.step2b ) ||
-						( document.getElementById("_2.step2.c").value.toLowerCase() != this.step2c ) ||
-						( document.getElementById("_2.step2.d").value.toLowerCase() != this.step2d ) ||
-						( document.getElementById("_2.step2.e").value != this.step2e ))
+						( document.getElementById("_2.step2.b").value.toUpperCase() != this.step2c ) ||
+						( document.getElementById("_2.step2.c").value != this.step2c ))
 					{
 						setVal("_2.step2.a",this.step2a);
 						setVal("_2.step2.b",this.step2b);
 						setVal("_2.step2.c",this.step2c);
-						setVal("_2.step2.d",this.step2d);
-						setVal("_2.step2.e",this.step2e);
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 33;
 					show( "_2.step3" );		// make next step visible
 				}
 				else if( aStep == "_2.step3" )
 				{
 					if (( document.getElementById("_2.step3.a").value != this.step3a ) ||
 						( document.getElementById("_2.step3.b").value.toUpperCase() != this.step3b ) ||
-						( document.getElementById("_2.step3.c").value != this.step3c ) ||
-						( document.getElementById("_2.step3.d").value != this.step3d ) ||
-						( document.getElementById("_2.step3.e").value != this.step3e ))
+						( document.getElementById("_2.step3.c").value != this.step3c ))
 					{
 						setVal("_2.step3.a",this.step3a);
 						setVal("_2.step3.b",this.step3b);
 						setVal("_2.step3.c",this.step3c);
-						setVal("_2.step3.d",this.step3d);
-						setVal("_2.step3.e",this.step3e);
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 34;
 						
-					show("_2.step4");		// make next step visible
-				}
-				else if( aStep == "_2.step4" )
-				{
-					if(	document.getElementById("_2.step4.a").value != this.step4a )
-					{
-						setVal( "_2.step4.a", this.step4a );
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
 				}
 				document.getElementById( "2.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
@@ -340,45 +335,23 @@
 			formed by f(x) and g(x).  The distance between them at any point [&nbsp;<equ>f(x)&nbsp;&minus;&nbsp;g(x)</equ>&nbsp;] 
 			along the graph is the width of each square. (And also the height since it IS a square)
 			<br><br>
-			Therefore our equation would be: 
-			<equ>V = </equ><script>drawInt("0", "4", "[ f(x) &minus; g(x) ]<sup>2</sup>","dx");</script> <equ> = 5.333 u<sup>3</sup></equ>
+			Therefore the area of each square <equ>A<sub>square</sub> = [ f(x) &minus; g(x) ]<sup>2</sup></equ> and the volume of the solit build by those squares is:<br>
+			<equ>V = </equ><script>drawInt("0", "4", "[A<sub>square</sub>]","dx");</script><equ> = </equ><script>drawInt("0", "4", "[ f(x) &minus; g(x) ]<sup>2</sup>","dx");</script> <equ> = 5.333 u<sup>3</sup></equ>
 			<br><br>
 			
 	</p>
 	
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 	
-	<p>
-		<img class="floatRight fixedWidth" src="lesson.area.2.jpg">
-		
-		What may not be as obvious is what happens when we translate the rectangle.
-		Obviously the area is still 8, but:<br>  
-		<script>drawInt("-1","3","f(x)","dx");</script><equ> = </equ><script>drawInt("-1","3","3","dx");</script><equ> = 3x</equ> <script>drawEval("-1","3");</script><equ> = 3(3) &minus; 3(-1) = 12</equ><br>
-		So what are we missing?  It turns out that <b>ALL</b> integrals are actually of the form:<br>
-		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","( Top &minus; Bottom )", "dx");</script><br>otherwise written as<br>
-		<span class=padLeft20 /><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","f(x) - g(x)","dx");</script><br>
-		However, because g(x) has been the x axis for every integral up until now, we have just ignored it.
-		So looking at this graph we have <equ>f(x)=3</equ> and <equ>g(x)=1</equ> which gives us:<br>
-		<span class=padLeft20 /><script>drawBigInt("-1","3","3 - 1","dx = ");</script><script>drawBigInt("-1","3","2","dx = 8")</script><br>.
-		
-	</p>
 
 	<h2>General Process:</h2>
 
-	<img class="floatRight fixedWidth" src=lesson.area.3.jpg>
-
 	<ol>
 		<li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
-			In the example on the right we can see that the bounds are [-2,2].<br>
-			If you did not have a graph you would solve <equ>f(x)=g(x)</equ> algebraically.
 		</li>
-		<li>Determine which equation is bigger (on top)<br>
-			(If you have multiple intervals the equations may swap)<br>
-			 In the example at right g(x) is bigger so our integral is <script>drawInt("-2","2","g(x) &minus; f(x)","dx")</script>
+		<li>Determine which equation is bigger.  
 		</li>
-		<li>Integrating we get ( <script>drawFrac("-1","12")</script><equ>x<sup>3</sup>&plus;3x</equ> ) &minus; ( <script>drawFrac( "1","3") </script><equ>x<sup>3</sup>&minus;2x</equ> ) <script>drawEval("-2","2");</script><br>
-			Combining like terms <script>drawFrac( "-5","12") </script><equ>x<sup>3</sup>+5</equ> <script>drawEval("-2","2");</script><br>
-			Evaluating over the domain [-2,2]: <script>drawFrac("40","3")</script> u<sup>2</sup>.
+		<li>Pick the appropriate Area formula and use <equ>[f(x) &minus; g(x)] or [g(x) &minus; f(x)]</equ> as your base (and potentialy your height)<br>
 		</li>
 	</ol> 
 
@@ -392,12 +365,14 @@
 		<img class="fixedwidth floatLeft" src="2003.1.jpg">
 		<H3>2003 AP<sup>&copy;</sup> Calculus AB.  Problem # 1.</H3><BR>
 		Let R be the shaded region bounded by the graphs of <equ>f(x)=<script>drawRoot('x');</script></equ> and <equ>g(x)=e<sup>-3x</sup></equ> and the vertical line x = 1.<br>
-		<b>Find the area of R.  (You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )</b><br><br>
+		<br>
+		The region R is the base of a solid.  For this solid, each cross section perpendicular to the x-axis is a rectangle whose height is 5 times the length of its base in region R.
+		<b>Find the volume of this solid.</b>  (You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )</b><br><br>
 	</p>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
 	<table class=hw >
-		<tr id=_1.step1r>	<!-- step?r row. Used for scrolling -->
+		<tr id=_1.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step 1<br>
 				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
@@ -415,24 +390,77 @@
 				<script>drawValidate("_1", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_1.step2r>	<!-- step?r row. Used for scrolling -->
+
+		<tr id=_1.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step 2<br>
-				(<script>buildToolTip("Find the Area of R.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("Define the base of the rectangle as [f(x) &minus; g(x)] or [g(x) &minus; f(x)] (Biggest first)", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>b = <input id=_1.step2.a class=c1>(x) &minus; <input id=_1.step2.b class=c1>(x)</equ>	<!-- step?.a-z for each input step -->
+				<div id=_1.step2h class="hidden">													<!-- step?h hidden solution -->
+					b = f(x) - g(x)
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_1", "step2", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_1.step3r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 3<br>
+				(<script>buildToolTip("Define the height using [f(x) &minus; g(x)] or [g(x) &minus; f(x)]", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>h = <input id=_1.step3.a class=c1>[<input id=_1.step3.b class=c1>(x) &minus; <input id=_1.step3.c class=c1>(x)]</equ>	<!-- step?.a-z for each input step -->
+				<div id=_1.step3h class="hidden">													<!-- step?h hidden solution -->
+					h = 5[f(x) - g(x)]
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_1", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_1.step4r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 4<br>
+				(<script>buildToolTip("Area = bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>rect</sub> = <input id=_1.step4.a class=c1>[<input id=_1.step4.b class=c1>(x) &minus; <input id=_1.step4.c class=c1>(x)]<sup><input id=_1.step4.d class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_1.step4h class="hidden">													<!-- step?h hidden solution -->
+					h = 5[f(x) - g(x)]<sup>2</sup>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_1", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+
+		<tr id=_1.step5r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 5<br>
+				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_1.step2.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_1.step2.b class=c1></input>",
-							"<input id=_1.step2.c class=c1></input>(x) &minus; <input id=_1.step2.d class=c1></input>(x)", "dx");
+					drawInt("<input class=c1 id=_1.step5.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_1.step5.b class=c1></input>",
+							"A<sub>rect</sub>", "dx");
 				</script>
-				<equ> = <input id="_1.step2.e" class=c4></input></equ>
-				<div id=_1.step2h class="hidden">										<!-- step?h hidden solution -->
+				<equ> = <input id="_1.step5.c" class=c5></input></equ>
+				<div id=_1.step5h class="hidden">										<!-- step?h hidden solution -->
 					<errMsg>The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_1", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
 		<tr>
@@ -452,7 +480,8 @@
 		<equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
 		Let R and S be the two regions enclosed by the graphs of f and g shown in the figure at left. 
 		<br>
-		<b>Find the sum of the areas of regions R and S </b><br>(You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )<br>
+			Region S is the base of a solid whose cross sections perpendicular to the x-axis are squares.  
+			<b>Find the Volume of the solid.</b><br>(You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )<br>
 	</p>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
@@ -480,14 +509,9 @@
 				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				<script>
-					drawInt("<input class=c1 id=_2.step2.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_2.step2.b class=c1></input>",
-							"<input id=_2.step2.c class=c1></input>(x) &minus; <input id=_2.step2.d class=c1></input>(x)", "dx");
-				</script>
-				<equ>=&nbsp;<input id="_2.step2.e" class=c7></input></equ>
+				<equ>A<sub>rect</sub> = [<input id=_2.step2.a class=c1>(x) &minus; <input id=_2.step2.b class=c1>(x)]<sup><input id=_2.step2.c class=c1></sup>
 				<div id=_2.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
+					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
 				</div>
 			</td>
 			<td>
@@ -497,33 +521,21 @@
 		<tr id=_2.step3r>	<!-- step?r  row Used for scrolling -->
 			<td class=hwc1>
 				Step 3<br>
-				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
 					drawInt("<input id=_2.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_2.step3.b class=c1></input>",
-							"<input id=_2.step3.c class=c1></input>(x) &minus; <input id=_2.step3.d class=c1></input>(x)", "dx");
+							"A<sub>rect</sub>", "dx");
 				</script>
-				<equ>=&nbsp;<input id="_2.step3.e" class=c7></input></equ>
+				<equ>=&nbsp;<input id="_2.step3.c" class=c7></input></equ>
 				<div id=_2.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,2].</errMsg>  
+					<errMsg>The bounds of S are from A to 2.</errMsg>  
 				</div>
 			</td>
 			<td>
 				<script>drawValidate("_2", "step3", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_2.step4r class>	<!-- step?r  row Used for scrolling -->
-			<td class=hwc1>Answer</td>
-			<td class=hwc2>
-				Total Area:  <input id=_2.step2.a class=c5></input>
-				<div id=_2.step4h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The area of R + S = 2.004</errMsg>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_2", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
 		<tr>

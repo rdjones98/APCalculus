@@ -298,9 +298,35 @@
 	
 	<div class=bigIdea>
 		<B>Big Idea:  Volume is the integral of a middle school area Formula:</B> <br>
-			Square:  <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","s<sup>2</sup>", "dx");</script><equ>=</equ> <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
-			Triangle: <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "bh", "dx");</script><equ>=</equ> <script>drawFrac("1","2")</script><script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
-			Semi-Circle: <script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "&pi;r<sup>2</sup>", "dx");</script><equ>=</equ> <script>drawFrac("1","2")</script>&pi;<script>drawBigInt("x<sub>1</sub>","x<sub>2</sub>", "[" + buildFrac("f(x) &minus; g(x)",2) + "]" + "<sup>2</sup>" , "dx");</script><br>
+		<table>
+			<tr>
+				<td>Square:</td>
+				<td>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>","s<sup>2</sup>", "dx");</script><equ>=
+				</td>
+				<td>
+					</equ> <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+				</td>
+			</tr>
+			<tr>
+				<td>Triangle:</td>
+				<td>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "bh", "dx");</script><equ>=
+				</td>
+				<td>
+					</equ> <script>drawFrac("1","2")</script><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+				</td>
+			</tr>
+			<tr>
+				<td>Semi-Circle:</td>
+				<td>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "&pi;r<sup>2</sup>", "dx");</script><equ>=
+				</td>
+				<td>
+					</equ> <script>drawFrac("1","2")</script><equ>&pi;</equ><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[" + buildFrac("f(x) &minus; g(x)",2) + "]" + "<sup>2</sup>" , "dx");</script><br>
+				</td>
+			</tr>
+		</table>
 	</div>
 	<p>
 			In the previous section we learned how to find the area between two curves.  
@@ -315,7 +341,7 @@
 			along the graph is the width of each square. (And also the height since it IS a square)
 			<br><br>
 			Therefore our equation would be: 
-			<equ>V = </equ><script>drawInt("0", "4", "[ f(x)-g(x) ]<sup>2</sup>","dx");</script>
+			<equ>V = </equ><script>drawInt("0", "4", "[ f(x) &minus; g(x) ]<sup>2</sup>","dx");</script> <equ> = 5.333 u<sup>3</sup></equ>
 			<br><br>
 			
 	</p>

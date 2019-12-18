@@ -312,15 +312,11 @@
 			and g(x) = <script>drawFrac("1","4")</script>x<sup>2</sup></equ> and whose cross sections are squares.
 			<br>First off it is helpful to visualize what is happening.  In the picture you can see the base of the solid is 
 			formed by f(x) and g(x).  The distance between them at any point [&nbsp;<equ>f(x)&nbsp;&minus;&nbsp;g(x)</equ>&nbsp;] 
-			along the graph is the width of each square.
+			along the graph is the width of each square. (And also the height since it IS a square)
 			<br><br>
-			For the example above, since the shape is a square <equ>h</equ> would also be <equ>f(x)&nbsp;&minus;&nbsp;g(x)</equ>, so our equation would be:<br>
-			<equ>V = </equ><script>drawInt("0", "4", "&beta;<sup>2</sup>","dx");</script> = <script>drawInt("0", "4", "[ f(x)-g(x) ]<sup>2</sup>","dx");</script>
+			Therefore our equation would be: 
+			<equ>V = </equ><script>drawInt("0", "4", "[ f(x)-g(x) ]<sup>2</sup>","dx");</script>
 			<br><br>
-			Some general equations are:<br>
-			Square: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>", "&beta;<sup>2</sup>","dx");</script><br>
-			Right Triangle: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>",  buildFrac("1","2") +"&beta;<sup>2</sup>","dx");</script><br>
-			Semi-Circle: <script>drawInt("x<sub>1</sub>", "x<sub>2</sub>", buildFrac("1","2") + "&pi;(" + buildFrac("&beta;","2") + ")<sup>2</sup>","dx");</script><br>
 			
 	</p>
 	

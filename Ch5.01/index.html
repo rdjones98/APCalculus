@@ -94,7 +94,7 @@
 						this.score = this.score + 25;
 					
 				}
-				document.getElementById( "1.score").innerHTML=this.score;
+				document.getElementById( "_1.score").innerHTML=this.score;
 			}
 
 		// Validator for problem 2
@@ -187,7 +187,7 @@
 					else
 						this.score = this.score + 25;
 				}
-				document.getElementById( "2.score").innerHTML=this.score;
+				document.getElementById( "_2.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
 			}		
 
@@ -277,7 +277,7 @@
 					else
 						this.score = this.score + 25;
 				}
-				document.getElementById( "3.score").innerHTML=this.score;
+				document.getElementById( "_3.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
 			}		
 
@@ -286,7 +286,7 @@
 			scoreQuestion(1, _1.score);
 			scoreQuestion(2, _2.score);
 			scoreQuestion(3, _3.score);
-			submitScores("Chapter 5.1");
+			submitScores("Chapter 5.01 Area Between 2 Curves");
 		}
 	</script>
 </head>
@@ -390,8 +390,8 @@
 							"[ <input id=_1.step2.c class=c1></input>(x) &minus; <input id=_1.step2.d class=c1></input>(x) ]", "dx");
 				</script>
 				<equ> = <input id="_1.step2.e" class=c4></input></equ>
-				<div id=_1.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].</errMsg>  
+				<div id=_1.step2h class="hidden errMsg">										<!-- step?h hidden solution -->
+					The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].
 				</div>
 			</td>
 			<td>
@@ -400,7 +400,7 @@
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=1.score></td>
+			<td id=_1.score></td>
 			<td></td>
 		</tr>
 	</table>
@@ -449,8 +449,8 @@
 							"[ <input id=_2.step2.c class=c1></input>(x) &minus; <input id=_2.step2.d class=c1></input>(x) ]", "dx");
 				</script>
 				<equ>=&nbsp;<input id="_2.step2.e" class=c7></input></equ>
-				<div id=_2.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].</errMsg>  
+				<div id=_2.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+					The bounds of R are from 0 to A.<br>The integral is g(x) - f(x) because g(x) > f(x) on [0,a].
 				</div>
 			</td>
 			<td>
@@ -469,8 +469,8 @@
 							"[ <input id=_2.step3.c class=c1></input>(x) &minus; <input id=_2.step3.d class=c1></input>(x) ]", "dx");
 				</script>
 				<equ>=&nbsp;<input id="_2.step3.e" class=c7></input></equ>
-				<div id=_2.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,2].</errMsg>  
+				<div id=_2.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+					The bounds of S are from A to 2.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,2].
 				</div>
 			</td>
 			<td>
@@ -481,8 +481,8 @@
 			<td class=hwc1>Answer</td>
 			<td class=hwc2>
 				Total Area:  <input id=_2.step2.a class=c5></input>
-				<div id=_2.step4h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The area of R + S = 2.004</errMsg>
+				<div id=_2.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+					The area of R + S = 2.004
 				</div>
 			</td>
 			<td>
@@ -491,7 +491,7 @@
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=2.score></td>
+			<td id=_2.score></td>
 			<td></td>
 		</tr>
 	</table>
@@ -586,8 +586,8 @@
 			</td>
 			<td class=hwc2>
 				Let <equ>q(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_3.step2h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
+				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+					Remember you are solving for x which means there will only be "y" in the result.
 				</div>
 			</td>
 			<td>
@@ -601,8 +601,8 @@
 			</td>
 			<td class=hwc2>
 				Let <equ>r(y) = </equ><input id=_3.step3.a class=c1> &minus; <input id=_3.step3.b class=c1></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_3.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
+				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+					Remember you are solving for x which means there will only be "y" in the result.
 				</div>
 			</td>
 			<td>
@@ -621,8 +621,8 @@
 							"[ <input id=_3.step4.c class=c1></input>(y) &minus; <input id=_3.step4.d class=c1></input>(y) ]", "dy");
 				</script>
 				<equ>=&nbsp;<input id="_3.step4.e" class=c5></input></equ>
-				<div id=_3.step4h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is r(y) - q(y) because r(y) > q(y) on [0,B].</errMsg>  
+				<div id=_3.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+					The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is r(y) - q(y) because r(y) > q(y) on [0,B].
 				</div>
 			</td>
 			<td>
@@ -631,7 +631,7 @@
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=3.score></td>
+			<td id=_3.score></td>
 			<td></td>
 		</tr>
 	</table>

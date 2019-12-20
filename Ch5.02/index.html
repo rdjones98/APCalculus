@@ -7,8 +7,8 @@
 	<script src="../myframework.js"></script>
 	<script src="../mymath.js"></script>
 	<script>
-		setNumProblems(2);  // In mymath.js  Used to compute the average for this assignment
-		
+		setNumProblems(5);  // In mymath.js  Used to compute the average for this assignment
+
 		// Validator for problem 1
 		var _1 = new Object();
 			_1.score=0;
@@ -113,20 +113,20 @@
 						this.score = this.score + 20;
 						
 				}
-				document.getElementById( "1.score").innerHTML=this.score;
+				document.getElementById( "_1.score").innerHTML=this.score;
 			}
-
-		// Validator for problem 2
+		
+		// Validator for problem 2 (extension for problem 1)
 		var _2 = new Object();
 			_2.score=0;
-			_2.step1a="1.032832";
-			_2.step1b="2.401108";
-			_2.step2a="f";
-			_2.step2b="g";
-			_2.step2c="2";
-			_2.step3a="A";
-			_2.step3b="2";
-			_2.step3c="1.283";
+			_2.step1a="1";
+			_2.step1b="2";
+			_2.step1c="f";
+			_2.step1d="g";
+			_2.step1e="2";
+			_2.step2a="A";
+			_2.step2b="1";
+			_2.step2c=".155";
 			_2.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -141,65 +141,52 @@
 				if( aStep == "_2.step1" )
 				{
 					if (( document.getElementById("_2.step1.a").value != this.step1a ) ||
-						( document.getElementById("_2.step1.b").value != this.step1b ) )
+						( document.getElementById("_2.step1.b").value.toLowerCase() != this.step1b ) ||
+						( document.getElementById("_2.step1.c").value.toLowerCase() != this.step1c ) ||
+						( document.getElementById("_2.step1.d").value.toLowerCase() != this.step1d ) ||
+						( document.getElementById("_2.step1.e").value != this.step1e ))
 					{
 						setVal("_2.step1.a",this.step1a);
 						setVal("_2.step1.b",this.step1b);
-					
-						this.showStep(aStep);
+						setVal("_2.step1.c",this.step1c);
+						setVal("_2.step1.d",this.step1d);
+						setVal("_2.step1.e",this.step1e);
+						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 33;
-					show("_2.step2" );	// make next step visible
+						this.score = this.score + 50;
+						
+					show("_2.step2");		// make next step visible
 				}
 				else if( aStep == "_2.step2" )
 				{
-					if (( document.getElementById("_2.step2.a").value != this.step2a )|| 
-						( document.getElementById("_2.step2.b").value.toUpperCase() != this.step2c ) ||
+					if (( document.getElementById("_2.step2.a").value.toUpperCase() != this.step2a ) ||
+						( document.getElementById("_2.step2.b").value != this.step2b ) ||
 						( document.getElementById("_2.step2.c").value != this.step2c ))
 					{
 						setVal("_2.step2.a",this.step2a);
 						setVal("_2.step2.b",this.step2b);
 						setVal("_2.step2.c",this.step2c);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 33;
-					show( "_2.step3" );		// make next step visible
-				}
-				else if( aStep == "_2.step3" )
-				{
-					if (( document.getElementById("_2.step3.a").value != this.step3a ) ||
-						( document.getElementById("_2.step3.b").value.toUpperCase() != this.step3b ) ||
-						( document.getElementById("_2.step3.c").value != this.step3c ))
-					{
-						setVal("_2.step3.a",this.step3a);
-						setVal("_2.step3.b",this.step3b);
-						setVal("_2.step3.c",this.step3c);
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 34;
+						this.score = this.score + 50;
 						
 				}
-				document.getElementById( "2.score").innerHTML=this.score;
-				var v = document.getElementById(el.id + "r");
-			}		
+				document.getElementById( "_2.score").innerHTML=this.score;
+			}
 
-		// Validator for problem 3	
+		// Validator for problem 3
 		var _3 = new Object();
 			_3.score=0;
-			_3.step1a="3.693441";
-			_3.step1b="1.306558";
-			_3.step2a="e";
-			_3.step2b="y";
-			_3.step3a="5";
-			_3.step3b="y";
-			_3.step4a="0";
-			_3.step4b="B";
-			_3.step4c="q";
-			_3.step4d="r";
-			_3.step4e="2.985";
+			_3.step1a="1.032832";
+			_3.step1b="2.401108";
+			_3.step2a="f";
+			_3.step2b="g";
+			_3.step2c="2";
+			_3.step3a="A";
+			_3.step3b="2";
+			_3.step3c="1.283";
 			_3.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -207,11 +194,10 @@
 				show(aDiv+"h");	// Show any hidden comments/solutions
 			}
 			_3.validate = function(el) 
-			{
+			{	
 				hide(el.id);
 				show(el.id+"c");
 				var aStep = el.id;
-
 				if( aStep == "_3.step1" )
 				{
 					if (( document.getElementById("_3.step1.a").value != this.step1a ) ||
@@ -223,56 +209,211 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 33;
 					show("_3.step2" );	// make next step visible
 				}
 				else if( aStep == "_3.step2" )
 				{
-					if (( document.getElementById("_3.step2.a").value.toLowerCase() != this.step2a ) ||
-						( document.getElementById("_3.step2.b").value.toLowerCase() != this.step2b ) )
+					if (( document.getElementById("_3.step2.a").value.toLowerCase() != this.step2a )|| 
+						( document.getElementById("_3.step2.b").value.toLowerCase() != this.step2b ) ||
+						( document.getElementById("_3.step2.c").value != this.step2c ))
 					{
 						setVal("_3.step2.a",this.step2a);
 						setVal("_3.step2.b",this.step2b);
-					
+						setVal("_3.step2.c",this.step2c);
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
-					show("_3.step3" );	// make next step visible
+						this.score = this.score + 33;
+					show( "_3.step3" );		// make next step visible
 				}
 				else if( aStep == "_3.step3" )
 				{
-					if (( document.getElementById("_3.step3.a").value.toLowerCase() != this.step3a ) ||
-						( document.getElementById("_3.step3.b").value.toLowerCase() != this.step3b ) )
+					if (( document.getElementById("_3.step3.a").value != this.step3a ) ||
+						( document.getElementById("_3.step3.b").value.toUpperCase() != this.step3b ) ||
+						( document.getElementById("_3.step3.c").value != this.step3c ))
 					{
 						setVal("_3.step3.a",this.step3a);
 						setVal("_3.step3.b",this.step3b);
+						setVal("_3.step3.c",this.step3c);
+						this.showStep(aStep);		
+					}
+					else
+						this.score = this.score + 34;
+						
+				}
+				document.getElementById( "_3.score").innerHTML=this.score;
+				var v = document.getElementById(el.id + "r");
+			}		
+
+		// Validator for problem 4 (Extension for Problem 3)
+		var _4 = new Object();
+			_4.score=0;
+			_4.step1a="1";
+			_4.step1b="2";
+			_4.step1c="f";
+			_4.step1d="g";
+			_4.step1e="2";
+			_4.step1f="2";
+			_4.step2a="A";
+			_4.step2b="1";
+			_4.step2c=".503";
+			_4.showStep = function showStep(aDiv)
+			{
+				hide(aDiv+"c"); // Hide correct checkmark
+				show(aDiv+"x");	// Show error Checkmark
+				show(aDiv+"h");	// Show any hidden comments/solutions
+			}
+			_4.validate = function(el) 
+			{
+				hide(el.id);
+				show(el.id+"c");
+				var aStep = el.id;
+				if( aStep == "_4.step1" )
+				{
+					if (( document.getElementById("_4.step1.a").value != this.step1a ) ||
+						( document.getElementById("_4.step1.b").value.toLowerCase() != this.step1b ) ||
+						( document.getElementById("_4.step1.c").value.toLowerCase() != this.step1c ) ||
+						( document.getElementById("_4.step1.d").value.toLowerCase() != this.step1d ) ||
+						( document.getElementById("_4.step1.e").value.toLowerCase() != this.step1e ) ||
+						( document.getElementById("_4.step1.f").value != this.step1f ))
+					{
+						setVal("_4.step1.a",this.step1a);
+						setVal("_4.step1.b",this.step1b);
+						setVal("_4.step1.c",this.step1c);
+						setVal("_4.step1.d",this.step1d);
+						setVal("_4.step1.e",this.step1e);
+						setVal("_4.step1.f",this.step1f);
+						this.showStep(aStep);		
+					}
+					else
+						this.score = this.score + 50;
+						
+					show("_4.step2");		// make next step visible
+				}
+				else if( aStep == "_4.step2" )
+				{
+					if (( document.getElementById("_4.step2.a").value.toUpperCase() != this.step2a ) ||
+						( document.getElementById("_4.step2.b").value != this.step2b ) ||
+						( document.getElementById("_4.step2.c").value != this.step2c ))
+					{
+						setVal("_4.step2.a",this.step2a);
+						setVal("_4.step2.b",this.step2b);
+						setVal("_4.step2.c",this.step2c);
+						this.showStep(aStep);		
+					}
+					else
+						this.score = this.score + 50;
+						
+				}
+				document.getElementById( "_4.score").innerHTML=this.score;
+			}
+
+		// Validator for problem 5	
+		var _5 = new Object();
+			_5.score=0;
+			_5.step1a=".896262";
+			_5.step1b="1.450426";
+			_5.step2a="ln";
+			_5.step2b="y";
+			_5.step2c="1";
+			_5.step3a="3";
+			_5.step3b="y";
+			_5.step3c="2";
+			_5.step4a="r";
+			_5.step4b="q";
+			_5.step4c="2";
+			_5.step5a="0";
+			_5.step5b="B";
+			_5.step5c="5.713";
+			_5.showStep = function showStep(aDiv)
+			{
+				hide(aDiv+"c"); // Hide correct checkmark
+				show(aDiv+"x");	// Show error Checkmark
+				show(aDiv+"h");	// Show any hidden comments/solutions
+			}
+			_5.validate = function(el) 
+			{
+				hide(el.id);
+				show(el.id+"c");
+				var aStep = el.id;
+
+				if( aStep == "_5.step1" )
+				{
+					if (( document.getElementById("_5.step1.a").value != this.step1a ) ||
+						( document.getElementById("_5.step1.b").value != this.step1b ) )
+					{
+						setVal("_5.step1.a",this.step1a);
+						setVal("_5.step1.b",this.step1b);
 					
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
-					show("_3.step4" );	// make next step visible
+						this.score = this.score + 20;
+					show("_5.step2" );	// make next step visible
 				}
-				else if( aStep == "_3.step4" )
+				else if( aStep == "_5.step2" )
 				{
-					if (( document.getElementById("_3.step4.a").value != this.step4a )|| 
-						( document.getElementById("_3.step4.b").value.toUpperCase() != this.step4b ) ||
-						( document.getElementById("_3.step4.c").value.toLowerCase() != this.step4c ) ||
-						( document.getElementById("_3.step4.d").value.toLowerCase() != this.step4d ) ||
-						( document.getElementById("_3.step4.e").value != this.step4e ))
+					if (( document.getElementById("_5.step2.a").value.toLowerCase() != this.step2a ) ||
+						( document.getElementById("_5.step2.b").value.toLowerCase() != this.step2b ) ||
+						( document.getElementById("_5.step2.c").value.toLowerCase() != this.step2c ) )
 					{
-						setVal("_3.step4.a",this.step4a);
-						setVal("_3.step4.b",this.step4b);
-						setVal("_3.step4.c",this.step4c);
-						setVal("_3.step4.d",this.step4d);
-						setVal("_3.step4.e",this.step4e);
+						setVal("_5.step2.a",this.step2a);
+						setVal("_5.step2.b",this.step2b);
+						setVal("_5.step2.c",this.step2c);
+					
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 25;
+						this.score = this.score + 20;
+					show("_5.step3" );	// make next step visible
 				}
-				document.getElementById( "3.score").innerHTML=this.score;
+				else if( aStep == "_5.step3" )
+				{
+					if (( document.getElementById("_5.step3.a").value.toLowerCase() != this.step3a ) ||
+						( document.getElementById("_5.step3.b").value.toLowerCase() != this.step3b ) ||
+						( document.getElementById("_5.step3.c").value.toLowerCase() != this.step3c ) )
+					{
+						setVal("_5.step3.a",this.step3a);
+						setVal("_5.step3.b",this.step3b);
+						setVal("_5.step3.c",this.step3c);
+					
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 20;
+					show("_5.step4" );	// make next step visible
+				}
+				else if( aStep == "_5.step4" )
+				{
+					if (( document.getElementById("_5.step4.a").value.toLowerCase() != this.step4a )|| 
+						( document.getElementById("_5.step4.b").value.toLowerCase() != this.step4b ) ||
+						( document.getElementById("_5.step4.c").value.toLowerCase() != this.step4c ))
+					{
+						setVal("_5.step4.a",this.step4a);
+						setVal("_5.step4.b",this.step4b);
+						setVal("_5.step4.c",this.step4c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 20;
+					show("_5.step5" );	// make next step visible
+				}
+				else if( aStep == "_5.step5" )
+				{
+					if (( document.getElementById("_5.step5.a").value != this.step5a )|| 
+						( document.getElementById("_5.step5.b").value.toUpperCase() != this.step5b ) ||
+						( document.getElementById("_5.step5.c").value.toLowerCase() != this.step5c ))
+					{
+						setVal("_5.step5.a",this.step5a);
+						setVal("_5.step5.b",this.step5b);
+						setVal("_5.step5.c",this.step5c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 20;
+				}
+				document.getElementById( "_5.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
 			}		
 
@@ -281,18 +422,20 @@
 			scoreQuestion(1, _1.score);
 			scoreQuestion(2, _2.score);
 			scoreQuestion(3, _3.score);
-			submitScores("Chapter 5.1");
+			scoreQuestion(4, _4.score);
+			scoreQuestion(5, _5.score);
+			submitScores("Chapter 5.02");
 		}
 	</script>
 </head>
 <body>
-<script>buildHeader("Chapter 5.2 Volume given a Cross Section");</script><!-- Build Common Header -->
+<script>buildHeader("Chapter 5.02 Volume given a Cross Section");</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
 	<H2>Topic: Volume for a given Cross Section.</H2><BR>
 	
 	<div class=bigIdea>
-		<B>Big Idea:  Volume is the integral of a middle school area Formula:</B> <br>
+		<B>Big Idea:  Find the area of 1 shape, then integrate over the bounds to find the Volume.</B> <br>
 		<table>
 			<tr>
 				<td>Square:</td>
@@ -399,7 +542,7 @@
 			</td>
 			<td class=hwc2>
 				Let <equ>b = <input id=_1.step2.a class=c1>(x) &minus; <input id=_1.step2.b class=c1>(x)</equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step2h class="hidden">													<!-- step?h hidden solution -->
+				<div id=_1.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
 					b = f(x) - g(x)
 				</div>
 			</td>
@@ -416,7 +559,7 @@
 			</td>
 			<td class=hwc2>
 				Let <equ>h = <input id=_1.step3.a class=c1>[<input id=_1.step3.b class=c1>(x) &minus; <input id=_1.step3.c class=c1>(x)]</equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step3h class="hidden">													<!-- step?h hidden solution -->
+				<div id=_1.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
 					h = 5[f(x) - g(x)]
 				</div>
 			</td>
@@ -433,7 +576,7 @@
 			</td>
 			<td class=hwc2>
 				Let <equ>A<sub>rect</sub> = <input id=_1.step4.a class=c1>[<input id=_1.step4.b class=c1>(x) &minus; <input id=_1.step4.c class=c1>(x)]<sup><input id=_1.step4.d class=c1></equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step4h class="hidden">													<!-- step?h hidden solution -->
+				<div id=_1.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
 					h = 5[f(x) - g(x)]<sup>2</sup>
 				</div>
 			</td>
@@ -455,8 +598,9 @@
 							"A<sub>rect</sub>", "dx");
 				</script>
 				<equ> = <input id="_1.step5.c" class=c5></input></equ>
-				<div id=_1.step5h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].</errMsg>  
+				<div id=_1.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2003.1.a.step1d.jpg"><br>
 				</div>
 			</td>
 			<td>
@@ -465,11 +609,65 @@
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=1.score></td>
+			<td id=_1.score></td>
 			<td></td>
 		</tr>
 	</table>
 	<!-- End Problem 1 ----------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Start Problem 1 Extension ----------------------------------------------------------------------------------------------------------------->
+	
+	<h3>Extension:</h3>  Find the volume of a solid whose base is R and each cross section is a right triangle with 1 leg in R perpendicular to the x-axis.
+	<table class=hw >
+		<tr id=_2.step1r>	<!-- step1r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 1<br>
+				(<script>buildToolTip("Area = 1/2bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>triangle</sub> = <script>drawFrac("<input id=_2.step1.a class=c1>","<input id=_2.step1.b class=c1>")</script>
+				[<input id=_2.step1.c class=c1>(x) &minus; <input id=_2.step1.d class=c1>(x)]<sup><input id=_2.step1.e class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_2.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					h = 1/2[f(x) - g(x)]<sup>2</sup>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_2", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+
+		<tr id=_2.step2r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 2<br>
+				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
+			</td>
+			<td class=hwc2>
+				<script>
+					drawInt("<input class=c1 id=_2.step2.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_2.step2.b class=c1></input>",
+							"A<sub>triangle</sub>", "dx");
+				</script>
+				<equ> = <input id="_2.step2.c" class=c5></input></equ>
+				<div id=_2.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2003.1.a.step1e.jpg"><br>
+				</div>
+			</td>	
+			<td>
+				<script>drawValidate("_2", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr>
+			<td class=hwc1>Score:</td>
+			<td id=_2.score></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	<!-- End Problem 1 Extension ------------------------------------------------------------------------------------------------------------------->
+
 
 	<!-- Start Problem  2 -------------------------------------------------------------------------------------------------------------------------->
 	<h3>Problem 2:</h3>
@@ -486,200 +684,221 @@
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
 	<table class=hw >
-		<tr id=_2.step1r>	<!-- step?r row. Used for scrolling -->
+		<tr id=_3.step1r>	<!-- step?r row. Used for scrolling -->
 			<td class=hwc1>
 				Step 1<br>
 				(<script>buildToolTip("Find the intersection of R of S", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_2.step1.a class=c7>,<input id=_2.step1.b class=c7>)	<!-- step?.a-z for each input step -->
-				<div id=_2.step1h class="hidden">													<!-- step?h hidden solution -->
+				Let (<equ>A,B</equ>)=(<input id=_3.step1.a class=c7>,<input id=_3.step1.b class=c7>)	<!-- step?.a-z for each input step -->
+				<div id=_3.step1h class="hidden">													<!-- step?h hidden solution -->
 					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
 					<img class="fixedWidth" src="2015.2.a.step1b.jpg"><br>
 					<img class="fixedWidth" src="2015.2.a.step1c.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_2.step2r>	<!-- step?r row. Used for scrolling -->
+		<tr id=_3.step2r>	<!-- step?r row. Used for scrolling -->
 			<td class=hwc1>
 				Step 2<br>
 				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				<equ>A<sub>rect</sub> = [<input id=_2.step2.a class=c1>(x) &minus; <input id=_2.step2.b class=c1>(x)]<sup><input id=_2.step2.c class=c1></sup>
-				<div id=_2.step2h class="hidden">										<!-- step?h hidden solution -->
+				<equ>A<sub>square</sub> = [<input id=_3.step2.a class=c1>(x) &minus; <input id=_3.step2.b class=c1>(x)]<sup><input id=_3.step2.c class=c1></sup>
+				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_2.step3r>	<!-- step?r  row Used for scrolling -->
+		<tr id=_3.step3r>	<!-- step?r  row Used for scrolling -->
 			<td class=hwc1>
 				Step 3<br>
 				(<script>buildToolTip("You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input id=_2.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_2.step3.b class=c1></input>",
-							"A<sub>rect</sub>", "dx");
+					drawInt("<input id=_3.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_3.step3.b class=c1></input>",
+							"A<sub>square</sub>", "dx");
 				</script>
-				<equ>=&nbsp;<input id="_2.step3.c" class=c7></input></equ>
-				<div id=_2.step3h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds of S are from A to 2.</errMsg>  
+				<equ>=&nbsp;<input id="_3.step3.c" class=c7></input></equ>
+				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1d.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step3", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step3", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=2.score></td>
+			<td id=_3.score></td>
 			<td></td>
 		</tr>
 	</table>
 	<!-- End of Problem  2 -------------------------------------------------------------------------------------------------------------------------->
 
-	<!-- Continue Lesson  -------------------------------------------------------------------------------------------------------------------------->
-	<h3>Lesson Continued: What do you do when f(x) and g(x) have different domains? </h3>
-	<p>
-		<img class="fixedwidth floatLeft" src="lesson.area.4a.jpg">
-		Notice that f(x) and g(x) exist on different domains.  f(x) exists on [-1,0] and g(x) exists on [0,1]. Therefore it is not possible to 
-		<script>drawInt("-1", "1", "f(x) &minus; g(x)","dx")</script><br><br>
-		<table width="100%"><tr><td></td></tr></table>
-		To solve you have two choices:
-		<img class="fixedwidth floatRight" src="lesson.area.4b.jpg">
-		<br>
-		<B>Option 1:</B> Break the problem into two pieces. <script>drawInt("-1","0","f(x)", "dx");</script> + <script>drawInt("0","1","g(x)","dx")</script> <br>
-		This option will usually work on the AP test and is a valid strategy.
-		<table width="100%"><tr><td></td></tr></table>
-		<BR>
-		<img class="fixedwidth floatRight" src="lesson.area.4c.jpg">
-		<B>Option 2: </B>Solve each equation for x and integrate with respect to "y".<br>
-					<span class=padLeft20 /><script>drawInt("y<sub>1</sub>","y<sub>2</sub>","( Right &minus; Left )", "dy");</script><br>
-					(This may seem more difficult but its an important AP skill and its how we are going to solve this problem.)<br>
-		<B>Process:</B>
-		<ol>
-			<li>Solve each equation for "x".<br>
-				<equ>y = (x &plus;  1)<sup>2</sup></equ> becomes <equ>x = &plusmn;<script>drawRoot("y")</script> &minus; 1</equ> <br>
-				<equ>y = (x &minus; 1)<sup>2</sup></equ> becomes <equ>x = &plusmn;<script>drawRoot("y")</script> &plus; 1</equ> 
-			</li>
-			<li>
-				Instead of <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","(top &minus; bottom)","dx")</script> you are going to <script>drawInt("y<sub>1</sub>","y<sub>2</sub>","(right &minus; left)","dy")</script> (Notice the bounds have changed)<br>
-			</li>
-			<li>
-				Let:<br>
-				(A,B) = (0,1)<br>
-				<equ>q(y) = <script>drawRoot("y");</script> &minus; 1  		<br>
-				     r(y) = &minus;<script>drawRoot("y");</script> &plus; 1
-				</equ> (&minus; because of domain for g(x))<br>
-				
-				<script>drawInt("0","B","r(y) &minus; q(y)","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
-				
-			</li>
-		</ol>
-	
-		<table width="100%"><tr><td></td></tr></table>
-	<!-- End Lesson  -------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Start Problem  2 Extension -------------------------------------------------------------------------------------------------------------------------->
+
+	<h3>Extension:</h3>  Find the volume of a solid whose base is R and each cross section is a semi-circle perpendicular to the x-axis.
+	<table class=hw >
+		<tr id=_4.step1r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 1<br>
+				(<script>buildToolTip("Area = 1/2bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>semi-circle</sub> = <script>drawFrac("<input id=_4.step1.a class=c1>","<input id=_4.step1.b class=c1>")</script>
+				&pi;[<script>drawFrac("<input id=_4.step1.c class=c1>(x) &minus; <input id=_4.step1.d class=c1>(x)", "<input id=_4.step1.e class=c1>")</script>]
+				<sup><input id=_4.step1.f class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					h = 1/2&pi;[g(x) - f(x)]<sup>2</sup>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_4", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+
+		<tr id=_4.step2r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step 2<br>
+				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
+			</td>
+			<td class=hwc2>
+				<script>
+					drawInt("<input class=c1 id=_4.step2.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_4.step2.b class=c1></input>",
+							"A<sub>semi-circle</sub>", "dx");
+				</script>
+				<equ> = <input id="_4.step2.c" class=c5></input></equ>
+				<div id=_4.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2015.2.a.step1e.jpg"><br>
+				</div>
+			</td>	
+			<td>
+				<script>drawValidate("_4", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr>
+			<td class=hwc1>Score:</td>
+			<td id=_4.score></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<!-- End Problem  2 Extension -------------------------------------------------------------------------------------------------------------------------->
 	
 	<!-- Start Problem  3  -------------------------------------------------------------------------------------------------------------------------->
 	<h3>Problem 3:</h3>
 	
-		<img class="fixedwidth floatLeft" src="2012.2.jpg">
-		<H3>2012 AP<sup>&copy;</sup> Calculus AB.  Problem # 2.</H3><BR>
-		Let f and g be the functions defined by<br>
-		<equ>f(x)=ln(x)</equ> and <equ>g(x)=5 &minus; x</equ>. 
-		<b>Find the area of R </b><br>
-		
-		<table width="100%"><tr><td></td></tr></table>
-		<img class="floatRight fixedWidth" src="2012.2.a.jpg">
-		<br><br>Notice that you could integrate with respect to "x" by breaking the problem into two parts(since f(x) and g(x) only exist on separate domains. 
-		<script>drawInt("1","A","f(x)", "dx");</script> + <script>drawInt("A","5","g(x)", "dx");</script>
-		
-		<br>
-		However you are going to solve it by integrating with respect to "y".  <br>
+		<img class="fixedwidth floatLeft" src="lesson.2.jpg">
+		Let f and g be the functions defined on the left.<br>
+		Find the volume of the solid bounded by f(x) and g(x) and with cross-sections that are squares perpendicular to the <b>y-axis</b>.  
+		<br><br>
+		Just like Problem 3 in the last section, you will need to solve f(x) and g(x) for x and integrate with respect to y.  
 		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
 		
 	</p>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
 	<table class=hw >
-		<tr id=_3.step1r>	<!-- step1r row. Used for scrolling -->
+		<tr id=_5.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;1<br>
 				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_3.step1.a class=c8>,<input id=_3.step1.b class=c8>)	<!-- step?.a-z for each input step -->
-				<div id=_3.step1h class="hidden">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2012.2.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2012.2.a.step1b.jpg"><br>
-					<img class="fixedWidth" src="2012.2.a.step1c.jpg"><br>
+				Let (<equ>A,B</equ>)=(<input id=_5.step1.a class=c8>,<input id=_5.step1.b class=c8>)	<!-- step?.a-z for each input step -->
+				<div id=_5.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="lesson.2a.jpg"><br>
+					<img class="fixedWidth" src="lesson.2b.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_3", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_5", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_3.step2r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_5.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;2<br>
 				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so q(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>q(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_3.step2h class="hidden">										<!-- step?h hidden solution -->
+				Let <equ>q(y) = </equ><input id=_5.step2.a class=c2>(<input id=_5.step2.b class=c1> + <input id=_5.step2.c class=c1>) (Solve f(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_5.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_3", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_5", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_3.step3r>	<!-- step3r row. Used for scrolling -->
+		<tr id=_5.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;3<br>
 				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so r(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>r(y) = </equ><input id=_3.step3.a class=c1> &minus; <input id=_3.step3.b class=c1></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_3.step3h class="hidden">										<!-- step?h hidden solution -->
+				Let <equ>r(y) = </equ><input id=_5.step3.a class=c1> &minus; <input id=_5.step3.b class=c1><sup><input id=_5.step3.c class=c1></sup></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_5.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_3", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_5", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_3.step4r>	<!-- step4r row. Used for scrolling -->
+		<tr id=_5.step4r>	<!-- step?r row. Used for scrolling -->
 			<td class=hwc1>
-				Step&nbsp;4<br>
+				Step 4<br>
+				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
+			</td>
+			<td class=hwc2>
+				<equ>A<sub>square</sub> = [<input id=_5.step4.a class=c1>(x) &minus; <input id=_5.step4.b class=c1>(x)]<sup><input id=_5.step4.c class=c1></sup>
+				<div id=_5.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_5.step5r>	<!-- step5r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;5<br>
 				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), q(y)-r(y) or r(y)-q(x), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_3.step4.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_3.step4.b class=c1></input>",
-							"<input id=_3.step4.c class=c1></input>(y) &minus; <input id=_3.step4.d class=c1></input>(y)", "dy");
+					drawInt("<input class=c1 id=_5.step5.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_5.step5.b class=c1></input>",
+							"A<sub>square</sub>", "dy");
 				</script>
-				<equ>=&nbsp;<input id="_3.step4.e" class=c5></input></equ>
-				<div id=_3.step4h class="hidden">										<!-- step?h hidden solution -->
-					<errMsg>The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is r(y) - q(y) because r(y) > q(y) on [0,B].</errMsg>  
+				<equ>=&nbsp;<input id="_5.step5.c" class=c5></input></equ>
+				<div id=_5.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<errMsg>The bounds are from 0 to B because you are integrating with respect to Y.</errMsg>  
+					<img class="fixedWidth" src="lesson.2d.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_3", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_5", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=3.score></td>
+			<td id=_5.score></td>
 			<td></td>
 		</tr>
 	</table>

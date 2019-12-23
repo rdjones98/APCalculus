@@ -82,7 +82,7 @@ var out =`
 		<div class='items'>
 			<a class='menuItem' href='../Ch5.01'>Area between 2 Curves</a>
 			<a class='menuItem' href='../Ch5.02'>Volume given Cross Section</a>
-			<a class='menuItem' href='../Ch5.03'>Volume given Cross Section</a>
+			<a class='menuItem' href='../Ch5.03'>Volume of Rotation</a>
 		</div>
 	</div>
 

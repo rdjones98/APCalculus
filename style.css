@@ -62,21 +62,21 @@ equ 	{ font-family: Times New Roman;	font-size:120%;font-style:normal;}	/*custom
 
 .row  {}
 .col1 {width:100px;  vertical-align:top; }
-.col2 {width:700px;	 vertical-align:top; }; 
+.col2 {width:700px;	 vertical-align:top; }
 
-table.hw {border-collapse:collapse; }
-table.hw td {border: 1px solid black; border-collapse:collapse; }
-td.hwc1 {width:50px; padding-top:10px;  padding-bottom:10px; padding-left:5px; }
-td.hwc2 {width:700px; padding-top:10px; padding-bottom:10px; padding-left:5px;}
+table.hw {border-collapse:collapse; border: 1px solid black; }
+.hw td   {border: 1px solid black;}
+td.hwc1  {width:50px;  padding-top:10px; padding-bottom:10px; padding-left:5px; }
+td.hwc2  {width:700px; padding-top:10px; padding-bottom:10px; padding-left:5px; }
 
-table.frac { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding:0px;}
-td.fracNum { border-bottom-style:solid; border-bottom-width:1px; text-align:center; padding:0px;}
-td.fracDen { text-align:center; padding:0px;}
+table.frac { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding:0px; border:none;}
+td.fracNum { border:none; border-bottom-style:solid; border-bottom-width:1px; text-align:center; padding:0px;}
+td.fracDen { border:none; text-align:center; padding:0px;}
 
 table.eval { display:inline; border-collapse:collapse; position:relative; top:-5px; margin:0px; padding:0px; }
-td.evalUB { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
-td.evalMB { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
-td.evalLB { font-size:smaller; vertical-align: bottom; 	border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
+td.evalUB  { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
+td.evalMB  { font-size:smaller; vertical-align: top; 	border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
+td.evalLB  { font-size:smaller; vertical-align: bottom; border-left-style:solid; border-left-width:1px; text-align:center; padding:0px; }
 
 span.root{}
 span.rootBody{  position: relative; border-top-style:solid; }
@@ -85,6 +85,7 @@ span.rootBody{  position: relative; border-top-style:solid; }
 td {padding-top:5px; padding-bottom:5px;}
 
 sup {font-size:15px;}
+negative:before {position:relative; top:-5px; content:'\002D'; }
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {

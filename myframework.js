@@ -44,7 +44,7 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 1 Limits</a> <span id=menuX onclick='closeMenu();'>x</span>
 		<div class='items'>
-			<a class='menuItem' href='../Ch1.01'>Area between 2 Curves</a>
+			<a class='menuItem' href='../Ch1.01'>Not Yet Developed</a>
 		</div>
 	</div>
 
@@ -53,16 +53,16 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 2 Derivatives</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch2.01'>Area between 2 Curves</a>
+			<a class='menuItem' href='../Ch2.01'>Not Yet Developed</a>
 		</div>
 	</div>
 
 	<div class='item'>
 		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
-		<a href=# onclick='bClick(this)'>Chapter 3</a>
+		<a href=# onclick='bClick(this)'>Chapter 3 Applications of Derivatives</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch3.01'>Applications of Derivatives</a>
+			<a class='menuItem' href='../Ch3.01'>Not Yet Developed</a>
 		</div>
 	</div>
 
@@ -71,7 +71,7 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 4 Integrals</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch4.01'>Integrate</a>
+			<a class='menuItem' href='../Ch4.01'>Not Yet Developed</a>
 		</div>
 	</div>
 

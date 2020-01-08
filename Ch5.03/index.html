@@ -18,13 +18,9 @@
 			_1.step2b="1";
 			_1.step3a="f";
 			_1.step3b="1";
-			_1.step4a="5";
-			_1.step4b="f";
-			_1.step4c="g";
-			_1.step4d="2";
 			_1.step5a="A";
 			_1.step5b="1";
-			_1.step5c="1.554";
+			_1.step5c="1.423";
 			_1.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -47,7 +43,7 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 20;
+						this.score = this.score + 25;
 					show("_1.step2" );	// make next step visible
 				}
 				else if( aStep == "_1.step2" )
@@ -60,7 +56,7 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 20;
+						this.score = this.score + 25;
 					show( "_1.step3" );		// make next step visible
 				}
 				else if( aStep == "_1.step3" )
@@ -73,25 +69,7 @@
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 20;
-						
-					show("_1.step4");		// make next step visible
-				}
-				else if( aStep == "_1.step4" )
-				{
-					if (( document.getElementById("_1.step4.a").value != this.step4a ) ||
-						( document.getElementById("_1.step4.b").value.toLowerCase() != this.step4b ) ||
-						( document.getElementById("_1.step4.c").value.toLowerCase() != this.step4c ) ||
-						( document.getElementById("_1.step4.d").value != this.step4d ))
-					{
-						setVal("_1.step4.a",this.step4a);
-						setVal("_1.step4.b",this.step4b);
-						setVal("_1.step4.c",this.step4c);
-						setVal("_1.step4.d",this.step4d);
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 20;
+						this.score = this.score + 25;
 						
 					show("_1.step5");		// make next step visible
 				}
@@ -107,7 +85,7 @@
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 20;
+						this.score = this.score + 25;
 						
 				}
 				document.getElementById( "_1.score").innerHTML=this.score;
@@ -116,14 +94,13 @@
 		// Validator for problem 2 (extension for problem 1)
 		var _2 = new Object();
 			_2.score=0;
-			_2.step1a="1";
-			_2.step1b="2";
-			_2.step1c="f";
-			_2.step1d="g";
-			_2.step1e="2";
-			_2.step2a="A";
-			_2.step2b="1";
-			_2.step2c=".155";
+			_2.step2a="f";
+			_2.step2b="-1";
+			_2.step3a="g";
+			_2.step3b="-1";
+			_2.step5a="A";
+			_2.step5b="1";
+			_2.step5c="4.138";
 			_2.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -138,52 +115,77 @@
 				if( aStep == "_2.step1" )
 				{
 					if (( document.getElementById("_2.step1.a").value != this.step1a ) ||
-						( document.getElementById("_2.step1.b").value.toLowerCase() != this.step1b ) ||
-						( document.getElementById("_2.step1.c").value.toLowerCase() != this.step1c ) ||
-						( document.getElementById("_2.step1.d").value.toLowerCase() != this.step1d ) ||
-						( document.getElementById("_2.step1.e").value != this.step1e ))
+						( document.getElementById("_2.step1.b").value != this.step1b ) )
 					{
 						setVal("_2.step1.a",this.step1a);
 						setVal("_2.step1.b",this.step1b);
-						setVal("_2.step1.c",this.step1c);
-						setVal("_2.step1.d",this.step1d);
-						setVal("_2.step1.e",this.step1e);
-						this.showStep(aStep);		
+					
+						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 50;
-						
-					show("_2.step2");		// make next step visible
+						this.score = this.score + 20;
+					show("_2.step2" );	// make next step visible
 				}
 				else if( aStep == "_2.step2" )
 				{
-					if (( document.getElementById("_2.step2.a").value.toUpperCase() != this.step2a ) ||
-						( document.getElementById("_2.step2.b").value != this.step2b ) ||
-						( document.getElementById("_2.step2.c").value != this.step2c ))
+					if (( document.getElementById("_2.step2.a").value.toLowerCase() != this.step2a )|| 
+						( document.getElementById("_2.step2.b").value.toLowerCase() != this.step2b ))
 					{
 						setVal("_2.step2.a",this.step2a);
 						setVal("_2.step2.b",this.step2b);
-						setVal("_2.step2.c",this.step2c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 20;
+					show( "_2.step3" );		// make next step visible
+				}
+				else if( aStep == "_2.step3" )
+				{
+					if (( document.getElementById("_2.step3.a").value != this.step3a ) ||
+						( document.getElementById("_2.step3.b").value.toLowerCase() != this.step3b ))
+					{
+						setVal("_2.step3.a",this.step3a);
+						setVal("_2.step3.b",this.step3b);
 						this.showStep(aStep);		
 					}
 					else
-						this.score = this.score + 50;
+						this.score = this.score + 20;
+						
+					show("_2.step5");		// make next step visible
+				}
+				else if( aStep == "_2.step5" )
+				{
+					if (( document.getElementById("_2.step5.a").value.toUpperCase() != this.step5a ) ||
+						( document.getElementById("_2.step5.b").value != this.step5b ) ||
+						( document.getElementById("_2.step5.c").value != this.step5c ))
+					{
+						setVal("_2.step5.a",this.step5a);
+						setVal("_2.step5.b",this.step5b);
+						setVal("_2.step5.c",this.step5c);
+						this.showStep(aStep);		
+					}
+					else
+						this.score = this.score + 20;
 						
 				}
 				document.getElementById( "_2.score").innerHTML=this.score;
 			}
 
-		// Validator for problem 3
+
+		// Validator for problem 3	
 		var _3 = new Object();
 			_3.score=0;
-			_3.step1a="1.032832";
-			_3.step1b="2.401108";
-			_3.step2a="f";
-			_3.step2b="g";
-			_3.step2c="2";
-			_3.step3a="A";
-			_3.step3b="2";
-			_3.step3c="1.283";
+			_3.step1a="2.519842";
+			_3.step1b="1.587401";
+			_3.step2a="y";
+			_3.step2b="2";
+			_3.step3a="2";
+			_3.step3b="y";
+			_3.step4a="g";
+			_3.step5a="f";
+			_3.step7a="0";
+			_3.step7b="B";
+			_3.step7c="9.499";
 			_3.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -191,10 +193,11 @@
 				show(aDiv+"h");	// Show any hidden comments/solutions
 			}
 			_3.validate = function(el) 
-			{	
+			{
 				hide(el.id);
 				show(el.id+"c");
 				var aStep = el.id;
+
 				if( aStep == "_3.step1" )
 				{
 					if (( document.getElementById("_3.step1.a").value != this.step1a ) ||
@@ -206,55 +209,86 @@
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 33;
+						this.score = this.score + 16;
 					show("_3.step2" );	// make next step visible
 				}
 				else if( aStep == "_3.step2" )
 				{
-					if (( document.getElementById("_3.step2.a").value.toLowerCase() != this.step2a )|| 
-						( document.getElementById("_3.step2.b").value.toLowerCase() != this.step2b ) ||
-						( document.getElementById("_3.step2.c").value != this.step2c ))
+					if (( document.getElementById("_3.step2.a").value.toLowerCase() != this.step2a ) ||
+						( document.getElementById("_3.step2.b").value.toLowerCase() != this.step2b ) )
 					{
 						setVal("_3.step2.a",this.step2a);
 						setVal("_3.step2.b",this.step2b);
-						setVal("_3.step2.c",this.step2c);
+					
 						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 33;
-					show( "_3.step3" );		// make next step visible
+						this.score = this.score + 16;
+					show("_3.step3" );	// make next step visible
 				}
 				else if( aStep == "_3.step3" )
 				{
-					if (( document.getElementById("_3.step3.a").value != this.step3a ) ||
-						( document.getElementById("_3.step3.b").value.toUpperCase() != this.step3b ) ||
-						( document.getElementById("_3.step3.c").value != this.step3c ))
+					if (( document.getElementById("_3.step3.a").value.toLowerCase() != this.step3a ) ||
+						( document.getElementById("_3.step3.b").value.toLowerCase() != this.step3b ) )
 					{
 						setVal("_3.step3.a",this.step3a);
 						setVal("_3.step3.b",this.step3b);
-						setVal("_3.step3.c",this.step3c);
-						this.showStep(aStep);		
+					
+						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 34;
-						
+						this.score = this.score + 16;
+					show("_3.step4" );	// make next step visible
+				}
+				else if( aStep == "_3.step4" )
+				{
+					if (document.getElementById("_3.step4.a").value.toLowerCase() != this.step4a )
+					{
+						setVal("_3.step4.a",this.step4a);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+					show("_3.step5" );	// make next step visible
+				}
+				else if( aStep == "_3.step5" )
+				{
+					if (document.getElementById("_3.step5.a").value.toLowerCase() != this.step5a )
+					{
+						setVal("_3.step5.a",this.step5a);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 18;
+					show("_3.step7" );	// make next step visible
+				}
+				else if( aStep == "_3.step7" )
+				{
+					if (( document.getElementById("_3.step7.a").value != this.step7a )|| 
+						( document.getElementById("_3.step7.b").value.toUpperCase() != this.step7b ) ||
+						( document.getElementById("_3.step7.c").value.toLowerCase() != this.step7c ))
+					{
+						setVal("_3.step7.a",this.step7a);
+						setVal("_3.step7.b",this.step7b);
+						setVal("_3.step7.c",this.step7c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 18;
 				}
 				document.getElementById( "_3.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
 			}		
-
-		// Validator for problem 4 (Extension for Problem 3)
+		// Validator for problem 4
 		var _4 = new Object();
 			_4.score=0;
-			_4.step1a="1";
-			_4.step1b="2";
-			_4.step1c="f";
-			_4.step1d="g";
-			_4.step1e="2";
-			_4.step1f="2";
-			_4.step2a="A";
-			_4.step2b="1";
-			_4.step2c=".503";
+			_4.step1a="f";
+			_4.step1b="3";
+			_4.step2a="g";
+			_4.step2b="3";
+			_4.step4a="0";
+			_4.step4b="B";
+			_4.step4c="15.633";
 			_4.showStep = function showStep(aDiv)
 			{
 				hide(aDiv+"c"); // Hide correct checkmark
@@ -266,151 +300,50 @@
 				hide(el.id);
 				show(el.id+"c");
 				var aStep = el.id;
+
 				if( aStep == "_4.step1" )
 				{
 					if (( document.getElementById("_4.step1.a").value != this.step1a ) ||
-						( document.getElementById("_4.step1.b").value.toLowerCase() != this.step1b ) ||
-						( document.getElementById("_4.step1.c").value.toLowerCase() != this.step1c ) ||
-						( document.getElementById("_4.step1.d").value.toLowerCase() != this.step1d ) ||
-						( document.getElementById("_4.step1.e").value.toLowerCase() != this.step1e ) ||
-						( document.getElementById("_4.step1.f").value != this.step1f ))
+						( document.getElementById("_4.step1.b").value != this.step1b ) )
 					{
 						setVal("_4.step1.a",this.step1a);
 						setVal("_4.step1.b",this.step1b);
-						setVal("_4.step1.c",this.step1c);
-						setVal("_4.step1.d",this.step1d);
-						setVal("_4.step1.e",this.step1e);
-						setVal("_4.step1.f",this.step1f);
-						this.showStep(aStep);		
+					
+						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 50;
-						
-					show("_4.step2");		// make next step visible
+						this.score = this.score + 33;
+					show("_4.step2" );	// make next step visible
 				}
 				else if( aStep == "_4.step2" )
 				{
-					if (( document.getElementById("_4.step2.a").value.toUpperCase() != this.step2a ) ||
-						( document.getElementById("_4.step2.b").value != this.step2b ) ||
-						( document.getElementById("_4.step2.c").value != this.step2c ))
+					if (( document.getElementById("_4.step2.a").value.toLowerCase() != this.step2a ) ||
+						( document.getElementById("_4.step2.b").value.toLowerCase() != this.step2b ) )
 					{
 						setVal("_4.step2.a",this.step2a);
 						setVal("_4.step2.b",this.step2b);
-						setVal("_4.step2.c",this.step2c);
-						this.showStep(aStep);		
+					
+						this.showStep(aStep);
 					}
 					else
-						this.score = this.score + 50;
-						
+						this.score = this.score + 33;
+					show("_4.step4" );	// make next step visible
+				}
+				else if( aStep == "_4.step4" )
+				{
+					if (( document.getElementById("_4.step4.a").value != this.step4a )|| 
+						( document.getElementById("_4.step4.b").value.toUpperCase() != this.step4b ) ||
+						( document.getElementById("_4.step4.c").value.toLowerCase() != this.step4c ))
+					{
+						setVal("_4.step4.a",this.step4a);
+						setVal("_4.step4.b",this.step4b);
+						setVal("_4.step4.c",this.step4c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 34;
 				}
 				document.getElementById( "_4.score").innerHTML=this.score;
-			}
-
-		// Validator for problem 5	
-		var _5 = new Object();
-			_5.score=0;
-			_5.step1a=".896262";
-			_5.step1b="1.450426";
-			_5.step2a="ln";
-			_5.step2b="y";
-			_5.step2c="1";
-			_5.step3a="3";
-			_5.step3b="y";
-			_5.step3c="2";
-			_5.step4a="r";
-			_5.step4b="q";
-			_5.step4c="2";
-			_5.step5a="0";
-			_5.step5b="B";
-			_5.step5c="5.713";
-			_5.showStep = function showStep(aDiv)
-			{
-				hide(aDiv+"c"); // Hide correct checkmark
-				show(aDiv+"x");	// Show error Checkmark
-				show(aDiv+"h");	// Show any hidden comments/solutions
-			}
-			_5.validate = function(el) 
-			{
-				hide(el.id);
-				show(el.id+"c");
-				var aStep = el.id;
-
-				if( aStep == "_5.step1" )
-				{
-					if (( document.getElementById("_5.step1.a").value != this.step1a ) ||
-						( document.getElementById("_5.step1.b").value != this.step1b ) )
-					{
-						setVal("_5.step1.a",this.step1a);
-						setVal("_5.step1.b",this.step1b);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step2" );	// make next step visible
-				}
-				else if( aStep == "_5.step2" )
-				{
-					if (( document.getElementById("_5.step2.a").value.toLowerCase() != this.step2a ) ||
-						( document.getElementById("_5.step2.b").value.toLowerCase() != this.step2b ) ||
-						( document.getElementById("_5.step2.c").value.toLowerCase() != this.step2c ) )
-					{
-						setVal("_5.step2.a",this.step2a);
-						setVal("_5.step2.b",this.step2b);
-						setVal("_5.step2.c",this.step2c);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step3" );	// make next step visible
-				}
-				else if( aStep == "_5.step3" )
-				{
-					if (( document.getElementById("_5.step3.a").value.toLowerCase() != this.step3a ) ||
-						( document.getElementById("_5.step3.b").value.toLowerCase() != this.step3b ) ||
-						( document.getElementById("_5.step3.c").value.toLowerCase() != this.step3c ) )
-					{
-						setVal("_5.step3.a",this.step3a);
-						setVal("_5.step3.b",this.step3b);
-						setVal("_5.step3.c",this.step3c);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step4" );	// make next step visible
-				}
-				else if( aStep == "_5.step4" )
-				{
-					if (( document.getElementById("_5.step4.a").value.toLowerCase() != this.step4a )|| 
-						( document.getElementById("_5.step4.b").value.toLowerCase() != this.step4b ) ||
-						( document.getElementById("_5.step4.c").value.toLowerCase() != this.step4c ))
-					{
-						setVal("_5.step4.a",this.step4a);
-						setVal("_5.step4.b",this.step4b);
-						setVal("_5.step4.c",this.step4c);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step5" );	// make next step visible
-				}
-				else if( aStep == "_5.step5" )
-				{
-					if (( document.getElementById("_5.step5.a").value != this.step5a )|| 
-						( document.getElementById("_5.step5.b").value.toUpperCase() != this.step5b ) ||
-						( document.getElementById("_5.step5.c").value.toLowerCase() != this.step5c ))
-					{
-						setVal("_5.step5.a",this.step5a);
-						setVal("_5.step5.b",this.step5b);
-						setVal("_5.step5.c",this.step5c);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-				}
-				document.getElementById( "_5.score").innerHTML=this.score;
 				var v = document.getElementById(el.id + "r");
 			}		
 
@@ -420,13 +353,12 @@
 			scoreQuestion(2, _2.score);
 			scoreQuestion(3, _3.score);
 			scoreQuestion(4, _4.score);
-			scoreQuestion(5, _5.score);
-			submitScores("Chapter 5.02");
+			submitScores("Chapter 5.03 Volume of Rotation");
 		}
 	</script>
 </head>
 <body>
-<script>buildHeader("Chapter 5.02 Volume given a Cross Section");</script><!-- Build Common Header -->
+<script>buildHeader("Chapter 5.03 Volume given a Cross Section");</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
 	<H2>Topic: Volume of Rotation.</H2><BR>
@@ -449,10 +381,10 @@
 			<img class="floatLeft fixedWidth" src="lesson.1.jpg" >
 			<b>Example 1:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
 			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the x-axis.<br><br>
-			The outer function is <equ>f(x)</equ> and, because we are rotating around the "x-axis", the outer radius "R" is just <equ>f(x)</equ> and the inner radius "r" is <equ>g(x)</equ><br><br>
+			The outer function "R" is <equ>f(x)</equ> and the inner radius "r" is <equ>g(x)</equ><br><br>
 			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;f(x)<sup>2</sup>&nbsp;&minus;&nbsp;g(x)<sup>2</sup>&nbsp;]</equ> 
 			and the volume of the solid build by those washers is:<br>
-			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  u<sup>3</sup></equ>
+			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  5.984u<sup>3</sup></equ> <b>(Verify this!)</b>
 			<br><br>
 			
 	</p>
@@ -460,10 +392,11 @@
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 			<img class="floatRight fixedWidth" src="lesson.2.jpg" >
 			<b>Example 2:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
-			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the line y=<negative />1.
+			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the line y=<negative />1. (y=<negative />1 is your Axis of Rotation: AOR)<br>
+			Notice that both "R" and "r" are exactly 1 unit bigger.  In general each radius is (R&minus;AOR) and (r&minus;AOR)<br>
 			The area of each washer is now <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;&nbsp;=&nbsp;&pi;[&nbsp;(f(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;&minus;&nbsp;(g(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;]</equ> 
 			and the volume of the solid build by those washers is:<br>
-			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  u<sup>3</sup></equ>
+			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  14.361u<sup>3</sup></equ> <b>(Verify this)</b>
 			<br><br>
 	
 
@@ -474,7 +407,7 @@
 		</li>
 		<li>Determine which equation is farthest from the AOR (Axis of rotation).  <br>
 			Let R = [ f(x) &minus; AOR ] (assuming f(x) is the farthest equation). <br>
-			Let r = [ g(x) &minus; AOR ] (assuming g(x) is the closer equation).<br>
+			Let r&nbsp;&nbsp;= [ g(x) &minus; AOR ] (assuming g(x) is the closer equation).<br>
 			
 		</li>
 		<li>Find the area of 1 washer. <br>
@@ -495,7 +428,8 @@
 		<H3>2003 AP<sup>&copy;</sup> Calculus AB.  Problem # 1.</H3><BR>
 		Let R be the shaded region bounded by the graphs of <equ>f(x)=<script>drawRoot('x');</script></equ> and <equ>g(x)=e<sup>-3x</sup></equ> and the vertical line x = 1.<br>
 		<br>
-		Find the volume of the solid generated when R is revolved about the horizontal line <equ>y&nbsp;=&nbsp;1</equ>.  <br>If you need the <equ>&pi;</equ> symbol, type "pi".  (You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )</b><br><br>
+		Find the volume of the solid generated when R is revolved about the horizontal line <equ>y&nbsp;=&nbsp;1</equ>.  <br><br>
+		Don't let the fact that the region is labeled "R" confuse you.  It has NOTHING to do with the "R" (bigger radius)  you will use below. (You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )</b><br><br>
 	</p>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
@@ -528,7 +462,7 @@
 			<td class=hwc2>
 				Let <equ>R = <input id=_1.step2.a class=c1>(x) &minus; <input id=_1.step2.b class=c1></equ>	<!-- step?.a-z for each input step -->
 				<div id=_1.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
-					b = g(x) - 1
+					R = g(x) - 1
 				</div>
 			</td>
 			<td>
@@ -545,7 +479,7 @@
 			<td class=hwc2>
 				Let <equ>r = <input id=_1.step3.a class=c1>(x) &minus; <input id=_1.step3.b class=c1></equ>	<!-- step?.a-z for each input step -->
 				<div id=_1.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
-					b = f(x) - 1
+					r = f(x) - 1
 				</div>
 			</td>
 			<td>
@@ -556,11 +490,9 @@
 		<tr id=_1.step4r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;4<br>
-				(<script>buildToolTip("Area = bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
-
 			</td>
 			<td class=hwc2>
-				Let <equ>A<sub>washer</sub> = <input id=_1.step4.a class=c1>[<input id=_1.step4.b class=c1><sup><input id=_1.step4.d class=c1></sup> &minus; <input id=_1.step4.c class=c1><sup><input id=_1.step4.d class=c1></sup> ]</equ>	<!-- step?.a-z for each input step -->
+				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
 				<div id=_1.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
 					h = 5[f(x) - g(x)]<sup>2</sup>
 				</div>
@@ -580,7 +512,7 @@
 				<script>
 					drawInt("<input class=c1 id=_1.step5.a ></input>",					<!-- step?.a-z for each input step -->
 							"<input id=_1.step5.b class=c1></input>",
-							"A<sub>rect</sub>", "dx");
+							"A<sub>washer</sub>", "dx");
 				</script>
 				<equ> = <input id="_1.step5.c" class=c5></input></equ>
 				<div id=_1.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
@@ -602,46 +534,92 @@
 
 	<!-- Start Problem 1 Extension ----------------------------------------------------------------------------------------------------------------->
 	
-	<h3>Extension:</h3>  Find the volume of a solid whose base is R and each cross section is a right triangle with 1 leg in R perpendicular to the x-axis.
+	<h3>Extension:</h3>  Find the volume of the solid when R is rotated around the line y=<negative />1
 	<table class=hw >
-		<tr id=_2.step1r>	<!-- step1r row. Used for scrolling -->
+		<tr id=_1.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;1<br>
-				(<script>buildToolTip("Area = 1/2bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
-
 			</td>
 			<td class=hwc2>
-				Let <equ>A<sub>triangle</sub> = <script>drawFrac("<input id=_2.step1.a class=c1>","<input id=_2.step1.b class=c1>")</script>
-				[<input id=_2.step1.c class=c1>(x) &minus; <input id=_2.step1.d class=c1>(x)]<sup><input id=_2.step1.e class=c1></equ>	<!-- step?.a-z for each input step -->
-				<div id=_2.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
-					h = 1/2[f(x) - g(x)]<sup>2</sup>
+				Let (<equ>A,B</equ>)=(.238734,.488604)	<!-- step?.a-z for each input step -->
+				<div id=_1.step1h class="hidden">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2003.1.a.step1b.jpg"><br>
+					<img class="fixedWidth" src="2003.1.a.step1c.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_1", "step1", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_2.step2r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;2<br>
+				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), y = -1", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>R = <input id=_2.step2.a class=c1>(x) &minus; <input id=_2.step2.b class=c2></equ>	<!-- step?.a-z for each input step -->
+				<div id=_2.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
+					R = f(x) &minus; <negative />1
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_2", "step2", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_2.step3r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;3<br>
+				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), y = -1", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>r = <input id=_2.step3.a class=c1>(x) &minus; <input id=_2.step3.b class=c2></equ>	<!-- step?.a-z for each input step -->
+				<div id=_2.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
+					r = g(x) &minus; <negative />1
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_2", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_2.step4r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;4<br>
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
+				<div id=_2.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_2", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
 
 
-		<tr id=_2.step2r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_2.step5r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
-				Step&nbsp;2<br>
+				Step&nbsp;5<br>
 				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_2.step2.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_2.step2.b class=c1></input>",
-							"A<sub>triangle</sub>", "dx");
+					drawInt("<input class=c1 id=_2.step5.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_2.step5.b class=c1></input>",
+							"A<sub>washer</sub>", "dx");
 				</script>
-				<equ> = <input id="_2.step2.c" class=c5></input></equ>
-				<div id=_2.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+				<equ> = <input id="_2.step5.c" class=c5></input></equ>
+				<div id=_2.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
 					<img class="fixedWidth" src="2003.1.a.step1e.jpg"><br>
 				</div>
-			</td>	
+			</td>
 			<td>
-				<script>drawValidate("_2", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_2", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
 		<tr>
@@ -654,143 +632,12 @@
 	<!-- End Problem 1 Extension ------------------------------------------------------------------------------------------------------------------->
 
 
-	<!-- Start Problem  2 -------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 2:</h3>
-	<p>
-		<img class="fixedwidth floatLeft" src="2015.2.jpg">
-		<H3>2015 AP<sup>&copy;</sup> Calculus AB.  Problem # 2.</H3><BR>
-		Let f and g be the functions defined by<br>
-		<equ>f(x)=1+x+e<sup>x<sup>2</sup>&minus;2x</sup></equ> and <equ>g(x)=x<sup>4</sup>&minus;6.5x<sup>2</sup>+6x+2</equ>. <br>
-		Let R and S be the two regions enclosed by the graphs of f and g shown in the figure at left. 
-		<br>
-			Region S is the base of a solid whose cross sections perpendicular to the x-axis are squares.  
-			<b>Find the Volume of the solid.</b><br>(You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )<br>
-	</p>
-	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-
-	<table class=hw >
-		<tr id=_3.step1r>	<!-- step?r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;1<br>
-				(<script>buildToolTip("Find the intersection of R of S", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_3.step1.a class=c7>,<input id=_3.step1.b class=c7>)	<!-- step?.a-z for each input step -->
-				<div id=_3.step1h class="hidden">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2015.2.a.step1b.jpg"><br>
-					<img class="fixedWidth" src="2015.2.a.step1c.jpg"><br>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_3", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_3.step2r>	<!-- step?r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;2<br>
-				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				<equ>A<sub>square</sub> = [<input id=_3.step2.a class=c1>(x) &minus; <input id=_3.step2.b class=c1>(x)]<sup><input id=_3.step2.c class=c1></sup>
-				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_3", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_3.step3r>	<!-- step?r  row Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;3<br>
-				(<script>buildToolTip("You need to specify the bounds and the result of the integral", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				<script>
-					drawInt("<input id=_3.step3.a class=c1></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_3.step3.b class=c1></input>",
-							"A<sub>square</sub>", "dx");
-				</script>
-				<equ>=&nbsp;<input id="_3.step3.c" class=c7></input></equ>
-				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2015.2.a.step1d.jpg"><br>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_3", "step3", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr>
-			<td class=hwc1>Score:</td>
-			<td id=_3.score></td>
-			<td></td>
-		</tr>
-	</table>
-	<!-- End of Problem  2 -------------------------------------------------------------------------------------------------------------------------->
-
-
-	<!-- Start Problem  2 Extension -------------------------------------------------------------------------------------------------------------------------->
-
-	<h3>Extension:</h3>  Find the volume of a solid whose base is R and each cross section is a semi-circle perpendicular to the x-axis.
-	<table class=hw >
-		<tr id=_4.step1r>	<!-- step3r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;1<br>
-				(<script>buildToolTip("Area = 1/2bh.  Combine like terms and simplify as much as possible before integrating", "hint");</script>)
-
-			</td>
-			<td class=hwc2>
-				Let <equ>A<sub>semi-circle</sub> = <script>drawFrac("<input id=_4.step1.a class=c1>","<input id=_4.step1.b class=c1>")</script>
-				&pi;[<script>drawFrac("<input id=_4.step1.c class=c1>(x) &minus; <input id=_4.step1.d class=c1>(x)", "<input id=_4.step1.e class=c1>")</script>]
-				<sup><input id=_4.step1.f class=c1></equ>	<!-- step?.a-z for each input step -->
-				<div id=_4.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
-					h = 1/2&pi;[g(x) - f(x)]<sup>2</sup>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_4", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-
-
-		<tr id=_4.step2r>	<!-- step2r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;2<br>
-				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				<script>
-					drawInt("<input class=c1 id=_4.step2.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_4.step2.b class=c1></input>",
-							"A<sub>semi-circle</sub>", "dx");
-				</script>
-				<equ> = <input id="_4.step2.c" class=c5></input></equ>
-				<div id=_4.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2015.2.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2015.2.a.step1e.jpg"><br>
-				</div>
-			</td>	
-			<td>
-				<script>drawValidate("_4", "step2", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr>
-			<td class=hwc1>Score:</td>
-			<td id=_4.score></td>
-			<td></td>
-		</tr>
-	</table>
-
-	<!-- End Problem  2 Extension -------------------------------------------------------------------------------------------------------------------------->
-	
 	<!-- Start Problem  3  -------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 3:</h3>
+	<h3>Problem 2:</h3>
 	
-		<img class="fixedwidth floatLeft" src="lesson.2.jpg">
+		<img class="fixedwidth floatLeft" src="problem2.jpg">
 		Let f and g be the functions defined on the left.<br>
-		Find the volume of the solid bounded by f(x) and g(x) and with cross-sections that are squares perpendicular to the <b>y-axis</b>.  
+		Find the volume of the solid bounded by f(x) and g(x) rotated around the <b>y-axis</b>.  
 		<br><br>
 		Just like Problem 3 in the last section, you will need to solve f(x) and g(x) for x and integrate with respect to y.  
 		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
@@ -799,96 +646,210 @@
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
 	<table class=hw >
-		<tr id=_5.step1r>	<!-- step1r row. Used for scrolling -->
+		<tr id=_3.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;1<br>
 				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_5.step1.a class=c8>,<input id=_5.step1.b class=c8>)	<!-- step?.a-z for each input step -->
-				<div id=_5.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="lesson.2a.jpg"><br>
-					<img class="fixedWidth" src="lesson.2b.jpg"><br>
+				Let (<equ>A,B</equ>)=(<input id=_3.step1.a class=c8>,<input id=_3.step1.b class=c8>)	<!-- step?.a-z for each input step -->
+				<div id=_3.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1b.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1c.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_5", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_5.step2r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_3.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;2<br>
-				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so q(y) = 1/2y", "hint");</script>)
+				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so f(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>q(y) = </equ><input id=_5.step2.a class=c2>(<input id=_5.step2.b class=c1> + <input id=_5.step2.c class=c1>) (Solve f(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_5.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+				Let <equ>f(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_5", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_5.step3r>	<!-- step3r row. Used for scrolling -->
+		<tr id=_3.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;3<br>
-				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so r(y) = 1/2y", "hint");</script>)
+				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so g(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>r(y) = </equ><input id=_5.step3.a class=c1> &minus; <input id=_5.step3.b class=c1><sup><input id=_5.step3.c class=c1></sup></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_5.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+				Let <equ>g(y) = </equ><input id=_3.step3.a class=c1><script>drawRoot( "<input id=_3.step3.b class=c1>" );</script>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
 					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_5", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_5.step4r>	<!-- step?r row. Used for scrolling -->
+
+		<tr id=_3.step4r>	<!-- step4r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;4<br>
-				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
+
 			</td>
 			<td class=hwc2>
-				<equ>A<sub>square</sub> = [<input id=_5.step4.a class=c1>(x) &minus; <input id=_5.step4.b class=c1>(x)]<sup><input id=_5.step4.c class=c1></sup>
-				<div id=_5.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
+				Let <equ>R = <input id=_3.step4.a class=c1>(y)</equ>	<!-- step?.a-z for each input step -->
+				<div id=_3.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
+					R = g(x) since g(x) is farthest from the AOR x=0 (y-axis)
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_5", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_5.step5r>	<!-- step5r row. Used for scrolling -->
+
+		<tr id=_3.step5r>	<!-- step5r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;5<br>
-				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), q(y)-r(y) or r(y)-q(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>r = <input id=_3.step5.a class=c1>(y)</equ>	<!-- step?.a-z for each input step -->
+				<div id=_3.step5h class="hidden errmsg">													<!-- step?h hidden solution -->
+					r = f(x) since f(x) is closest to the AOR x=0 (y-axis)
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_3", "step5", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_3.step6r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;6<br>
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
+				<div id=_3.step6h class="hidden errmsg">													<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_3", "step6", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_3.step7r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;7<br>
+				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_5.step5.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_5.step5.b class=c1></input>",
-							"A<sub>square</sub>", "dy");
+					drawInt("<input class=c1 id=_3.step7.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_3.step7.b class=c1></input>",
+							"A<sub>washer</sub>", "dx");
 				</script>
-				<equ>=&nbsp;<input id="_5.step5.c" class=c5></input></equ>
-				<div id=_5.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>The bounds are from 0 to B because you are integrating with respect to Y.</errMsg>  
-					<img class="fixedWidth" src="lesson.2d.jpg"><br>
+				<equ> = <input id="_3.step7.c" class=c5></input></equ>
+				<div id=_3.step7h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1d.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1e.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_5", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step7", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
+
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=_5.score></td>
+			<td id=_3.score></td>
 			<td></td>
 		</tr>
 	</table>
 	<!-- End of Problem 3 ----------------------------------------------------------------------------------------------------------->
 
+	<h3>Extension:</h3>  Find the volume of the solid above is rotated around the line x=3
+	<table class=hw >
+		<tr id=_4.step1r>	<!-- step1r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;1<br>
+				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), x=3", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>R = <input id=_4.step1.a class=c1>(y) &minus; <input id=_4.step1.b class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					R = f(x) since f(x) is farthest from the AOR x=3 
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_4", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_4.step2r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;2<br>
+				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>r = <input id=_4.step2.a class=c1>(y) &minus; <input id=_4.step2.b class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
+					r = g(x) since g(x) is closest to the AOR x=3 
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_4", "step2", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_4.step3r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;3<br>
+			</td>
+			<td class=hwc2>
+				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_4", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_4.step4r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;4<br>
+				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
+			</td>
+			<td class=hwc2>
+				<script>
+					drawInt("<input class=c1 id=_4.step4.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_4.step4.b class=c1></input>",
+							"A<sub>washer</sub>", "dx");
+				</script>
+				<equ> = <input id="_4.step4.c" class=c5></input></equ>
+				<div id=_4.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1f.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1g.jpg"><br>
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_4", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class=hwc1>Score:</td>
+			<td id=_4.score></td>
+			<td></td>
+		</tr>
+	</table>
 
 
 

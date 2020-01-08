@@ -528,11 +528,11 @@
 			<li>
 				Let:<br>
 				(A,B) = (0,1)<br>
-				<equ>q(y) = <script>drawRoot("y");</script> &minus; 1  		<br>
-				     r(y) = <negative /><script>drawRoot("y");</script> &plus; 1
+				<equ>f(y) = <script>drawRoot("y");</script> &minus; 1  		<br>
+				     g(y) = <negative /><script>drawRoot("y");</script> &plus; 1
 				</equ> (&minus; because of domain for g(x))<br>
 				
-				<script>drawInt("0","B","[ r(y) &minus; q(y) ]","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
+				<script>drawInt("0","B","[ g(y) &minus; f(y) ]","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
 				
 			</li>
 		</ol>
@@ -582,10 +582,10 @@
 		<tr id=_3.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;2<br>
-				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so q(y) = 1/2y", "hint");</script>)
+				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so f(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>q(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
+				Let <equ>f(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
 				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
 					Remember you are solving for x which means there will only be "y" in the result.
 				</div>
@@ -597,10 +597,10 @@
 		<tr id=_3.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;3<br>
-				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so r(y) = 1/2y", "hint");</script>)
+				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so g(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>r(y) = </equ><input id=_3.step3.a class=c1> &minus; <input id=_3.step3.b class=c1></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
+				Let <equ>g(y) = </equ><input id=_3.step3.a class=c1> &minus; <input id=_3.step3.b class=c1></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
 				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
 					Remember you are solving for x which means there will only be "y" in the result.
 				</div>
@@ -612,7 +612,7 @@
 		<tr id=_3.step4r>	<!-- step4r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;4<br>
-				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), q(y)-r(y) or r(y)-q(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), f(y)-g(y) or g(y)-f(y), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
@@ -622,7 +622,7 @@
 				</script>
 				<equ>=&nbsp;<input id="_3.step4.e" class=c5></input></equ>
 				<div id=_3.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
-					The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is r(y) - q(y) because r(y) > q(y) on [0,B].
+					The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is g(y) - f(y) because f(y) > g(y) on [0,B].
 				</div>
 			</td>
 			<td>

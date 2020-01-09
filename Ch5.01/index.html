@@ -202,8 +202,8 @@
 			_3.step3b="y";
 			_3.step4a="0";
 			_3.step4b="B";
-			_3.step4c="q";
-			_3.step4d="r";
+			_3.step4c="g";
+			_3.step4d="f";
 			_3.step4e="2.985";
 			_3.showStep = function showStep(aDiv)
 			{
@@ -391,7 +391,9 @@
 				</script>
 				<equ> = <input id="_1.step2.e" class=c4></input></equ>
 				<div id=_1.step2h class="hidden errMsg">										<!-- step?h hidden solution -->
-					The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].
+					The bounds of R are from A to 1.<br>The integral is f(x) - g(x) because f(x) > g(x) on [A,0].<br>
+					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="2003.1.a.step1d.jpg"><br>
 				</div>
 			</td>
 			<td>
@@ -480,7 +482,7 @@
 		<tr id=_2.step4r class>	<!-- step?r  row Used for scrolling -->
 			<td class=hwc1>Answer</td>
 			<td class=hwc2>
-				Total Area:  <input id=_2.step2.a class=c5></input>
+				Total Area:  <input id=_2.step4.a class=c5></input>
 				<div id=_2.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
 					The area of R + S = 2.004
 				</div>
@@ -518,20 +520,20 @@
 		<B>Process:</B>
 		<ol>
 			<li>Solve each equation for "x".<br>
-				<equ>y = (x &plus;  1)<sup>2</sup></equ> becomes <equ>x = &plusmn;<script>drawRoot("y")</script> &minus; 1</equ> <br>
-				<equ>y = (x &minus; 1)<sup>2</sup></equ> becomes <equ>x = &plusmn;<script>drawRoot("y")</script> &plus; 1</equ> 
+				<equ><b>f(x): </b>y = (x &plus;  1)<sup>2</sup></equ> on [-1,0] becomes <equ>x = +<script>drawRoot("y")</script> &minus; 1</equ> <br>
+				<equ><b>g(x): </b>y = (x &minus; 1)<sup>2</sup></equ> on [ 0,1] becomes <equ>x = &minus;<script>drawRoot("y")</script> &plus; 1</equ><br>(Since [0,1] is left of g(x)'s vertex, we need the "&minus;" equation)
 			</li>
 			<li>
 				Instead of <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","[ top &minus; bottom ]","dx")</script> you are going to 
-				<script>drawInt("y<sub>1</sub>","y<sub>2</sub>","[ right &minus; left ]","dy")</script> (Notice the bounds have changed)<br>
+				<script>drawInt("y<sub>1</sub>","y<sub>2</sub>","[ right &minus; left ]","dy")</script> (Notice EVERYTHING has changed)<br>
 			</li>
 			<li>
 				Let:<br>
 				(A,B) = (0,1)<br>
 				<equ>f(y) = <script>drawRoot("y");</script> &minus; 1  		<br>
 				     g(y) = <negative /><script>drawRoot("y");</script> &plus; 1
-				</equ> (&minus; because of domain for g(x))<br>
-				
+				</equ> 
+				<br>
 				<script>drawInt("0","B","[ g(y) &minus; f(y) ]","dy")</script> = [(<script>drawFrac("-2","3")</script>y<sup>3/2</sup> + y) &minus; (<script>drawFrac("2","3")</script>y<sup>3/2</sup> &minus; y)]<script>drawEval("0","1")</script> = <script>drawFrac("2","3")</script> u<sup>2</sup>
 				
 			</li>
@@ -551,11 +553,11 @@
 		
 		<table width="100%"><tr><td></td></tr></table>
 		<img class="floatRight fixedWidth" src="2012.2.a.jpg">
-		<br><br>Notice that you could integrate with respect to "x" by breaking the problem into two parts(since f(x) and g(x) only exist on separate domains. 
+		<br><br>Notice that you <b>could</b> integrate with respect to "x" by breaking the problem into two parts(since f(x) and g(x) only exist on separate domains. 
 		<script>drawInt("1","A","f(x)", "dx");</script> + <script>drawInt("A","5","g(x)", "dx");</script>
 		
-		<br>
-		However you are going to solve it by integrating with respect to "y".  <br>
+		<br><br>
+		<b>However</b> you are instead going to solve it by integrating with respect to "y" as discussed above.  <br>
 		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
 		
 	</p>
@@ -622,7 +624,7 @@
 				</script>
 				<equ>=&nbsp;<input id="_3.step4.e" class=c5></input></equ>
 				<div id=_3.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
-					The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is g(y) - f(y) because f(y) > g(y) on [0,B].
+					The bounds are from 0 to B because you are integrating with respect to Y.<br>The integral is g(y) - f(y) because g(y) > f(y) (right of f(y))on [0,B].
 				</div>
 			</td>
 			<td>

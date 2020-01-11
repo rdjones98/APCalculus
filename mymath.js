@@ -48,14 +48,16 @@ function scoreQuestion( aProbNbr, aScore )
 }
 function submitScores( anAssignment )
 {
+	var firstTime = getCookie(anAssignment);
 	var endTime = getDateTime();
 	var person = prompt("Please enter your name", "");
 	var doc = new jsPDF();
 	var x = 100 - anAssignment.length / 2;
 	doc.text( anAssignment, x, 10);
 	doc.text( person, 10,20);
-	doc.text( "Start Time: " + startTime, 120, 20);
-	doc.text(   "End Time: " + endTime,   122, 30);
+	doc.text( "First Time: " + firstTime, 120, 20);
+	doc.text( "Start Time: " + startTime, 120, 30);
+	doc.text(   "End Time: " + endTime,   122, 40);
 
 	var sum=0;
 	for( var i=0; i<results.length; i++ )
@@ -165,6 +167,41 @@ function showToolTip(e)
 {
 	alert(e.title);
 }
+
+/* Begin Cookie Management */
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function checkCookie() {
+  var username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+}
+
 
 //Debugger Helper
 function dumpHTML() {

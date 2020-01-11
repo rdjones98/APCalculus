@@ -7,8 +7,9 @@
 	<script src="../myframework.js"></script>
 	<script src="../mymath.js"></script>
 	<script>
+		var title = "Chapter 5.01 Area Between 2 Curves";
 		setNumProblems(2);  // In mymath.js  Used to compute the average for this assignment
-		setCookie("5.01", getDateTime(), 5);
+		setCookie(title, getDateTime(), 5);
 		// Validator for problem 1
 		var _1 = new Object();
 			_1.score=0;
@@ -286,12 +287,12 @@
 			scoreQuestion(1, _1.score);
 			scoreQuestion(2, _2.score);
 			scoreQuestion(3, _3.score);
-			submitScores("Chapter 5.01 Area Between 2 Curves");
+			submitScores(title);
 		}
 	</script>
 </head>
 <body>
-<script>buildHeader("Chapter 9");</script><!-- Build Common Header -->
+<script>buildHeader(title);</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
 	<H2>Topic: Area between 2 Curves.</H2><BR>

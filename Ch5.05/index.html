@@ -7,7 +7,7 @@
 	<script src="../myframework.js"></script>
 	<script src="../mymath.js"></script>
 	<script>
-		title="Chapter 5.02 Derivatives of an Inverse";
+		title="Chapter 5.05 Volume of Rotation";
 		setNumProblems(5);  // In mymath.js  Used to compute the average for this assignment
 
 		// Validator for problem 1
@@ -362,78 +362,71 @@
 <script>buildHeader(title);</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
-	<H2>Derivative of an inverse function.</H2><BR>
+	<H2>Topic: Volume of Rotation.</H2><BR>
 	
 	<div class=bigIdea>
-		<B>Big Idea:  Find the Derivative of an inverse function WITHOUT finding the actual inverse.</B> <br>
+		<B>Big Idea:  Find the area of 1 washer, then integrate over the bounds to find the Volume.</B> <br>
 		<table>
 			<tr>
 				<td>
-					<equ>(f<sup>&minus;1</sup>)<sup>&prime;</sup>(x) = </equ><script>drawFrac("1","f <sup>&prime;</sup>(f<sup>&minus;1</sup>(x))");</script>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "&pi;[R<sup>2</sup> &minus; r<sup>2</sup>]", "dx");</script> where R is the larger function
 				</td>
 			</tr>
 		</table>
 	</div>
 	<p>
-			<h3>Steps:</h3>
-			You will be given a function and an x or y coordinate for that function.  <br>
-			<ol>
-			<li>Use that information and solve for the missing coordinate, giving you an <b>(x,y)</b> pair for <equ><b>f(x)</b></equ>
-			</li>
-			<li>The inverse of that point <b>(y,x)</b> is a solution for <equ><b>f<sup>&minus;1</sup>(y)</b></equ>
-			</li>
-			<li>Derive the function you've been given to find <equ><b>f<sup>&prime;</sup>(x)</b></equ>
-			</li>
-			<li>Use the equation above to find the "derivative of the inverse".
-			</li>
-			</ol>
+			Because each function is being rotated around an "Axis of Rotation", the resulting shape will always be a circle.  
+			For the sake of simplicity we will label the larger circle's radius "R" and the smaller circle's radius "r".  
+			The resulting shape is typically a "washer" of area <equ>&pi;[R<sup>2</sup> - r<sup>2</sup>]</equ><br><br>
+
+			<img class="floatLeft fixedWidth" src="lesson.1.jpg" >
+			<b>Example 1:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
+			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the x-axis.<br><br>
+			The outer function "R" is <equ>f(x)</equ> and the inner radius "r" is <equ>g(x)</equ><br><br>
+			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;f(x)<sup>2</sup>&nbsp;&minus;&nbsp;g(x)<sup>2</sup>&nbsp;]</equ> 
+			and the volume of the solid build by those washers is:<br>
+			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  5.984u<sup>3</sup></equ> <b>(Verify this!)</b>
 			<br><br>
+			
 	</p>
 	
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-			<b>Example 1:</b> Let <equ>f(x)=x<sup>3</sup>&minus;5x<sup>2</sup>&minus;8</equ> and let <equ>g</equ> be the inverse of f.  Find <equ>g<sup>&prime;</sup>(&minus;12)</equ>.<br>
-			Notice that since we are asking about <equ>g<sup>&prime;</sup>(&minus;12)</equ>, f(x) has the point (x, &minus;12) as a solution.<br>
-			Steps:<br>
-			<ol>
-			<li><equ>&minus;12 = x<sup>3</sup>&minus;5x<sup>2</sup>&minus;8</equ><br>
-			(Don't be intimidated.  These will always have an easy solution, usually 1.  Just guess and check.)<br>
-			Now we have (1,-12) as a solution to f(x).
-			</li>
-			<li>The point (-12,1) is a solution for <equ>g(x)</equ>.  (Remember, <equ>g(x)</equ> is the inverse of f so <equ>g(x) = f<sup>&minus;1</sup>(x)</equ>)
-			</li>
-			<li><equ>f<sup> &prime;</sup>(x) = 3x<sup>2</sup>&minus;10x</equ>
-			</li>
-			<li>
-				<equ>g<sup>&prime;</sup>(-12) = (f<sup>&minus;1</sup>)<sup>&prime;</sup>(&minus;12) = </equ><script>drawFrac("1","f <sup>&prime;</sup>(f<sup>&minus;1</sup>(&minus;12))");</script> = <script>drawFrac("1","f <sup>&prime;</sup>(1)");</script> = &minus; <script>drawFrac("1","7");</script> 
-			</li>
-			</ol>
+			<img class="floatRight fixedWidth" src="lesson.2.jpg" >
+			<b>Example 2:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
+			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the line y=<negative />1. (y=<negative />1 is your Axis of Rotation: AOR)<br>
+			Notice that both "R" and "r" are exactly 1 unit bigger.  In general each radius is (R&minus;AOR) and (r&minus;AOR)<br>
+			The area of each washer is now <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;&nbsp;=&nbsp;&pi;[&nbsp;(f(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;&minus;&nbsp;(g(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;]</equ> 
+			and the volume of the solid build by those washers is:<br>
+			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  14.361u<sup>3</sup></equ> <b>(Verify this)</b>
+			<br><br>
+	
 
-	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-			<b>Example 2:</b> <br>
-			<img width=500 src="lesson2.jpg"><br>
-			Notice that since we are asking about <equ>g<sup>&prime;</sup>(2) = f<sup>&minus;1</sup>(2)</equ>, f(x) has the point (x, 2) as a solution (which is the first row).<br>
-			Steps:<br>
-			<ol>
-			<li>(1,2) is the row we need<br>
-			</li>
-			<li>The point (2,1) is the solution for <equ>g(x)</equ>.  (Remember, <equ>g(x)</equ> is the inverse of f so <equ>g(x) = f<sup>&minus;1</sup>(x)</equ>)
-			</li>
-			<li>We will use <equ>f<sup>&prime;</sup></equ> from the first row.
-			</li>
-			<li>
-				<equ>g<sup>&prime;</sup>(2) = (f<sup>&minus;1</sup>)<sup>&prime;</sup>(&minus;2) = </equ><script>drawFrac("1","f <sup>&prime;</sup>(f<sup>&minus;1</sup>(2))");</script> = <script>drawFrac("1","f <sup>&prime;</sup>(1)");</script>= <script>drawFrac("1","4");</script>
-			</li>
-			</ol>
+	<h2>General Process:</h2>
+
+	<ol>
+		<li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
+		</li>
+		<li>Determine which equation is farthest from the AOR (Axis of rotation).  <br>
+			Let R = [ f(x) &minus; AOR ] (assuming f(x) is the farthest equation). <br>
+			Let r&nbsp;&nbsp;= [ g(x) &minus; AOR ] (assuming g(x) is the closer equation).<br>
+			
+		</li>
+		<li>Find the area of 1 washer. <br>
+			<equ>A<sub>washer</sub> = &pi;[ R<sup>2</sup> &minus; r<sup>2</sup> ]&nbsp;= &pi;[&nbsp;(&nbsp;f(x)&nbsp;&minus;&nbsp;AOR&nbsp;)<sup>2</sup>&nbsp;&minus;&nbsp;(&nbsp;g(x)&nbsp;&minus;&nbsp;AOR&nbsp;)<sup>2</sup>&nbsp;] <br></equ>
+		</li>
+		<li><script>drawInt("x<sub>1</sub>","x<sub>2</sub>","A<sub>washer</sub>", "dx");</script> or <script>drawInt("y<sub>1</sub>","y<sub>2</sub>","A<sub>washer</sub>", "dy");</script> <br>
+		</li>
+	</ol> 
 
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 	
 	<h2>Your Turn:</h2>
 
 	<!-- Start Problem 1 ----------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 1: 2014 AP<sup>&copy;</sup> Calculus AB.  Problem # 92.</h3>
+	<h3>Problem 1:</h3>
 	<p>
-		<img width=700 src="2014.92.jpg"><br>
-		
+		<img class="fixedwidth floatLeft" src="2003.1.jpg">
+		<H3>2003 AP<sup>&copy;</sup> Calculus AB.  Problem # 1.</H3><BR>
 		Let R be the shaded region bounded by the graphs of <equ>f(x)=<script>drawRoot('x');</script></equ> and <equ>g(x)=e<sup>-3x</sup></equ> and the vertical line x = 1.<br>
 		<br>
 		Find the volume of the solid generated when R is revolved about the horizontal line <equ>y&nbsp;=&nbsp;1</equ>.  <br><br>

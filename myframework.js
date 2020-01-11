@@ -80,9 +80,10 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 5 Applications of Integrals</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch5.01'>Area between 2 Curves</a>
-			<a class='menuItem' href='../Ch5.02'>Volume given Cross Section</a>
-			<a class='menuItem' href='../Ch5.03'>Volume of Rotation</a>
+			<a class='menuItem' href='../Ch5.02'>Derivatives of an Inverse</a>
+			<a class='menuItem' href='../Ch5.03'>Area between 2 Curves</a>
+			<a class='menuItem' href='../Ch5.04'>Volume given Cross Section</a>
+			<a class='menuItem' href='../Ch5.05'>Volume of Rotation</a>
 		</div>
 	</div>
 
@@ -210,39 +211,6 @@ function rightArrowClicked()
 	urlClicked(url);
 }
 
-/* Begin Cookie Management */
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-function checkCookie() {
-  var username = getCookie("username");
-  if (username != "") {
-   alert("Welcome again " + username);
-  } else {
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 365);
-    }
-  }
-}
 
 // Load KeyListener.  This is outside of any function and should load when page loads
 document.onkeydown = function(e) {

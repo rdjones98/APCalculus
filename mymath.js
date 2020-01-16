@@ -125,8 +125,12 @@ function drawBigInt(lb, ub, func, d)
 }
 function drawRoot(body, root)
 {
-	var out = "<span class=root>&#8730;</span><span class=rootBody>"+ body + "</span>";
+	var out = buildRoot(body,root);
 	document.writeln(out);
+}
+function buildRoot(body, root)
+{
+	return "<span class=root>&#8730;</span><span class=rootBody>"+ body + "</span>";
 }
 /***************************************************************************************
  * Draw the group of validator buttons and indicators for correct/incorrect answers

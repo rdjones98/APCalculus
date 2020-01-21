@@ -55,7 +55,7 @@ input.c6 { width:60px; }
 input.c7 { width:65px; }
 input.c8 { width:70px; }
 
-equ 	{ font-family: Times New Roman;	font-size:120%;font-style:normal;}	/*custom div*/
+equ 	{ font-family: Times New Roman;	font-size:120%;font-style:normal; white-space: nowrap;}	/*custom div*/
 iequ 	{ font-family: Times New Roman;	font-size:120%;font-style:italic;}	/*custom div*/
 .errMsg  { display:block; color:red; padding-top:10px; }
 .hidden  { display: none;}
@@ -87,6 +87,7 @@ td {padding-top:5px; padding-bottom:5px;}
 
 sup {font-size:15px;}
 negative:before {position:relative; top:-5px; content:'\002D'; }
+
 /* smartphones, touchscreens */
 @media (pointer:coarse) 
 {

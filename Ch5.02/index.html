@@ -8,7 +8,7 @@
 	<script src="../mymath.js"></script>
 	<script>
 		title="Chapter 5.02 Derivatives of an Inverse";
-		setNumProblems(5);  // In mymath.js  Used to compute the average for this assignment
+		setNumProblems(1);  // In mymath.js  Used to compute the average for this assignment
 
 		// Validator for problem 1
 		var _1 = new Object();
@@ -85,6 +85,15 @@
 
 <div id=chapterDiv> 
 	<H2>Derivative of an inverse function.</H2><BR>
+	<H3>Objective: Find the <b>derivative</b> (slope) of the <b>inverse</b> of <iequ>f</iequ><br></H3>
+	Example: If <equ><i>f</i>(x)=x<sup>2</sup>+1</equ>, find <equ>(<i>f</i> <sup>-1</sup>)<sup>&prime;</sup>(2)</equ><br>
+	<img class="floatLeft fixedwidth" src="lesson1.jpg"><br>
+		
+	So what are you being asked to do?  Remember that <equ><i>f</i> <sup>-1</sup></equ> is the "inverse" of <iequ>f</iequ>, 
+	Therefore this problem is asking you to find the derivative (slope) of the inverse function at <equ><i>x</i>=2</equ>. <br>
+	One approach is to find <equ><i>f</i> <sup>-1</sup></equ> (Swap x and y, then solve for y) and you would get <equ><i>f</i> <sup>-1</sup>(x)=</equ><script>drawRoot("x&minus;1");</script> <b>(verify this)</b><br>
+	Now you can derive it and evaluate it at 2.  <equ>(<i>f</i> <sup>-1</sup>)<sup>&prime;</sup>(2) = </equ><script>drawFrac("1","2"+buildRoot("x&minus;1"))</script> = <script>drawFrac("1","2")</script><br>
+	However, how do you find <equ><i>f</i> <sup>-1</sup></equ> if <equ><i>f</i>(x) = x<sup>3</sup>&minus;5x<sup>2</sup>&minus;8</equ>?  You can't!  Therefore you need to a different approach.<br><br>
 	
 	<div class=bigIdea>
 		<B>Big Idea:  Find the Derivative of an inverse function WITHOUT finding the actual inverse.</B> <br>
@@ -98,9 +107,11 @@
 	</div>
 	<p>
 		<h3>Steps:</h3>
-		You will be given a function and an x or y coordinate for that function.  <br>
+		
 		<ol>
-		<li>Use that information and solve for the missing coordinate, giving you an <equ><b>(x,y)</b></equ> pair for <equ><b><i>f</i>&nbsp;(x)</b></equ>
+		<li>Find an <equ>(x,y)</equ> coordinate pair for <equ><i>f</i>(x)</equ>.  <br>
+			If you have been given an equation, plug in the "y" coordiate you've been given and solve for x.<br>
+			If you have been given a table, use the "y" coordinate you've been give to find the appropriate row
 		</li>
 		<li>The inverse of that point <equ><b>(y,x)</b></equ> is a solution for <equ><b><i>f</i>&nbsp;<sup>&minus;1</sup></b></equ>
 		</li>
@@ -113,8 +124,8 @@
 	
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 		<b>Example 1:</b> Let <equ><i>f</i>(x) = x<sup>3</sup>&minus;5x<sup>2</sup>&minus;8</equ> and let <iequ>g</iequ> be the inverse of <iequ>f</iequ>.  Find <equ><i>g</i>&prime;(&minus;12)</equ>.<br>
-		<div class="padleft20">Notice that since we are asking about <equ><i>g</i>&prime;(&minus;12)</equ>, <equ><i>f</i>&nbsp;(x)</equ> has the point <equ>(x, &minus;12)</equ> as a solution.</div>
-		<b class="padleft20">Steps:</b><br>
+		Notice that since we are asking about <equ><i>g</i>&prime;(&minus;12)</equ>, <equ><i>f</i>&nbsp;(x)</equ> has the point <equ>(x, &minus;12)</equ> as a solution.
+		<b>Steps:</b><br>
 		<ol>
 		<li><equ>&minus;12 = x<sup>3</sup>&minus;5x<sup>2</sup>&minus;8</equ><br>
 		(Don't be intimidated.  These will always have an easy solution, usually 1.  Just guess and check.)<br>
@@ -131,12 +142,12 @@
 
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 			<b>Example 2:</b> <br>
-			<img class=padleft20 width=500 src="lesson2.jpg"><br>
-			<div class=padleft20>
-				Notice that since we are asking about <equ><i>g</i><sup> &prime;</sup>(2) = <i>f</i><sup>&nbsp;&minus;1</sup>(2)</equ>, <equ><i>f</i>&nbsp;(x)</equ> has the point <equ>(x, 2)</equ>
-				as a solution (which is the first row).<br>
-				<b>Steps:</b><br>
-			</div>
+			If <equ><i>f</i>(x)</equ> is a one-to-one continuous function with values given in the following table:<br>
+			<img class=fixedwidth src="lesson2.jpg"><br>
+			If <iequ>g</iequ> is the inverse of <iequ>f</iequ> then <equ><i>g</i>(2)</equ> is:<br><br>
+			Notice that since we are asking about <equ><i>g</i><sup> &prime;</sup>(2) = <i>f</i><sup>&nbsp;&minus;1</sup>(2)</equ>, <equ><i>f</i>&nbsp;(x)</equ> has the point <equ>(x, 2)</equ>
+			as a solution (which is the first row).<br>
+			<b>Steps:</b><br>
 			<ol>
 			<li><equ>(1,2)</equ> is the row we need<br>
 			</li>
@@ -156,9 +167,9 @@
 	<!-- Start Problem 1 ----------------------------------------------------------------------------------------------------------------------------->
 	<h3>Problem 1: </h3>
 	<p>
-		<img width=700 src="2014.92.jpg"><br>
+		<img fixedwidth src="2014.92.jpg"><br>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-	The table above gives values of the differentiable functions <iequ>f</iequ> and <iequ>g</iequ>, and <iequ>f</iequ>', the derivative of <iequ>f</iequ>, at selected values of <iequ>x</iequ>. <br>
+	The table above gives values of the differentiable functions <iequ>f</iequ> and <iequ>g</iequ>, and <equ><i>f</i> &prime;</equ>, the derivative of <iequ>f</iequ>, at selected values of <iequ>x</iequ>. <br>
 	If <equ><i>g</i>(x)=<i>f<sup>&nbsp;&minus;1</sup></i>(x)</equ>, what is the value of <equ><i>g</i>&prime;(7)</equ>?
 	<table class=hw >
 		<tr id=_1.step1r>	<!-- step1r row. Used for scrolling -->
@@ -202,7 +213,7 @@
 
 			</td>
 			<td class=hwc2>
-				<equ><i>g</i>&prime; (7) = (<i>f</i>&nbsp;<sup>&minus;1</sup>)<sup>&prime;</sup>(7) = </equ><script>drawFrac("1","<i>f</i>&nbsp;<sup>&prime;</sup>(<i>f</i><sup>&minus;1</sup>(7))");</script> = <script>drawFrac("1","<i>f</i>&nbsp;<sup>&prime;</sup>(<input id=_1.step3.a class=c1>)");</script>= <script>drawFrac("1","<input id=_1.step3.b class=c1>");</script>
+				<equ><i>g</i>&prime; (7) = </equ><script>drawFrac("1","<i>f</i>&nbsp;<sup>&prime;</sup>(<i>f</i><sup>&minus;1</sup>(7))");</script> = <script>drawFrac("1","<i>f</i>&nbsp;<sup>&prime;</sup>(<input id=_1.step3.a class=c1>)");</script>= <script>drawFrac("1","<input id=_1.step3.b class=c1>");</script>
 				<div id=_1.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
 					plug in values from table
 				</div>

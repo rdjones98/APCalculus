@@ -332,15 +332,17 @@
 	<img class="floatRight fixedWidth" src=lesson.area.3.jpg>
 
 	<ol>
-		<li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
+		<li><b>Find your bounds.</b>  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
 			In the example on the right we can see that the bounds are [<negative />2,2].<br>
-			If you did not have a graph you would solve <equ>f(x)=g(x)</equ> algebraically.
+			Typically these are decimals so we will usually create variables to make writing faster.<br>
+			let <equ>(A,B) = (-2,2) and (C,D)=(2,2)</equ>.  [<equ>(A,B)</equ> is the left bound and <equ>(C,D)</equ> is the right bound.]<br>
+			(This is not required but makes things faster on the AP Test).
 		</li>
-		<li>Determine which equation is bigger (on top)<br>
+		<li><b>Determine which equation is bigger (on top)</b><br>
 			(If you have multiple intervals the equations may swap)<br>
-			 In the example at right g(x) is bigger so our integral is <script>drawInt("-2","2","[ g(x) &minus; f(x) ]","dx")</script>
+			 In the example at right g(x) is bigger so our integral is <script>drawInt("A","C","[ g(x) &minus; f(x) ]","dx")</script>
 		</li>
-		<li>Integrating we get ( <script>drawFrac("<negative />1","12")</script><equ>x<sup>3</sup>&plus;3x</equ> ) &minus; ( <script>drawFrac( "1","3") </script><equ>x<sup>3</sup>&minus;2x</equ> ) <script>drawEval("-2","2");</script><br>
+		<li><B>Integrate</b> We get ( <script>drawFrac("<negative />1","12")</script><equ>x<sup>3</sup>&plus;3x</equ> ) &minus; ( <script>drawFrac( "1","3") </script><equ>x<sup>3</sup>&minus;2x</equ> ) <script>drawEval("-2","2");</script><br>
 			Combining like terms <script>drawFrac( "<negative />5","12") </script><equ>x<sup>3</sup>+5</equ> <script>drawEval("-2","2");</script><br>
 			Evaluating over the domain [<negative />2,2]: <script>drawFrac("40","3")</script> u<sup>2</sup>.
 		</li>
@@ -443,7 +445,7 @@
 		<tr id=_2.step2r>	<!-- step?r row. Used for scrolling -->
 			<td class=hwc1>
 				Step 2<br>
-				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
+				(<script>buildToolTip("Find the Area of R.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>

@@ -1,5 +1,5 @@
 /* Standard Tooltips */
-var ttRounding = "All intermediate steps should be truncated (not rounded) to 6 decimal places.  All final answers should be truncated (not rounded) at 3 decimal places."
+var ttRounding = "All intermediate steps should be truncated (not rounded) to 6 decimal places.  All final answers should be truncated (not rounded) at 3 decimal places.  NO LEADING ZEROS!"
 
 // Array of Results
 var results=[];

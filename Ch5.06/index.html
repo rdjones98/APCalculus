@@ -10,167 +10,6 @@
 		title="Chapter 5.06 Volume of Rotation Around Y";
 		setNumProblems(2);  // In mymath.js  Used to compute the average for this assignment
 
-		// Validator for problem 1
-		var _1 = new Object();
-			_1.score=0;
-			_1.step1a=".238734";
-			_1.step1b=".488604";
-			_1.step2a="g";
-			_1.step2b="1";
-			_1.step3a="f";
-			_1.step3b="1";
-			_1.step5a="A";
-			_1.step5b="1";
-			_1.step5c="1.423";
-			_1.showStep = function showStep(aDiv)
-			{
-				hide(aDiv+"c"); // Hide correct checkmark
-				show(aDiv+"x");	// Show error Checkmark
-				show(aDiv+"h");	// Show any hidden comments/solutions
-			}
-			_1.validate = function(el) 
-			{
-				hide(el.id);
-				show(el.id+"c");
-				var aStep = el.id;
-				if( aStep == "_1.step1" )
-				{
-					if (( document.getElementById("_1.step1.a").value != this.step1a ) ||
-						( document.getElementById("_1.step1.b").value != this.step1b ) )
-					{
-						setVal("_1.step1.a",this.step1a);
-						setVal("_1.step1.b",this.step1b);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
-					show("_1.step2" );	// make next step visible
-				}
-				else if( aStep == "_1.step2" )
-				{
-					if (( document.getElementById("_1.step2.a").value.toLowerCase() != this.step2a )|| 
-						( document.getElementById("_1.step2.b").value.toLowerCase() != this.step2b ))
-					{
-						setVal("_1.step2.a",this.step2a);
-						setVal("_1.step2.b",this.step2b);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 25;
-					show( "_1.step3" );		// make next step visible
-				}
-				else if( aStep == "_1.step3" )
-				{
-					if (( document.getElementById("_1.step3.a").value != this.step3a ) ||
-						( document.getElementById("_1.step3.b").value.toLowerCase() != this.step3b ))
-					{
-						setVal("_1.step3.a",this.step3a);
-						setVal("_1.step3.b",this.step3b);
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 25;
-						
-					show("_1.step5");		// make next step visible
-				}
-				else if( aStep == "_1.step5" )
-				{
-					if (( document.getElementById("_1.step5.a").value.toUpperCase() != this.step5a ) ||
-						( document.getElementById("_1.step5.b").value != this.step5b ) ||
-						( document.getElementById("_1.step5.c").value != this.step5c ))
-					{
-						setVal("_1.step5.a",this.step5a);
-						setVal("_1.step5.b",this.step5b);
-						setVal("_1.step5.c",this.step5c);
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 25;
-						
-				}
-				document.getElementById( "_1.score").innerHTML=this.score;
-			}
-		
-		// Validator for problem 2 (extension for problem 1)
-		var _2 = new Object();
-			_2.score=0;
-			_2.step2a="f";
-			_2.step2b="-1";
-			_2.step3a="g";
-			_2.step3b="-1";
-			_2.step5a="A";
-			_2.step5b="1";
-			_2.step5c="4.138";
-			_2.showStep = function showStep(aDiv)
-			{
-				hide(aDiv+"c"); // Hide correct checkmark
-				show(aDiv+"x");	// Show error Checkmark
-				show(aDiv+"h");	// Show any hidden comments/solutions
-			}
-			_2.validate = function(el) 
-			{
-				hide(el.id);
-				show(el.id+"c");
-				var aStep = el.id;
-				if( aStep == "_2.step1" )
-				{
-					if (( document.getElementById("_2.step1.a").value != this.step1a ) ||
-						( document.getElementById("_2.step1.b").value != this.step1b ) )
-					{
-						setVal("_2.step1.a",this.step1a);
-						setVal("_2.step1.b",this.step1b);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_2.step2" );	// make next step visible
-				}
-				else if( aStep == "_2.step2" )
-				{
-					if (( document.getElementById("_2.step2.a").value.toLowerCase() != this.step2a )|| 
-						( document.getElementById("_2.step2.b").value.toLowerCase() != this.step2b ))
-					{
-						setVal("_2.step2.a",this.step2a);
-						setVal("_2.step2.b",this.step2b);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show( "_2.step3" );		// make next step visible
-				}
-				else if( aStep == "_2.step3" )
-				{
-					if (( document.getElementById("_2.step3.a").value != this.step3a ) ||
-						( document.getElementById("_2.step3.b").value.toLowerCase() != this.step3b ))
-					{
-						setVal("_2.step3.a",this.step3a);
-						setVal("_2.step3.b",this.step3b);
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 20;
-						
-					show("_2.step5");		// make next step visible
-				}
-				else if( aStep == "_2.step5" )
-				{
-					if (( document.getElementById("_2.step5.a").value.toUpperCase() != this.step5a ) ||
-						( document.getElementById("_2.step5.b").value != this.step5b ) ||
-						( document.getElementById("_2.step5.c").value != this.step5c ))
-					{
-						setVal("_2.step5.a",this.step5a);
-						setVal("_2.step5.b",this.step5b);
-						setVal("_2.step5.c",this.step5c);
-						this.showStep(aStep);		
-					}
-					else
-						this.score = this.score + 20;
-						
-				}
-				document.getElementById( "_2.score").innerHTML=this.score;
-			}
 
 
 		// Validator for problem 3	
@@ -350,10 +189,8 @@
 
 		function submitClicked()
 		{
-			scoreQuestion(1, _1.score);
-			scoreQuestion(2, _2.score);
-			scoreQuestion(3, _3.score);
-			scoreQuestion(4, _4.score);
+			scoreQuestion(1, _3.score);
+			scoreQuestion(2, _4.score);
 			submitScores(title);
 		}
 	</script>
@@ -362,31 +199,38 @@
 <script>buildHeader(title);</script><!-- Build Common Header -->
 
 <div id=chapterDiv> 
-	<H2>Topic: Volume of Rotation.</H2><BR>
-	<H3>Objective: Find the volume of the 3D shape that would result from a series of "washers" created by <iequ>f</iequ> and <iequ>g</iequ> being rotated around an axis and then stacked end to end.</h3>
+	<H2>Topic: Volume of Rotation around Y.</H2><BR>
+	<H3>Objective: Find the volume of the 3D shape that would result from a series of "washers" created by <iequ>f</iequ> and <iequ>g</iequ> being rotated around the y-axis and then stacked end to end.</h3>
 	
 	<div class=bigIdea>
 		<B>Big Idea:  Find the area of 1 washer, then integrate over the bounds to find the Volume.</B> <br>
 		<table>
 			<tr>
 				<td>
-					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "&pi;[R<sup>2</sup> &minus; r<sup>2</sup>]", "dx");</script> where R is the larger function
+					<script>drawInt("y<sub>1</sub>","y<sub>2</sub>", "&pi;[R<sup>2</sup> &minus; r<sup>2</sup>]", "dy");</script> where R is the larger function
 				</td>
 			</tr>
 		</table>
 	</div>
 	<p>
-			Because each function is being rotated around an "Axis of Rotation", the resulting shape will always be a circle.  
-			For the sake of simplicity we will label the larger circle's radius "R" and the smaller circle's radius "r".  
-			The resulting shape is typically a "washer" of area <equ>&pi;[R<sup>2</sup> - r<sup>2</sup>]</equ><br><br>
-
+			Remember this example from the previous lesson?  What if we wanted to rotate it around the "y-axis" instead of the x-axis?
 			<img class="floatLeft fixedWidth" src="lesson.1.jpg" >
-			<b>Example 1:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
-			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the x-axis.<br><br>
-			The outer function "R" is <equ>f(x)</equ> and the inner radius "r" is <equ>g(x)</equ><br><br>
-			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;f(x)<sup>2</sup>&nbsp;&minus;&nbsp;g(x)<sup>2</sup>&nbsp;]</equ> 
+	</p>
+	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
+	</p>
+			First, we would need to solve both equations for "x" just as we have done in previous lessons.<br>
+			Second, our "washer" would be defined by the "farthest right" equation &minus; the "farthest left".<Br><br>
+
+			<img class="floatLeft fixedWidth" src="lesson.1.b.jpg" >
+			<b>Example 1:</b>  What is the volume of the solid formed by rotating<br>
+			<equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the <b>y-axis</b>.<br>
+			Solve f and g for x:<br>
+			f: <equ>y= </equ><script>drawRoot("x")</script> becomes </equ>x=y<sup>2</sup></equ> so <equ><i>f</i>(y)=y<sup>2</sup></equ><br>
+			g: <equ>y= <script>drawFrac("1","4")</script>x<sup>2</sup></equ> becomes <equ>x=</equ><script>drawRoot("4y")</script></equ> so <equ><i>g</i>(y)=</equ><script>drawRoot("4y")</script><br>
+			The outer function "R" is <equ>g(y)</equ> and the inner radius "r" is <equ>f(y)</equ><br><br>
+			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;g(y)<sup>2</sup>&nbsp;&minus;&nbsp;f(y)<sup>2</sup>&nbsp;]</equ> 
 			and the volume of the solid build by those washers is:<br>
-			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  5.984u<sup>3</sup></equ> <b>(Verify this!)</b>
+			<equ>V = </equ><script>drawInt("0", "B", "[ A<sub>washer</sub> ]","dy");</script><equ> =  ??? u<sup>3</sup></equ> <b>(Verify this!)</b>
 			<br><br>
 			
 	</p>

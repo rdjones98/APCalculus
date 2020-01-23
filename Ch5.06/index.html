@@ -7,7 +7,7 @@
 	<script src="../myframework.js"></script>
 	<script src="../mymath.js"></script>
 	<script>
-		title="Chapter 5.05 Volume of Rotation";
+		title="Chapter 5.06 Volume of Rotation Around Y";
 		setNumProblems(2);  // In mymath.js  Used to compute the average for this assignment
 
 		// Validator for problem 1
@@ -423,215 +423,227 @@
 	
 	<h2>Your Turn:</h2>
 
-	<!-- Start Problem 1 ----------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 1:</h3>
-	<p>
-		<img class="fixedwidth floatLeft" src="2003.1.jpg">
-		<H3>2003 AP<sup>&copy;</sup> Calculus AB.  Problem # 1.</H3><BR>
-		Let R be the shaded region bounded by the graphs of <equ>f(x)=<script>drawRoot('x');</script></equ> and <equ>g(x)=e<sup>-3x</sup></equ> and the vertical line x = 1.<br>
-		<br>
-		Find the volume of the solid generated when R is revolved about the horizontal line <equ>y&nbsp;=&nbsp;1</equ>.  <br><br>
-		Don't let the fact that the region is labeled "R" confuse you.  It has NOTHING to do with the "R" (bigger radius)  you will use below. (You may use a calculator.  <script>buildToolTip(ttRounding, "Round appropriately");</script> )</b><br><br>
+
+	<!-- Start Problem  3  -------------------------------------------------------------------------------------------------------------------------->
+	<h3>Problem 2:</h3>
+	
+		<img class="fixedwidth floatLeft" src="problem2.jpg">
+		Let f and g be the functions defined on the left.<br>
+		Find the volume of the solid bounded by f(x) and g(x) rotated around the <b>y-axis</b>.  
+		<br><br>
+		Just like Problem 3 in the last section, you will need to solve f(x) and g(x) for x and integrate with respect to y.  
+		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
+		
 	</p>
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 
 	<table class=hw >
-		<tr id=_1.step1r>	<!-- step1r row. Used for scrolling -->
+		<tr id=_3.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;1<br>
 				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
-
 			</td>
 			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_1.step1.a class=c7>,<input id=_1.step1.b class=c7>)	<!-- step?.a-z for each input step -->
-				<div id=_1.step1h class="hidden">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1b.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1c.jpg"><br>
+				Let (<equ>A,B</equ>)=(<input id=_3.step1.a class=c8>,<input id=_3.step1.b class=c8>)	<!-- step?.a-z for each input step -->
+				<div id=_3.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1a.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1b.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1c.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-
-		<tr id=_1.step2r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_3.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;2<br>
-				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), y = 1", "hint");</script>)
-
+				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so f(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>R = <input id=_1.step2.a class=c1>(x) &minus; <input id=_1.step2.b class=c1></equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
-					R = g(x) - 1
+				Let <equ>f(y) = </equ><input id=_3.step2.a class=c1><sup><input id=_3.step2.b class=c1></sup> (Solve f(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_3.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step2", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-
-		<tr id=_1.step3r>	<!-- step3r row. Used for scrolling -->
+		<tr id=_3.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;3<br>
-				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), y = 1", "hint");</script>)
-
+				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so g(y) = 1/2y", "hint");</script>)
 			</td>
 			<td class=hwc2>
-				Let <equ>r = <input id=_1.step3.a class=c1>(x) &minus; <input id=_1.step3.b class=c1></equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
-					r = f(x) - 1
+				Let <equ>g(y) = </equ><input id=_3.step3.a class=c1><script>drawRoot( "<input id=_3.step3.b class=c1>" );</script>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
+				<div id=_3.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
 
-		<tr id=_1.step4r>	<!-- step3r row. Used for scrolling -->
+		<tr id=_3.step4r>	<!-- step4r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;4<br>
+				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>R = <input id=_3.step4.a class=c1>(y)</equ>	<!-- step?.a-z for each input step -->
+				<div id=_3.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
+					R = g(x) since g(x) is farthest from the AOR x=0 (y-axis)
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_3", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_3.step5r>	<!-- step5r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;5<br>
+				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
+
+			</td>
+			<td class=hwc2>
+				Let <equ>r = <input id=_3.step5.a class=c1>(y)</equ>	<!-- step?.a-z for each input step -->
+				<div id=_3.step5h class="hidden errmsg">													<!-- step?h hidden solution -->
+					r = f(x) since f(x) is closest to the AOR x=0 (y-axis)
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_3", "step5", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+
+		<tr id=_3.step6r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				Step&nbsp;6<br>
 			</td>
 			<td class=hwc2>
 				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
-				<div id=_1.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
-					h = 5[f(x) - g(x)]<sup>2</sup>
+				<div id=_3.step6h class="hidden errmsg">													<!-- step?h hidden solution -->
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step6", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
 
-
-		<tr id=_1.step5r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_3.step7r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
-				Step&nbsp;5<br>
+				Step&nbsp;7<br>
 				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_1.step5.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_1.step5.b class=c1></input>",
+					drawInt("<input class=c1 id=_3.step7.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_3.step7.b class=c1></input>",
 							"A<sub>washer</sub>", "dx");
 				</script>
-				<equ> = <input id="_1.step5.c" class=c5></input></equ>
-				<div id=_1.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1d.jpg"><br>
+				<equ> = <input id="_3.step7.c" class=c5></input></equ>
+				<div id=_3.step7h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1d.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1e.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_3", "step7", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
+
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=_1.score></td>
+			<td id=_3.score></td>
 			<td></td>
 		</tr>
 	</table>
-	<!-- End Problem 1 ----------------------------------------------------------------------------------------------------------------------------->
+	<!-- End of Problem 3 ----------------------------------------------------------------------------------------------------------->
 
-	<!-- Start Problem 1 Extension ----------------------------------------------------------------------------------------------------------------->
-	
-	<h3>Extension:</h3>  Find the volume of the solid when R is rotated around the line y=<negative />1
+	<h3>Extension:</h3>  Find the volume of the solid above is rotated around the line x=3
 	<table class=hw >
-		<tr id=_1.step1r>	<!-- step1r row. Used for scrolling -->
+		<tr id=_4.step1r>	<!-- step1r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;1<br>
+				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), x=3", "hint");</script>)
+
 			</td>
 			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(.238734,.488604)	<!-- step?.a-z for each input step -->
-				<div id=_1.step1h class="hidden">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1b.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1c.jpg"><br>
+				Let <equ>R = <input id=_4.step1.a class=c1>(y) &minus; <input id=_4.step1.b class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+					R = f(x) since f(x) is farthest from the AOR x=3 
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_1", "step1", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_4", "step1", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
-		<tr id=_2.step2r>	<!-- step2r row. Used for scrolling -->
+
+		<tr id=_4.step2r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;2<br>
-				(<script>buildToolTip("Determine which equation is farthest from the AOR (Axis of Rotation), y = -1", "hint");</script>)
+				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), x=0 (y-axis)", "hint");</script>)
 
 			</td>
 			<td class=hwc2>
-				Let <equ>R = <input id=_2.step2.a class=c1>(x) &minus; <input id=_2.step2.b class=c2></equ>	<!-- step?.a-z for each input step -->
-				<div id=_2.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
-					R = f(x) &minus; <negative />1
+				Let <equ>r = <input id=_4.step2.a class=c1>(y) &minus; <input id=_4.step2.b class=c1></equ>	<!-- step?.a-z for each input step -->
+				<div id=_4.step2h class="hidden errmsg">													<!-- step?h hidden solution -->
+					r = g(x) since g(x) is closest to the AOR x=3 
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step2", "visible");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_4", "step2", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
 
-		<tr id=_2.step3r>	<!-- step3r row. Used for scrolling -->
+		<tr id=_4.step3r>	<!-- step3r row. Used for scrolling -->
 			<td class=hwc1>
 				Step&nbsp;3<br>
-				(<script>buildToolTip("Determine which equation is closest to the AOR (Axis of Rotation), y = -1", "hint");</script>)
-
-			</td>
-			<td class=hwc2>
-				Let <equ>r = <input id=_2.step3.a class=c1>(x) &minus; <input id=_2.step3.b class=c2></equ>	<!-- step?.a-z for each input step -->
-				<div id=_2.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
-					r = g(x) &minus; <negative />1
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_2", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-
-		<tr id=_2.step4r>	<!-- step3r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;4<br>
 			</td>
 			<td class=hwc2>
 				Let <equ>A<sub>washer</sub> = &pi;[R<sup>2</sup> &minus; r<sup>2</sup>]</equ>	<!-- step?.a-z for each input step -->
-				<div id=_2.step4h class="hidden errmsg">													<!-- step?h hidden solution -->
+				<div id=_4.step3h class="hidden errmsg">													<!-- step?h hidden solution -->
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step4", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+				<script>drawValidate("_4", "step3", "hidden");</script> <!-- Draw check answer and correct/incorrect images -->
 			</td>
 		</tr>
 
-
-		<tr id=_2.step5r>	<!-- step2r row. Used for scrolling -->
+		<tr id=_4.step4r>	<!-- step2r row. Used for scrolling -->
 			<td class=hwc1>
-				Step&nbsp;5<br>
+				Step&nbsp;4<br>
 				(<script>buildToolTip("Find the Volume of R.  You need to specify the bounds and the result of the integral", "hint");</script>)
 			</td>
 			<td class=hwc2>
 				<script>
-					drawInt("<input class=c1 id=_2.step5.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_2.step5.b class=c1></input>",
+					drawInt("<input class=c1 id=_4.step4.a ></input>",					<!-- step?.a-z for each input step -->
+							"<input id=_4.step4.b class=c1></input>",
 							"A<sub>washer</sub>", "dx");
 				</script>
-				<equ> = <input id="_2.step5.c" class=c5></input></equ>
-				<div id=_2.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="2003.1.a.step1a.jpg"><br>
-					<img class="fixedWidth" src="2003.1.a.step1e.jpg"><br>
+				<equ> = <input id="_4.step4.c" class=c6></input></equ>
+				<div id=_4.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+					<img class="fixedWidth" src="problem2.a.step1f.jpg"><br>
+					<img class="fixedWidth" src="problem2.a.step1g.jpg"><br>
 				</div>
 			</td>
 			<td>
-				<script>drawValidate("_2", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+				<script>drawValidate("_4", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
 			</td>
 		</tr>
+
 		<tr>
 			<td class=hwc1>Score:</td>
-			<td id=_2.score></td>
+			<td id=_4.score></td>
 			<td></td>
 		</tr>
 	</table>
-	
-	<!-- End Problem 1 Extension ------------------------------------------------------------------------------------------------------------------->
+
+
 
 
 	<h2>Turn in your Assignment</h2>

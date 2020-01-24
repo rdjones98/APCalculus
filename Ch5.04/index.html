@@ -8,7 +8,7 @@
 	<script src="../mymath.js"></script>
 	<script>
 		var title = "Chapter 5.04 Volume given Cross Section";
-		setNumProblems(5, title);  // In mymath.js  Used to compute the average for this assignment
+		setNumProblems(4, title);  // In mymath.js  Used to compute the average for this assignment
 
 		// Validator for problem 1
 		var _1 = new Object();
@@ -310,114 +310,6 @@
 				document.getElementById( "_4.score").innerHTML=this.score;
 			}
 
-		// Validator for problem 5	
-		var _5 = new Object();
-			_5.score=0;
-			_5.step1a=".896262";
-			_5.step1b="1.450426";
-			_5.step2a="ln";
-			_5.step2b="y";
-			_5.step2c="1";
-			_5.step3a="3";
-			_5.step3b="y";
-			_5.step3c="2";
-			_5.step4a="r";
-			_5.step4b="q";
-			_5.step4c="2";
-			_5.step5a="0";
-			_5.step5b="B";
-			_5.step5c="5.713";
-			_5.showStep = function showStep(aDiv)
-			{
-				hide(aDiv+"c"); // Hide correct checkmark
-				show(aDiv+"x");	// Show error Checkmark
-				show(aDiv+"h");	// Show any hidden comments/solutions
-			}
-			_5.validate = function(el) 
-			{
-				hide(el.id);
-				show(el.id+"c");
-				var aStep = el.id;
-
-				if( aStep == "_5.step1" )
-				{
-					if (( document.getElementById("_5.step1.a").value != this.step1a ) ||
-						( document.getElementById("_5.step1.b").value != this.step1b ) )
-					{
-						setVal("_5.step1.a",this.step1a);
-						setVal("_5.step1.b",this.step1b);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step2" );	// make next step visible
-				}
-				else if( aStep == "_5.step2" )
-				{
-					if (( document.getElementById("_5.step2.a").value.toLowerCase() != this.step2a ) ||
-						( document.getElementById("_5.step2.b").value.toLowerCase() != this.step2b ) ||
-						( document.getElementById("_5.step2.c").value.toLowerCase() != this.step2c ) )
-					{
-						setVal("_5.step2.a",this.step2a);
-						setVal("_5.step2.b",this.step2b);
-						setVal("_5.step2.c",this.step2c);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step3" );	// make next step visible
-				}
-				else if( aStep == "_5.step3" )
-				{
-					if (( document.getElementById("_5.step3.a").value.toLowerCase() != this.step3a ) ||
-						( document.getElementById("_5.step3.b").value.toLowerCase() != this.step3b ) ||
-						( document.getElementById("_5.step3.c").value.toLowerCase() != this.step3c ) )
-					{
-						setVal("_5.step3.a",this.step3a);
-						setVal("_5.step3.b",this.step3b);
-						setVal("_5.step3.c",this.step3c);
-					
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step4" );	// make next step visible
-				}
-				else if( aStep == "_5.step4" )
-				{
-					if (( document.getElementById("_5.step4.a").value.toLowerCase() != this.step4a )|| 
-						( document.getElementById("_5.step4.b").value.toLowerCase() != this.step4b ) ||
-						( document.getElementById("_5.step4.c").value.toLowerCase() != this.step4c ))
-					{
-						setVal("_5.step4.a",this.step4a);
-						setVal("_5.step4.b",this.step4b);
-						setVal("_5.step4.c",this.step4c);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-					show("_5.step5" );	// make next step visible
-				}
-				else if( aStep == "_5.step5" )
-				{
-					if (( document.getElementById("_5.step5.a").value != this.step5a )|| 
-						( document.getElementById("_5.step5.b").value.toUpperCase() != this.step5b ) ||
-						( document.getElementById("_5.step5.c").value.toLowerCase() != this.step5c ))
-					{
-						setVal("_5.step5.a",this.step5a);
-						setVal("_5.step5.b",this.step5b);
-						setVal("_5.step5.c",this.step5c);
-						this.showStep(aStep);
-					}
-					else
-						this.score = this.score + 20;
-				}
-				document.getElementById( "_5.score").innerHTML=this.score;
-				var v = document.getElementById(el.id + "r");
-			}		
-
 		function submitClicked()
 		{
 			scoreQuestion(1, _1.score);
@@ -442,28 +334,45 @@
 			<tr>
 				<td>Square:</td>
 				<td>
-					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>","s<sup>2</sup>", "dx");</script><equ>=
-				</td>
-				<td>
-					</equ> <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>","s<sup>2</sup>", "dx");</script><equ>=</equ>
 				</td>
 			</tr>
 			<tr>
-				<td>Triangle:</td>
+				<td></td>
 				<td>
-					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "bh", "dx");</script><equ>=
-				</td>
-				<td>
-					</equ> <script>drawFrac("1","2")</script><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
+					</equ> <script>drawInt("x<sub>1</sub>","x<sub>2</sub>","[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script>
 				</td>
 			</tr>
+			<tr><td></td></tr>
+			<tr>
+				<td>Triangle:</td>
+				<td>
+					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "bh", "dx");</script><equ>=</equ>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<script>drawFrac("1","2")</script><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script>
+				</td>
+			</tr>
+			<tr><td></td></tr>
 			<tr>
 				<td>Semi-Circle:</td>
 				<td>
 					<script>drawInt("x<sub>1</sub>","x<sub>2</sub>", buildFrac("1","2") + "&pi;r<sup>2</sup>", "dx");</script><equ>=
 				</td>
+			</tr>
+			<tr>
+				<td></td>
 				<td>
-					</equ> <script>drawFrac("1","2")</script><equ>&pi;</equ><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[" + buildFrac("f(x) &minus; g(x)",2) + "]" + "<sup>2</sup>" , "dx");</script><br>
+					</equ> <script>drawFrac("1","2")</script><equ>&pi;</equ><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[" + buildFrac("f(x) &minus; g(x)",2) + "]" + "<sup>2</sup>" , "dx");</script> = 
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<script>drawFrac("1","8")</script><equ>&pi;</equ><script>drawInt("x<sub>1</sub>","x<sub>2</sub>", "[ f(x) &minus; g(x) ]<sup>2</sup>", "dx");</script><br>
 				</td>
 			</tr>
 		</table>
@@ -481,7 +390,7 @@
 			along the graph is the width of each square. (And also the height since it IS a square)
 			<br><br>
 			Therefore the area of each square <equ>A<sub>square</sub> = [ f(x) &minus; g(x) ]<sup>2</sup></equ> and the volume of the solit build by those squares is:<br>
-			<equ>V = </equ><script>drawInt("0", "4", "[A<sub>square</sub>]","dx");</script><equ> = </equ><script>drawInt("0", "4", "[ f(x) &minus; g(x) ]<sup>2</sup>","dx");</script> <equ> = 5.333 u<sup>3</sup></equ>
+			<equ>V = </equ><script>drawInt("0", "4", "[A<sub>square</sub>]","dx");</script><equ> = </equ><script>drawInt("0", "4", "[ f(x) &minus; g(x) ]<sup>2</sup>","dx");</script> <equ> = 5.333 u<sup>3</sup></equ> <b>(Verify this)</b>
 			<br><br>
 			
 	</p>
@@ -801,111 +710,6 @@
 	</table>
 
 	<!-- End Problem  2 Extension -------------------------------------------------------------------------------------------------------------------------->
-	
-	<!-- Start Problem  3  -------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 3:</h3>
-	
-		<img class="fixedwidth floatLeft" src="lesson.2.jpg">
-		Let f and g be the functions defined on the left.<br>
-		Find the volume of the solid bounded by f(x) and g(x) and with cross-sections that are squares perpendicular to the <b>y-axis</b>.  
-		<br><br>
-		Just like Problem 3 in the last section, you will need to solve f(x) and g(x) for x and integrate with respect to y.  
-		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
-		
-	</p>
-	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-
-	<table class=hw >
-		<tr id=_5.step1r>	<!-- step1r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;1<br>
-				(<script>buildToolTip("Find the intersection of f(x) and g(x)", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				Let (<equ>A,B</equ>)=(<input id=_5.step1.a class=c8>,<input id=_5.step1.b class=c8>)	<!-- step?.a-z for each input step -->
-				<div id=_5.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
-					<img class="fixedWidth" src="lesson.2a.jpg"><br>
-					<img class="fixedWidth" src="lesson.2b.jpg"><br>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_5", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_5.step2r>	<!-- step2r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;2<br>
-				(<script>buildToolTip("Solve f(x) for x.  For example: y=2x becomes x = 1/2y so q(y) = 1/2y", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				Let <equ>q(y) = </equ><input id=_5.step2.a class=c2>(<input id=_5.step2.b class=c1> + <input id=_5.step2.c class=c1>) (Solve f(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_5.step2h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_5", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_5.step3r>	<!-- step3r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;3<br>
-				(<script>buildToolTip("Solve g(x) for x.  For example: y=2x becomes x = 1/2y so r(y) = 1/2y", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				Let <equ>r(y) = </equ><input id=_5.step3.a class=c1> &minus; <input id=_5.step3.b class=c1><sup><input id=_5.step3.c class=c1></sup></equ>  (Solve g(x) for x)	<!-- step?.a-z for each input step -->
-				<div id=_5.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>Remember you are solving for x which means there will only be "y" in the result.</errMsg>  
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_5", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_5.step4r>	<!-- step?r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;4<br>
-				(<script>buildToolTip("Find the Area of S.  You need to specify the bounds, f(x)-g(x) or g(x)-f(x), and the result of the integral", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				<equ>A<sub>square</sub> = [<input id=_5.step4.a class=c1>(x) &minus; <input id=_5.step4.b class=c1>(x)]<sup><input id=_5.step4.c class=c1></sup>
-				<div id=_5.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>Area of square is [f(x)&minus;g(x)]<sup>2</sup>.</errMsg>  
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_5", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr id=_5.step5r>	<!-- step5r row. Used for scrolling -->
-			<td class=hwc1>
-				Step&nbsp;5<br>
-				(<script>buildToolTip("You need to specify the bounds (Remember you are integrating with respect to Y), q(y)-r(y) or r(y)-q(x), and the result of the integral", "hint");</script>)
-			</td>
-			<td class=hwc2>
-				<script>
-					drawInt("<input class=c1 id=_5.step5.a ></input>",					<!-- step?.a-z for each input step -->
-							"<input id=_5.step5.b class=c1></input>",
-							"A<sub>square</sub>", "dy");
-				</script>
-				<equ>=&nbsp;<input id="_5.step5.c" class=c5></input></equ>
-				<div id=_5.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
-					<errMsg>The bounds are from 0 to B because you are integrating with respect to Y.</errMsg>  
-					<img class="fixedWidth" src="lesson.2d.jpg"><br>
-				</div>
-			</td>
-			<td>
-				<script>drawValidate("_5", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
-			</td>
-		</tr>
-		<tr>
-			<td class=hwc1>Score:</td>
-			<td id=_5.score></td>
-			<td></td>
-		</tr>
-	</table>
-	<!-- End of Problem 3 ----------------------------------------------------------------------------------------------------------->
-
 
 
 

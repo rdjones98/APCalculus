@@ -128,7 +128,7 @@ negative:before {position:relative; top:-5px; content:'\002D'; }
 
 	.integral 			{ font-family:Times New Roman; font-size: 125%; top:0px; position:relative; display:inline-block;}
 	.integral .lowbound { font-size: 50%;  top:12px;    left:-5px; position:relative;}
-	.integral .upbound  { font-size: 50%;  top:-20px;  left:-10px; position:relative;}
+	.integral .upbound  { font-size: 50%;  top:-30px;  left:-10px; position:relative;}
 	.integral .function { font-size: 75%;  top:0px;    left:-5px; position:relative;}
 
 	sup {font-size:35px;}

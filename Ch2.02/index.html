@@ -1,0 +1,328 @@
+<!-- This is the blank template for all chapters -->
+<!-- place webpage in the chapterdiv below -->
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>  <!-- PDF Generator -->
+	<script src="../myframework.js"></script>
+	<script src="../mymath.js"></script>
+	<script>
+		var title = "Chapter 2.02 Implicit Differentiation";
+		setNumProblems(1, title);  // In mymath.js  Used to compute the average for this assignment
+
+		// Validator for problem 5	
+		var _5 = new Object();
+			_5.score=0;
+			_5.step1a="3x";
+			_5.step1b="2";
+			_5.step2a="3y";
+			_5.step2b="2";
+			_5.step2c="dy";
+			_5.step2d="dx";
+			_5.step3a="2xy";
+			_5.step3b="x";
+			_5.step3c="2";
+			_5.step3d="dx";
+			_5.step3e="dy";
+			_5.step4a="-3x";
+			_5.step4b="2";
+			_5.step4c="-2xy";
+			_5.step5a="3y";
+			_5.step5b="2";
+			_5.step5c="x";
+			_5.step5d="2";
+			_5.step6a="-3x";
+			_5.step6b="2";
+			_5.step6c="-2xy";
+			_5.step6d="3y";
+			_5.step6e="2";
+			_5.step6f="x";
+			_5.step6g="2";
+			_5.showStep = function showStep(aDiv)
+			{
+				hide(aDiv+"c"); // Hide correct checkmark
+				show(aDiv+"x");	// Show error Checkmark
+				show(aDiv+"h");	// Show any hidden comments/solutions
+			}
+			_5.validate = function(el) 
+			{
+				hide(el.id);
+				show(el.id+"c");
+				var aStep = el.id;
+
+				if( aStep == "_5.step1" )
+				{
+					if (( document.getElementById("_5.step1.a").value != this.step1a ) ||
+						( document.getElementById("_5.step1.b").value != this.step1b ) )
+					{
+						setVal("_5.step1.a",this.step1a);
+						setVal("_5.step1.b",this.step1b);
+					
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+					document.getElementById("_5.step2.replace").innerHTML="<equ>3x<sup>2</sup> + </equ>";
+					show("_5.step2" );	// make next step visible
+				}
+				else if( aStep == "_5.step2" )
+				{
+					if (( document.getElementById("_5.step2.a").value.toLowerCase() != this.step2a ) ||
+						( document.getElementById("_5.step2.b").value.toLowerCase() != this.step2b ) ||
+						( document.getElementById("_5.step2.c").value.toLowerCase() != this.step2c ) ||
+						( document.getElementById("_5.step2.d").value.toLowerCase() != this.step2d ) )
+					{
+						setVal("_5.step2.a",this.step2a);
+						setVal("_5.step2.b",this.step2b);
+						setVal("_5.step2.c",this.step2c);
+						setVal("_5.step2.d",this.step2d);
+					
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+
+					document.getElementById("_5.step3.replace").innerHTML="<equ>3x<sup>2</sup> + 3y<sup>2</sup>" + buildFrac("dy","dx") + " + </equ>";
+					show("_5.step3" );	// make next step visible  
+				}
+				else if( aStep == "_5.step3" )
+				{
+					if (( document.getElementById("_5.step3.a").value.toLowerCase() != this.step3a ) ||
+						( document.getElementById("_5.step3.b").value.toLowerCase() != this.step3b ) ||
+						( document.getElementById("_5.step3.c").value.toLowerCase() != this.step3c ) ||
+						( document.getElementById("_5.step3.d").value.toLowerCase() != this.step3d ) ||
+						( document.getElementById("_5.step3.e").value.toLowerCase() != this.step3e ) )
+					{
+						setVal("_5.step3.a",this.step3a);
+						setVal("_5.step3.b",this.step3b);
+						setVal("_5.step3.c",this.step3c);
+						setVal("_5.step3.d",this.step3d);
+						setVal("_5.step3.e",this.step3e);
+					
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+					show("_5.step4" );	// make next step visible
+				}
+				else if( aStep == "_5.step4" )
+				{
+					if (( document.getElementById("_5.step4.a").value.toLowerCase() != this.step4a )|| 
+						( document.getElementById("_5.step4.b").value.toLowerCase() != this.step4b ) ||
+						( document.getElementById("_5.step4.c").value.toLowerCase() != this.step4c ))
+					{
+						setVal("_5.step4.a",this.step4a);
+						setVal("_5.step4.b",this.step4b);
+						setVal("_5.step4.c",this.step4c);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+					document.getElementById("_5.step5.replace").innerHTML="<equ>&minus;3x<sup>2</sup> &minus; 2xy";
+					show("_5.step5" );	// make next step visible
+				}
+				else if( aStep == "_5.step5" )
+				{
+					if (( document.getElementById("_5.step5.a").value != this.step5a )|| 
+						( document.getElementById("_5.step5.b").value.toUpperCase() != this.step5b ) ||
+						( document.getElementById("_5.step5.c").value.toUpperCase() != this.step5c ) ||
+						( document.getElementById("_5.step5.d").value.toLowerCase() != this.step5d ))
+					{
+						setVal("_5.step5.a",this.step5a);
+						setVal("_5.step5.b",this.step5b);
+						setVal("_5.step5.c",this.step5c);
+						setVal("_5.step5.d",this.step5d);
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 16;
+					show("_5.step6" );	// make next step visible
+				}
+				else if( aStep == "_5.step6" )
+				{
+					if (( document.getElementById("_5.step6.a").value != this.step6a )|| 
+						( document.getElementById("_5.step6.b").value.toUpperCase() != this.step6b ) ||
+						( document.getElementById("_5.step6.c").value.toUpperCase() != this.step6c ) ||
+						( document.getElementById("_5.step6.d").value.toUpperCase() != this.step6d ) ||
+						( document.getElementById("_5.step6.e").value.toUpperCase() != this.step6e ) ||
+						( document.getElementById("_5.step6.f").value.toUpperCase() != this.step6f ) ||
+						( document.getElementById("_5.step6.g").value.toLowerCase() != this.step6g ))
+					{
+						setVal("_5.step6.a",this.step6a);
+						setVal("_5.step6.b",this.step6b);
+						setVal("_5.step6.c",this.step6c);
+						setVal("_5.step6.d",this.step6d);
+						setVal("_5.step6.e",this.step6e);
+						setVal("_5.step6.f",this.step6f);
+						setVal("_5.step6.g",this.step6g);
+					
+						this.showStep(aStep);
+					}
+					else
+						this.score = this.score + 20;
+				}
+				document.getElementById( "_5.score").innerHTML=this.score;
+				var v = document.getElementById(el.id + "r");
+			}		
+
+		function submitClicked()
+		{
+			scoreQuestion(1, _5.score);
+			submitScores(title);
+		}
+	</script>
+</head>
+<body>
+<script>buildHeader(title);</script><!-- Build Common Header -->
+
+<div id=chapterDiv> 
+	<H2>Topic: Implicit Differentiation.</H2><BR>
+	<H3>Objective: Derive an equation that is NOT in <iequ>y =</iequ> form.</H3><BR>
+	
+	<div class=bigIdea>
+		<B>Big Idea:  Derive the equation as usual, just add <script>drawFrac("dy","dx")</script> to each y that gets derived.</B> <br>
+		<table>
+		</table>
+	</div>
+
+	<p>
+		How would you derive <equ>y=x<sup>3</sup></equ>?<Br>
+		Applying the rules we have already covered we have  <script>drawFrac("dy","dx")</script><equ> = 3x<sup>2</sup></equ>.<br>  
+		However, how would you derive <equ>x<sup>3</sup>y<sup>2</sup> + y<sup>3</sup>=3</equ>?<br>
+		Can you see that its NOT going to be easy (or even possible) to solve for "y" and apply the rules we have used up until now.<Br><br>
+		Implicit Differentiation is the strategy we are going to use to derive equations of this type.  The rules are simple.  
+		<h3>General Process</h3>
+		<ol>
+			<li>Derive each "x" and "y" using our standard derivation rules.
+			</li>
+			<li>Add a <script>drawFrac("dy","dx")</script> to the end of each "y" after it has been derived.
+			</li>
+			<li>Solve the resulting equation for <script>drawFrac("dy","dx")</script>
+			</li>
+		</ol>
+		<h3>Derive <equ><font color=red>x<sup>3</font><font color=blue></sup>y<sup>2</sup></font> + <font color=blue>y<sup>3</sup></font>=3</equ></h3>
+		<ol>
+			<li><equ><font color=red>x<sup>3</font><font color=blue></sup>y<sup>2</sup></font></equ> is "product rule" and derives to <equ><font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font> + <font color=red>x<sup>3</font><font color=blue></sup>2y</font></equ><script>drawFrac("dy","dx")</script> <br>
+				<equ><font color=blue>y<sup>3</sup></font></equ> is a monomial and derives to <equ><font color=blue>3y<sup>2</sup></font></equ><script>drawFrac("dy","dx")</script><br>
+			3 is a constant and derives to 0.<br><br>
+			<font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font> + <font color=red>x<sup>3</font><font color=blue></sup>2y</font></equ><script>drawFrac("dy","dx")</script> + <equ><font color=blue>3y<sup>2</sup></font></equ><script>drawFrac("dy","dx")</script> =  0 is our solution
+			</li>
+			<li>
+				Notice that we have to add <script>drawFrac("dy","dx")</script> to the second and third term because <equ>y</equ> was derived in each of those terms.<br>
+			</li>
+			<li>
+				<equ>Solve for <script>drawFrac("dy","dx")</script>:<br> <font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font> + <font color=red>x<sup>3</font><font color=blue></sup>2y</font></equ><script>drawFrac("dy","dx")</script> + <equ><font color=blue>3y<sup>2</sup></font></equ><script>drawFrac("dy","dx")</script> =  0<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=red>x<sup>3</font><font color=blue></sup>2y</font></equ><script>drawFrac("dy","dx")</script> + <equ><font color=blue>3y<sup>2</sup></font></equ><script>drawFrac("dy","dx")</script> =  &minus; <font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font> <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script>drawFrac("dy","dx")</script>[ <font color=red>x<sup>3</font><font color=blue></sup>2y</font> + <font color=blue>3y<sup>2</sup></font></equ> ] =  &minus; <font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script>drawFrac("dy","dx")</script> = <script>drawFrac("&minus;<font color=red>3x<sup>2</font><font color=blue></sup>y<sup>2</sup></font>", "<font color=red>x<sup>3</font><font color=blue></sup>2y</font> + <font color=blue>3y<sup>2</sup></font></equ>")</script>
+			</li>
+		</ol>
+		<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
+
+	
+	<h2>Your Turn:</h2>
+	
+	<!-- Start Problem  1  -------------------------------------------------------------------------------------------------------------------------->
+	<h3>Problem 1:</h3>
+	
+		Derive <equ>x<sup>3</sup> + y<sup>3</sup> + x<sup>2</sup>y = 0</equ>.  You will derive each term one at a time.<br>
+
+	<table class=hw >
+		<tr id=_5.step1r>	<!-- step1r row. Used for scrolling -->
+			<td class=hwc1>
+				<equ>x<sup>3</sup> 
+			</td>
+			<td class=hwc2>
+				<input id=_5.step1.a class=c2><sup><input id=_5.step1.b class=c1></sup>  <!-- step?.a-z for each input step -->
+				<div id=_5.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step1","visible");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_5.step2r>	<!-- step2r row. Used for scrolling -->
+			<td class=hwc1>
+				<equ>y<sup>3</sup></equ>
+			</td>
+			<td class=hwc2>
+				<span id=_5.step2.replace></span><input id=_5.step2.a class=c2><sup><input id=_5.step2.b class=c1><script>drawFrac("<input id=_5.step2.c class=c2>","<input id=_5.step2.d class=c2>")</script>	
+				<div id=_5.step1h class="hidden errmsg">													<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step2","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+			</td>
+		</tr>
+		<tr id=_5.step3r>	<!-- step3r row. Used for scrolling -->
+			<td class=hwc1>
+				<equ>x<sup>2</sup>y</equ>
+			</td>
+			<td class=hwc2>
+				<span id=_5.step3.replace></span><input id=_5.step3.a class=c3> + <input id=_5.step3.b class=c1><sup><input id=_5.step3.c class=c1></sup><script>drawFrac("<input id=_5.step3.d class=c2>","<input id=_5.step3.e class=c2>")</script> 
+				<div id=_5.step3h class="hidden errmsg">										<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step3","hidden");</script> <!-- Draw check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_5.step4r>	<!-- step?r row. Used for scrolling -->
+			<td class=hwc1>
+				
+			</td>
+			<td class=hwc2>
+				<equ>3y<sup>2</sup><script>drawFrac("dy","dx")</script> + x<sup>2</sup><script>drawFrac("dx","dy")</script> = <input id=_5.step4.a class=c3><sup><input id=_5.step4.b class=c1></sup> + <input id=_5.step4.c class=c4>
+				<div id=_5.step4h class="hidden errmsg">										<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step4", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_5.step5r>	<!-- step5r row. Used for scrolling -->
+			<td class=hwc1>
+			</td>
+			<td class=hwc2>
+				<script>drawFrac("dy","dx")</script> [  <input class=c2 id=_5.step5.a ></input><sup><input class=c1 id=_5.step5.b ></sup> + <input class=c1 id=_5.step5.c ></input><sup><input class=c1 id=_5.step5.d ></sup> ] = 
+				<span id=_5.step5.replace></span>
+				<div id=_5.step5h class="hidden errmsg">										<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step5", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr id=_5.step6r>	<!-- step6r row. Used for scrolling -->
+			<td class=hwc1>
+			</td>
+			<td class=hwc2>
+				<script>drawFrac("dy","dx")</script> = <script>drawFrac("<input class=c3 id=_5.step6.a ><sup><input class=c1 id=_5.step6.b ></sup> + <input class=c4 id=_5.step6.c >", "<input class=c2 id=_5.step6.d><sup><input class=c1 id=_5.step6.e></sup> + <input class=c1 id=_5.step6.f><sup><input class=c1 id=_5.step6.g></sup>" )</script>
+				<div id=_5.step6h class="hidden errmsg">										<!-- step?h hidden solution -->
+				</div>
+			</td>
+			<td>
+				<script>drawValidate("_5", "step6", "hidden");</script> <!-- Draw the button to check answer and correct/incorrect images -->
+			</td>
+		</tr>
+		<tr>
+			<td class=hwc1>Score:</td>
+			<td id=_5.score></td>
+			<td></td>
+		</tr>
+	</table>
+	<!-- End of Problem 3 ----------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+	<h2>Turn in your Assignment</h2>
+	<button onclick="submitClicked();">Submit Scores</button>
+	<br><br>
+</div>
+
+<script>buildMenu();</script> <!-- Build Common Menu -->
+</body>
+</html>

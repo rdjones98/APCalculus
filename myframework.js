@@ -53,7 +53,7 @@ var out =`
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
 		<a href=# onclick='bClick(this)'>Chapter 2 Derivatives</a>
 		<div class='items'>
-			<a class='menuItem' href='../Ch2.01'>Not Yet Developed</a>
+			<a class='menuItem' href='../Ch2.02'>Implicit Differentiation</a>
 		</div>
 	</div>
 

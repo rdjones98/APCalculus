@@ -219,7 +219,8 @@
 	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
 	</p>
 			First, we would need to solve both equations for "x" just as we have done in previous lessons.<br>
-			Second, our "washer" would be defined by the "farthest right" equation &minus; the "farthest left".<Br><br>
+			Second, our "washer" would be defined by the "farthest right" equation &minus; the "farthest left".<Br>
+			Third, we would integrate from "bottom" to "top".<Br><br>
 
 			<img class="floatLeft fixedWidth" src="lesson.1.b.jpg" >
 			<b>Example 1:</b>  What is the volume of the solid formed by rotating<br>
@@ -231,36 +232,26 @@
 			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;g(y)<sup>2</sup>&nbsp;&minus;&nbsp;f(y)<sup>2</sup>&nbsp;]</equ> 
 			The area of each washer is <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;g(y)<sup>2</sup>&nbsp;&minus;&nbsp;f(y)<sup>2</sup>&nbsp;]</equ> 
 			and the volume of the solid build by those washers is:<br>
-			<equ>V = </equ><script>drawInt("0", "B", "[ A<sub>washer</sub> ]","dy");</script><equ> =  ??? u<sup>3</sup></equ> <b>(Verify this!)</b>
+			<equ>V = </equ><script>drawInt("0", "B", "[ A<sub>washer</sub> ]","dy");</script><equ> = 4.188u<sup>3</sup></equ> <b>(Verify this!)</b>
 			<br><br>
 	</p>
 	
-	
-	<table style="width:100%"><tr><td></td></tr></table> <!-- Hard break in page -->
-			<img class="floatRight fixedWidth" src="lesson.2.jpg" >
-			<b>Example 2:</b>  What is the volume of the solid formed by rotating <equ>f(x)&nbsp;=&nbsp;<script>drawRoot("x");</script> and <br>
-			g(x)&nbsp;=&nbsp;<script>drawFrac("1","4")</script>x<sup>2</sup></equ> around the line y=<negative />1. (y=<negative />1 is your Axis of Rotation: AOR)<br>
-			Notice that both "R" and "r" are exactly 1 unit bigger.  In general each radius is (R&minus;AOR) and (r&minus;AOR)<br>
-			The area of each washer is now <equ>A<sub>washer</sub>&nbsp;=&nbsp;&pi;[&nbsp;R<sup>2</sup>&nbsp;&minus;&nbsp;r<sup>2</sup>&nbsp;]&nbsp;=&nbsp;&pi;[&nbsp;(f(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;&minus;&nbsp;(g(x)&nbsp;&minus;&nbsp;<negative />1)<sup>2</sup>&nbsp;]</equ> 
-			and the volume of the solid build by those washers is:<br>
-			<equ>V = </equ><script>drawInt("0", "A", "[ A<sub>washer</sub> ]","dx");</script><equ> =  14.361u<sup>3</sup></equ> <b>(Verify this)</b>
-			<br><br>
-	
-
 	<h2>General Process:</h2>
 
 	<ol>
 		<li>Find your bounds.  Set <equ>f(x)=g(x)</equ> and find all point(s) of intersection. <br> 
 		</li>
+		<li>Solve each equation for x.  
+		</li>
 		<li>Determine which equation is farthest from the AOR (Axis of rotation).  <br>
-			Let R = [ f(x) &minus; AOR ] (assuming f(x) is the farthest equation). <br>
-			Let r&nbsp;&nbsp;= [ g(x) &minus; AOR ] (assuming g(x) is the closer equation).<br>
+			Let R = [ f(y) &minus; AOR ] (assuming f(y) is the "farthest right" equation). <br>
+			Let r&nbsp;&nbsp;= [ g(y) &minus; AOR ] (assuming g(y) is the closer equation).<br>
 			
 		</li>
 		<li>Find the area of 1 washer. <br>
 			<equ>A<sub>washer</sub> = &pi;[ R<sup>2</sup> &minus; r<sup>2</sup> ]&nbsp;= &pi;[&nbsp;(&nbsp;f(x)&nbsp;&minus;&nbsp;AOR&nbsp;)<sup>2</sup>&nbsp;&minus;&nbsp;(&nbsp;g(x)&nbsp;&minus;&nbsp;AOR&nbsp;)<sup>2</sup>&nbsp;] <br></equ>
 		</li>
-		<li><script>drawInt("x<sub>1</sub>","x<sub>2</sub>","A<sub>washer</sub>", "dx");</script> or <script>drawInt("y<sub>1</sub>","y<sub>2</sub>","A<sub>washer</sub>", "dy");</script> <br>
+		<li><script>drawInt(<script>drawInt("y<sub>1</sub>","y<sub>2</sub>","A<sub>washer</sub>", "dy");</script> <br>
 		</li>
 	</ol> 
 
@@ -270,13 +261,11 @@
 
 
 	<!-- Start Problem  3  -------------------------------------------------------------------------------------------------------------------------->
-	<h3>Problem 2:</h3>
+	<h3>Problem 1:</h3>
 	
 		<img class="fixedwidth floatLeft" src="problem2.jpg">
 		Let f and g be the functions defined on the left.<br>
-		Find the volume of the solid bounded by f(x) and g(x) rotated around the <b>y-axis</b>.  
-		<br><br>
-		Just like Problem 3 in the last section, you will need to solve f(x) and g(x) for x and integrate with respect to y.  
+		Find the volume of the solid bounded by f(x) and g(x) rotated around the <b>y-axis</b>.<br>  
 		(Don't forget to <script>buildToolTip(ttRounding, "round appropriately");</script> )
 		
 	</p>

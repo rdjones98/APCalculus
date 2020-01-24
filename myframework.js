@@ -83,9 +83,9 @@ var out =`
 			<a class='menuItem' href='../Ch5.02'>Derivatives of an Inverse</a>
 			<a class='menuItem' href='../Ch5.03'>Area between 2 Curves</a>
 			<a class='menuItem' href='../Ch5.04'>Volume of Cross Section</a>
-			<a class='menuItem' href='../Ch5.04b'>Volume of Cross Section &perp; Y</a>
-			<a class='menuItem' href='../Ch5.05'>Volume of Rotation</a>
-			<a class='menuItem' href='../Ch5.06'>Volume of Rotation &perp; Y</a>
+			<a class='menuItem' href='../Ch5.05'>Volume of Cross Section &perp; Y</a>
+			<a class='menuItem' href='../Ch5.06'>Volume of Rotation</a>
+			<a class='menuItem' href='../Ch5.07'>Volume of Rotation &perp; Y</a>
 		</div>
 	</div>
 

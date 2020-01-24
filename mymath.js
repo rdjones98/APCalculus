@@ -41,8 +41,6 @@ function setNumProblems(aNumProblems, anAssignment)
 {
 	setCookie(anAssignment, getDateTime(), 7);
 
-	alert( getCookie(anAssignment) );
-	
 	for( var i=0; i<aNumProblems; i++ )
 		results.push(0);
 }

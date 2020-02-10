@@ -11,11 +11,9 @@ var out =`
 			</div>
 		</td>
 		<td id=leftArrowCol>
-			<img src='../images/leftArrow.png' onclick='leftArrowClicked();return false;'>
 		</td>
 		<td id=titleDiv>` + aTitle + `</td>
 		<td id=rightArrowCol>
-			<img src='../images/rightArrow.png' onclick='rightArrowClicked();return false;'>
 		</td>
 		<td id=referenceCol>
 			<div id=references onclick='showHideReferences(this);return false;'>+ References</div>
@@ -38,7 +36,7 @@ var out =`
 </div>
 
 
-<div id=menu>
+<div id=menu >
 	<div class='item'>
 		<img class='rt' src='../images/r.png' href='' onclick='bClick(this)'>
 		<img class='dn' src='../images/d.png' href='' onclick='bClick(this)'>
@@ -201,26 +199,3 @@ function showHideReferences(event)
 	}
 }
 
-function leftArrowClicked()
-{
-
-	var url = document.getElementById("iframeLoadChapter").contentWindow.document.getElementsByTagName("META")[0].getAttribute("prevchapter");
-	urlClicked(url);
-}
-function rightArrowClicked()
-{
-	var url = document.getElementById("iframeLoadChapter").contentWindow.document.getElementsByTagName("META")[0].getAttribute("nextchapter");
-	urlClicked(url);
-}
-
-
-// Load KeyListener.  This is outside of any function and should load when page loads
-document.onkeydown = function(e) {
-switch (e.keyCode) {
-	case 37:
-		leftArrowClicked();
-		break;
-	case 39:
-		rightArrowClicked();
-		break;
-}};
